@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>	
+	<!-- 警告 -->
+	<!-- 这里的配置注意顺序。spring-security过滤器必须在struts上面 -->
+	
+	<!-- SSO配置
+	
+<filter>
+	<filter-name>CASFilter</filter-name>
+	<filter-class>edu.yale.its.tp.cas.client.filter.CASFilter</filter-class>
+	<init-param>
+	  <param-name>edu.yale.its.tp.cas.client.filter.loginUrl</param-name>
+	  <param-value>https://i-think:8443/cas/login</param-value>
+	</init-param>
+	<init-param>
+	  <param-name>edu.yale.its.tp.cas.client.filter.validateUrl</param-name>
+	  <param-value>https://i-think:8443/cas/serviceValidate</param-value>
+	</init-param>
+	<init-param>
+	  <param-name>edu.yale.its.tp.cas.client.filter.serverName</param-name>
+	  <param-value>i-think:8088</param-value>
+	</init-param>
+</filter>
+<filter-mapping>
+	<filter-name>CASFilter</filter-name>
+	<url-pattern>*.jsp</url-pattern>
+</filter-mapping> --> 
+
+<!-- 在2.0协议中，CAS-Server端的配置与1.0基本一致。但在客户端上，多增加了一个call back URL，
+	该URL用来提供server端向client端传输PGT时使用。
+	因此，除了要配置edu.yale.its.tp.cas.client.filter.CASFilter作为认证过滤器外，
+	还要配置edu.yale.its.tp.cas.proxy.ProxyTicketReceptor这个servlet，
+	作为server回传PGT的call back URL
+	<servlet>
+		<servlet-name>ProxyTicketReceptor</servlet-name>
+		<servlet-class>edu.yale.its.tp.cas.proxy.ProxyTicketReceptor</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProxyTicketReceptor</servlet-name>
+		<url-pattern>/CasProxyServlet</url-pattern>
+	</servlet-mapping> -->
+	
+	<!-- Spring配置 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext*.xml</param-value>
+	</context-param>	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<!-- Spring Security配置 -->
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>
+			org.springframework.web.filter.DelegatingFilterProxy	
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<!--
+		<url-pattern>/*</url-pattern>
+		-->  
+		<url-pattern>/j_spring_security_check</url-pattern>
+		<url-pattern>*.jsp</url-pattern>
+		
+	</filter-mapping>
+	
+	<!-- struts配置 -->
+	<filter>
+	    <filter-name>struts2</filter-name>
+	    <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+  	</filter>
+  	<filter-mapping>
+	    <filter-name>struts2</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
+	<!-- 单用户登录监听session事件-->
+	<listener> 
+		<listener-class> org.springframework.security.web.session.HttpSessionEventPublisher </listener-class> 
+	</listener>
+	
+	<!-- hibernate配置 -->
+	<filter>
+		<filter-name>hibernateFilter</filter-name>
+		<filter-class>
+			org.springframework.orm.hibernate4.support.OpenSessionInViewFilter
+		</filter-class>
+		<!-- singleSession默认为true,若设为false则等于没用OpenSessionInView -->
+		<init-param>
+			<param-name>singleSession</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+            <param-name>flushMode</param-name>
+            <param-value>AUTO</param-value>
+        </init-param>
+		
+	</filter>
+	<filter-mapping>
+		<filter-name>hibernateFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	 
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
