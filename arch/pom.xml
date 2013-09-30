@@ -28,28 +28,6 @@
 			<scope>compile</scope>
 		</dependency>
 
-		<!-- <dependency> <groupId>org.aspectj</groupId> <artifactId>aspectjweaver</artifactId> 
-			<version>1.7.3</version> </dependency> -->
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-beans</artifactId>
-			<version>${org.springframework-version}</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>${org.springframework-version}</version>
-			<exclusions>
-				<!-- Exclude Commons Logging in favor of SLF4J -->
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -61,20 +39,7 @@
 
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>${org.springframework-version}</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
 			<artifactId>spring-expression</artifactId>
-			<version>${org.springframework-version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-tx</artifactId>
 			<version>${org.springframework-version}</version>
 			<scope>compile</scope>
 		</dependency>
@@ -85,34 +50,20 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-			<version>${org.springframework-version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-instrument</artifactId> 
-			<version>${org.springframework-version}</version> <scope>compile</scope> 
-			<optional>true</optional> </dependency> -->
-
-
-
-
-
-		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-oxm</artifactId> 
-			<version>${org.springframework-version}</version> <scope>compile</scope> 
-			<optional>true</optional> </dependency> -->
-
-		<dependency>
-			<groupId>org.springframework</groupId>
 			<artifactId>spring-struts</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-
-
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>${org.springframework-version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.servlet.jsp</groupId>
+					<artifactId>jsp-api</artifactId>
+				</exclusion>
+			</exclusions>
 			<scope>compile</scope>
 		</dependency>
 
@@ -128,12 +79,6 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-acl</artifactId>
-			<version>${org.springframework.security-version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-core</artifactId>
 			<version>${org.springframework.security-version}</version>
 			<scope>compile</scope>
 		</dependency>
@@ -156,6 +101,12 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-taglibs</artifactId>
 			<version>${org.springframework.security-version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.servlet</groupId>
+					<artifactId>jsp-api</artifactId>
+				</exclusion>
+			</exclusions>
 			<scope>compile</scope>
 		</dependency>
 
@@ -165,11 +116,23 @@
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>
 			<version>${org.apache.struts-version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.servlet</groupId>
+					<artifactId>jsp-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-dojo-plugin</artifactId>
 			<version>${org.apache.struts-version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.servlet</groupId>
+					<artifactId>jsp-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.struts</groupId>
@@ -180,11 +143,12 @@
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-json-plugin</artifactId>
 			<version>${org.apache.struts-version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.javassist</groupId>
-			<artifactId>javassist</artifactId>
-			<version>3.18.0-GA</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.servlet</groupId>
+					<artifactId>jsp-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<!-- Hibernate -->
 		<dependency>
@@ -192,26 +156,15 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>${org.hibernate-version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.kenai.nbpwr</groupId>
 			<artifactId>org-apache-commons-dbcp</artifactId>
 			<version>1.2.2-201002241055</version>
 		</dependency>
-
 		<!-- JDBC -->
-		<dependency>
-			<groupId>org.hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
-			<version>2.3.0</version>
-		</dependency>
+		
 
 		<!-- Logging -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${org.slf4j-version}</version>
-		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
@@ -238,14 +191,7 @@
 			<version>1</version>
 		</dependency>
 
-		<!-- Jetty -->
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-webapp</artifactId>
-			<version>${jettyVersion}</version>
-		</dependency>
-
-
+		
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -267,6 +213,11 @@
 			</exclusions>
 		</dependency>
 
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.7.3</version>
+		</dependency>
 		<dependency>
 			<groupId>org.glassfish.web</groupId>
 			<artifactId>jstl-impl</artifactId>
@@ -356,6 +307,13 @@
 			<scope>test</scope>
 		</dependency>
 
+
+		<!-- Jetty -->
+			<dependency>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-webapp</artifactId>
+				<version>${jettyVersion}</version>
+			</dependency>
 	</dependencies>
 	<build>
 		<finalName>ray</finalName>
@@ -402,7 +360,7 @@
 				</configuration>
 			</plugin>
 			<!-- This plugin is needed for the servlet examplt -->
-			<!-- <webApp>${base}/target/webmail</webApp> -->
+			<!-- <webApp>${base}/target/webmail</webApp>-->
 			<plugin>
 
 				<groupId>org.mortbay.jetty</groupId>
@@ -412,7 +370,7 @@
 
 					<connectors>
 						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-							<port>8080</port>
+							<port>8088</port>
 							<maxIdleTime>60000</maxIdleTime>
 						</connector>
 					</connectors>
@@ -420,7 +378,27 @@
 					<stopPort>9966</stopPort>
 					<stopKey>foo</stopKey>
 				</configuration>
-			</plugin>
+			</plugin> 
+			
+			
+			<!-- tomcat配置
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<configuration>
+					<uriEncoding>UTF-8</uriEncoding>
+					<path>/mavenTest</path>
+			                
+	                <port>8088</port>
+				</configuration>
+			</plugin> -->
+
+			<!--生成jar的时候会同时生成源码包的插件
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin> -->
+			
 		</plugins>
 	</build>
 </project>
