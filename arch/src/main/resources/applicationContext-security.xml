@@ -18,8 +18,7 @@
 		<session-management>
 			<concurrency-control max-sessions="1" error-if-maximum-exceeded="false"/>
 		</session-management>
-		<!--增加一个filter，这点与Acegi是不一样的，不能修改默认的filter了，
-		这个filter位于FILTER_SECURITY_INTERCEPTOR之前  -->
+		<!--增加一个filter，这点与Acegi是不一样的，不能修改默认的filter了，	这个filter位于FILTER_SECURITY_INTERCEPTOR之前  -->
 		<custom-filter ref="myFilter" before="FILTER_SECURITY_INTERCEPTOR"/>
 		<session-management
 			session-authentication-strategy-ref="sas" />
