@@ -6,163 +6,142 @@
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>show Maven Webapp</name>
-	<url>http://maven.apache.org</url>
+	<url>http://www.deep.tk</url>
+	<developers>
+		<developer></developer>
+	</developers>
+
 
 	<properties>
 		<java-version>1.6</java-version>
-		<org.springframework-version>3.2.4.RELEASE</org.springframework-version>
+		<spring.version>3.2.4.RELEASE</spring.version>
 		<org.springframework.security-version>3.1.4.RELEASE</org.springframework.security-version>
-		<org.apache.struts-version>2.3.15.1</org.apache.struts-version>
-		<org.hibernate-version>4.2.5.Final</org.hibernate-version>
-		<org.slf4j-version>1.6.1</org.slf4j-version>
-		<jettyVersion>8.1.10.v20130312</jettyVersion>
+		<hibernate.version>4.2.5.Final</hibernate.version>
+		<slf4j.version>1.6.1</slf4j.version>
+		<jetty.version>8.1.10.v20130312</jetty.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencies>
 
 		<!-- Spring -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-aop</artifactId>
-			<version>${org.springframework-version}</version>
-			<scope>compile</scope>
-		</dependency>
-
 
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-context-support</artifactId>
-			<version>${org.springframework-version}</version>
-			<scope>compile</scope>
-			<optional>true</optional>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-expression</artifactId>
-			<version>${org.springframework-version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-			<version>${org.springframework-version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-struts</artifactId>
-			<version>${org.springframework-version}</version>
-		</dependency>
+
+
+
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-context-support</artifactId> 
+			<version>${spring.version}</version> <scope>compile</scope> <optional>true</optional> 
+			</dependency> <dependency> <groupId>org.springframework</groupId> <artifactId>spring-expression</artifactId> 
+			<version>${spring.version}</version> <scope>compile</scope> </dependency> 
+			<dependency> <groupId>org.springframework</groupId> <artifactId>spring-aop</artifactId> 
+			<version>${spring.version}</version> <scope>compile</scope> </dependency> 
+			<dependency> <groupId>org.springframework</groupId> <artifactId>spring-orm</artifactId> 
+			<version>${spring.version}</version> </dependency> -->
+
+
+
+		<!-- spring mvc -->
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>${org.springframework-version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>javax.servlet.jsp</groupId>
-					<artifactId>jsp-api</artifactId>
-				</exclusion>
-			</exclusions>
-			<scope>compile</scope>
-		</dependency>
-		<!-- Spring-security -->
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-web</artifactId>
-			<version>${org.springframework.security-version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-acl</artifactId>
-			<version>${org.springframework.security-version}</version>
-			<scope>compile</scope>
-		</dependency>
-	
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-cas</artifactId>
-			<version>${org.springframework.security-version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-config</artifactId>
-			<version>${org.springframework.security-version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-taglibs</artifactId>
-			<version>${org.springframework.security-version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>javax.servlet</groupId>
-					<artifactId>jsp-api</artifactId>
-				</exclusion>
-			</exclusions>
+			<version>${spring.version}</version>
 			<scope>compile</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 
-		<!-- struts -->
 		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts2-core</artifactId>
-			<version>${org.apache.struts-version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>javax.servlet</groupId>
-					<artifactId>jsp-api</artifactId>
-				</exclusion>
-			</exclusions>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>3.0</version>
 		</dependency>
-		
+
+		<!-- Spring Data JPA -->
+
 		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts2-spring-plugin</artifactId>
-			<version>${org.apache.struts-version}</version>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>1.4.2.RELEASE</version>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts2-json-plugin</artifactId>
-			<version>${org.apache.struts-version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>javax.servlet</groupId>
-					<artifactId>jsp-api</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+
 		<!-- Hibernate -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>${org.hibernate-version}</version>
+			<version>${hibernate.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.kenai.nbpwr</groupId>
-			<artifactId>org-apache-commons-dbcp</artifactId>
-			<version>1.2.2-201002241055</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
 		</dependency>
-		<!-- JDBC -->
+
+		<!-- H2 Database -->
+
 		<dependency>
-			<groupId>org.hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
-			<version>2.3.0</version>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.3.174</version>
 		</dependency>
+		<!-- Mysql Database -->
+		<!-- If you use mysql, uncomment this dependency declaration -->
+		<!-- <dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> 
+			<version>${mysql.connector.version}</version> </dependency> -->
+		<!-- PostgreSQL JDBC4 -->
+		<!-- If you use postgresql, uncomment this dependency declaration -->
+		<!-- <dependency> <groupId>org.postgresql</groupId> <artifactId>postgresql</artifactId> 
+			<version>9.3-1100-jdbc4</version> </dependency> -->
+
+		<!-- BoneCP -->
+		<dependency>
+			<groupId>com.jolbox</groupId>
+			<artifactId>bonecp</artifactId>
+			<version>0.8.0.RELEASE</version>
+		</dependency>
+
+		<!-- Servlet API 3.0 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<!-- <dependency> <groupId>javax.servlet.jsp</groupId> <artifactId>javax.servlet.jsp-api</artifactId> 
+			<version>2.3.1</version> <scope>provided</scope> </dependency> -->
+
 
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
-			<version>${org.slf4j-version}</version>
+			<version>${slf4j.version}</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>${org.slf4j-version}</version>
+			<version>${slf4j.version}</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
@@ -179,44 +158,12 @@
 			<version>1</version>
 		</dependency>
 
-		
-		<!-- Servlet -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
-			<scope>provided</scope>
-		</dependency>
-		<!-- <dependency> <groupId>javax.servlet.jsp</groupId> <artifactId>javax.servlet.jsp-api</artifactId> 
-			<version>2.3.1</version> <scope>provided</scope> </dependency> -->
-		<dependency>
-			<groupId>javax.servlet.jsp.jstl</groupId>
-			<artifactId>javax.servlet.jsp.jstl-api</artifactId>
-			<version>1.2.1</version>
-			<exclusions>
-				<exclusion>
-					<groupId>javax.servlet</groupId>
-					<artifactId>servlet-api</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.7.3</version>
 		</dependency>
-		<dependency>
-			<groupId>org.glassfish.web</groupId>
-			<artifactId>jstl-impl</artifactId>
-			<version>1.2</version>
-			<exclusions>
-				<exclusion>
-					<groupId>javax.servlet</groupId>
-					<artifactId>servlet-api</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+
 
 
 		<!-- Jackson JSON Processor -->
@@ -268,7 +215,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>${org.springframework-version}</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -294,14 +241,6 @@
 			<version>1.3</version>
 			<scope>test</scope>
 		</dependency>
-
-
-		<!-- Jetty -->
-			<dependency>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-webapp</artifactId>
-				<version>${jettyVersion}</version>
-			</dependency>
 	</dependencies>
 	<build>
 		<finalName>ray</finalName>
@@ -345,48 +284,44 @@
 				<configuration>
 					<webXml>src/main/webapp/WEB-INF/web.xml</webXml>
 					<warName>template</warName>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
-			<!-- This plugin is needed for the servlet examplt -->
-			<!-- <webApp>${base}/target/webmail</webApp>-->
 			<plugin>
-
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>${jettyVersion}</version>
+				<version>${jetty.version}</version>
 				<configuration>
-
 					<connectors>
 						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
 							<port>8088</port>
 							<maxIdleTime>60000</maxIdleTime>
 						</connector>
 					</connectors>
-					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<scanIntervalSeconds>0</scanIntervalSeconds>
+					<webAppConfig>
+						<defaultsDescriptor>src/main/resources/webdefault.xml</defaultsDescriptor>
+					</webAppConfig>
 					<stopPort>9966</stopPort>
 					<stopKey>foo</stopKey>
 				</configuration>
-			</plugin> 
-			
-			
-			<!-- tomcat配置
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>tomcat-maven-plugin</artifactId>
-				<configuration>
-					<uriEncoding>UTF-8</uriEncoding>
-					<path>/mavenTest</path>
-			                
-	                <port>8088</port>
-				</configuration>
-			</plugin> -->
+			</plugin>
 
-			<!--生成jar的时候会同时生成源码包的插件
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-            </plugin> -->
-			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<reportPlugins>
+						<!-- Cobertura plugin -->
+						<plugin>
+							<groupId>org.codehaus.mojo</groupId>
+							<artifactId>cobertura-maven-plugin</artifactId>
+							<version>2.5.1</version>
+						</plugin>
+					</reportPlugins>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>
