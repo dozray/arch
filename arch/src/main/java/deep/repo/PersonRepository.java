@@ -15,7 +15,7 @@ package deep.repo;
  */
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import deep.vo.*;
+import deep.model.*;
 public interface PersonRepository extends JpaRepository<Person,Long> {
 
 }

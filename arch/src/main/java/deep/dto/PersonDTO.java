@@ -1,4 +1,4 @@
-package deep.svc;
+package deep.dto;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.hibernate.validator.constraints.NotEmpty;
 

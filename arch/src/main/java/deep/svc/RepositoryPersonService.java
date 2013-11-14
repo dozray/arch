@@ -6,8 +6,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import deep.dto.PersonDTO;
 import deep.repo.PersonRepository;
-import deep.vo.Person;
+import deep.model.Person;
 
 import javax.annotation.Resource;
 
