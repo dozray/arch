@@ -4,112 +4,60 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-  <display-name></display-name>	
-	<!-- 警告 -->
-	<!-- 这里的配置注意顺序。spring-security过滤器必须在struts上面 -->
-	
-	<!-- SSO配置
-	
-<filter>
-	<filter-name>CASFilter</filter-name>
-	<filter-class>edu.yale.its.tp.cas.client.filter.CASFilter</filter-class>
-	<init-param>
-	  <param-name>edu.yale.its.tp.cas.client.filter.loginUrl</param-name>
-	  <param-value>https://i-think:8443/cas/login</param-value>
-	</init-param>
-	<init-param>
-	  <param-name>edu.yale.its.tp.cas.client.filter.validateUrl</param-name>
-	  <param-value>https://i-think:8443/cas/serviceValidate</param-value>
-	</init-param>
-	<init-param>
-	  <param-name>edu.yale.its.tp.cas.client.filter.serverName</param-name>
-	  <param-value>i-think:8088</param-value>
-	</init-param>
-</filter>
-<filter-mapping>
-	<filter-name>CASFilter</filter-name>
-	<url-pattern>*.jsp</url-pattern>
-</filter-mapping> --> 
-
-<!-- 在2.0协议中，CAS-Server端的配置与1.0基本一致。但在客户端上，多增加了一个call back URL，
-	该URL用来提供server端向client端传输PGT时使用。
-	因此，除了要配置edu.yale.its.tp.cas.client.filter.CASFilter作为认证过滤器外，
-	还要配置edu.yale.its.tp.cas.proxy.ProxyTicketReceptor这个servlet，
-	作为server回传PGT的call back URL
-	<servlet>
-		<servlet-name>ProxyTicketReceptor</servlet-name>
-		<servlet-class>edu.yale.its.tp.cas.proxy.ProxyTicketReceptor</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ProxyTicketReceptor</servlet-name>
-		<url-pattern>/CasProxyServlet</url-pattern>
-	</servlet-mapping> -->
-	
-	<!-- Spring配置 -->
+  <display-name>arch</display-name>	
+	<!-- 上下文参数(第一启动),指定jdbc配置文件 
+	</context-param>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/classes/applicationContext*.xml</param-value>
-	</context-param>	
+		<param-value>/WEB-INF/configure/jdbc.xml</param-value>
+		<param-value>classpath:/config/jdbc.xml</param-value>
+	</context-param>
+	-->
+	<!-- spring监听器(第二启动),监听springMVC环境
+	<display-name>Archetype Created Web Application</display-name>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	
-	<!-- Spring Security配置 -->
+	 -->
+	<!-- springMVC编码拦截器(第三启动),springMVC内置的编码拦截器 -->
 	<filter>
-		<filter-name>springSecurityFilterChain</filter-name>
-		<filter-class>
-			org.springframework.web.filter.DelegatingFilterProxy	
-		</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>springSecurityFilterChain</filter-name>
-		<!--
-		<url-pattern>/*</url-pattern>
-		-->  
-		<url-pattern>/j_spring_security_check</url-pattern>
-		<url-pattern>*.jsp</url-pattern>
-		
-	</filter-mapping>
-	
-	<!-- struts配置 -->
-	<filter>
-	    <filter-name>struts2</filter-name>
-	    <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
-  	</filter>
-  	<filter-mapping>
-	    <filter-name>struts2</filter-name>
-	    <url-pattern>/*</url-pattern>
-	</filter-mapping>
-	
-	
-	<!-- 单用户登录监听session事件-->
-	<listener> 
-		<listener-class> org.springframework.security.web.session.HttpSessionEventPublisher </listener-class> 
-	</listener>
-	
-	<!-- hibernate配置 -->
-	<filter>
-		<filter-name>hibernateFilter</filter-name>
-		<filter-class>
-			org.springframework.orm.hibernate4.support.OpenSessionInViewFilter
-		</filter-class>
-		<!-- singleSession默认为true,若设为false则等于没用OpenSessionInView -->
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
 		<init-param>
-			<param-name>singleSession</param-name>
-			<param-value>true</param-value>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
 		</init-param>
 		<init-param>
-            <param-name>flushMode</param-name>
-            <param-value>AUTO</param-value>
-        </init-param>
-		
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
 	</filter>
 	<filter-mapping>
-		<filter-name>hibernateFilter</filter-name>
+		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+
+	<!-- springMVC前置控制器(第四启动)，在分发其它的控制器前都要经过这个总控制器 -->
+	<servlet>
+		<servlet-name>mvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/classes/mvc.xml</param-value>
+			<!-- 其中<param-value>**.xml</param-value> 这里可以使用多种写法 1、不写,使用默认值:/WEB-INF/<servlet-name>-servlet.xml 
+				2、<param-value>/WEB-INF/classes/springMVC.xml</param-value> 3、<param-value>classpath*:springMVC-mvc.xml</param-value> 
+				4、多个值用逗号分隔 -->
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mvc</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
 	 
 	<welcome-file-list>
+		<welcome-file>index.htm</welcome-file>
 		<welcome-file>login.jsp</welcome-file>
 	</welcome-file-list>
 </web-app>
