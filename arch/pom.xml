@@ -299,9 +299,9 @@
 						</connector>
 					</connectors>
 					<scanIntervalSeconds>0</scanIntervalSeconds>
-					<webAppConfig>
+					<!-- <webAppConfig>
 						<defaultsDescriptor>src/main/resources/webdefault.xml</defaultsDescriptor>
-					</webAppConfig>
+					</webAppConfig> -->
 					<stopPort>9966</stopPort>
 					<stopKey>foo</stopKey>
 				</configuration>
