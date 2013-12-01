@@ -122,8 +122,8 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		<!-- <dependency> <groupId>javax.servlet.jsp</groupId> <artifactId>javax.servlet.jsp-api</artifactId> 
-			<version>2.3.1</version> <scope>provided</scope> </dependency> -->
+		<dependency> <groupId>javax.servlet.jsp</groupId> <artifactId>javax.servlet.jsp-api</artifactId> 
+			<version>2.3.1</version> <scope>provided</scope> </dependency>
 
 
 		<!-- Logging -->
@@ -294,7 +294,7 @@
 				<configuration>
 					<connectors>
 						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-							<port>8088</port>
+							<port>8888</port>
 							<maxIdleTime>60000</maxIdleTime>
 						</connector>
 					</connectors>
