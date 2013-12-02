@@ -15,6 +15,19 @@
 	<mvc:annotation-driven />
 	<!--启用自动扫描  -->
 	<context:component-scan base-package="springmvc.controller" />
+	
+	<bean id="loginController" class="deep.controller.admin.LoginController">
+		<property name="errView" value="error" ></property>
+		<property name="successView" value="ok"></property>
+	</bean>
+	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/login.do">loginController</prop>
+			</props>
+		</property>
+	</bean>
+	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/view/" />
 		<property name="suffix" value=".jsp" />

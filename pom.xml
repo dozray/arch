@@ -295,7 +295,7 @@
 					<connectors>
 						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
 							<port>8888</port>
-							<maxIdleTime>60000</maxIdleTime>
+							<maxIdleTime>5000</maxIdleTime>
 						</connector>
 					</connectors>
 					<scanIntervalSeconds>0</scanIntervalSeconds>
