@@ -11,7 +11,6 @@
 		<developer></developer>
 	</developers>
 
-
 	<properties>
 		<java-version>1.6</java-version>
 		<spring.version>3.2.4.RELEASE</spring.version>
@@ -122,8 +121,12 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		<dependency> <groupId>javax.servlet.jsp</groupId> <artifactId>javax.servlet.jsp-api</artifactId> 
-			<version>2.3.1</version> <scope>provided</scope> </dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.1</version>
+			<scope>provided</scope>
+		</dependency>
 
 
 		<!-- Logging -->
@@ -292,6 +295,12 @@
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>${jetty.version}</version>
 				<configuration>
+					<systemProperties>
+						<systemProperty>
+							<name>org.apache.jasper.compiler.disablejsr199</name>
+							<value>true</value>
+						</systemProperty>
+					</systemProperties>
 					<connectors>
 						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
 							<port>8888</port>
@@ -299,9 +308,9 @@
 						</connector>
 					</connectors>
 					<scanIntervalSeconds>0</scanIntervalSeconds>
-					<!-- <webAppConfig>
-						<defaultsDescriptor>src/main/resources/webdefault.xml</defaultsDescriptor>
-					</webAppConfig> -->
+					<webAppConfig>
+						<!-- <defaultsDescriptor>src/main/resources/webdefault.xml</defaultsDescriptor> -->
+					</webAppConfig>
 					<stopPort>9966</stopPort>
 					<stopKey>foo</stopKey>
 				</configuration>

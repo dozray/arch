@@ -1,7 +1,64 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>arch</display-name>
+  
+  	<!-- 上下文参数(第一启动),指定jdbc配置文件 
+	</context-param>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/configure/jdbc.xml</param-value>
+		<param-value>classpath:/config/jdbc.xml</param-value>
+	</context-param>
+	-->
+	<!-- spring监听器(第二启动),监听spring环境 
+	<display-name>Archetype Created Web Application</display-name>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	-->
+	
+  
+  <!-- springMVC编码拦截器(第三启动),springMVC内置的编码拦截器 -->
+  <filter>
+  	<filter-name>encodingFilter</filter-name>
+  	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+  		<init-param>
+  			<param-name>encoding</param-name>
+  			<param-value>UTF-8</param-value>
+  		</init-param>
+  		<init-param>
+  			<param-name>forceEncoding</param-name>
+  			<param-value>true</param-value>
+  		</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>encodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- springMVC 前置控制器 (第四启动)，在分发其它控制器前都要经过这个控制器-->
+  <servlet>
+  <servlet-name>mvc</servlet-name>
+  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  <init-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>/WEB-INF/conf/mvc.xml</param-value>
+  	<!-- 其中<param-value>**.xml</param-value> 这里可以使用多种写法 1、不写,使用默认值:/WEB-INF/<servlet-name>-servlet.xml 
+				2、<param-value>/WEB-INF/classes/springMVC.xml</param-value> 3、<param-value>classpath*:springMVC-mvc.xml</param-value> 
+				4、多个值用逗号分隔 -->
+  </init-param>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>mvc</servlet-name>
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
 </web-app>

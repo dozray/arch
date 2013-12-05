@@ -26,7 +26,7 @@ public class LoginController extends AbstractController {
 		User u = getUser(userName,password);
 		
 		Map<String, Object> model = new HashMap<String,Object>();
-		if(u==null){
+		if(u!=null){
 			model.put("user", u);
 			return new ModelAndView(getSuccessView(),model);
 		}

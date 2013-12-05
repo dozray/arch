@@ -18,7 +18,7 @@
 	
 	<bean id="loginController" class="deep.controller.admin.LoginController">
 		<property name="errView" value="error" ></property>
-		<property name="successView" value="ok"></property>
+		<property name="successView" value="portal"></property>
 	</bean>
 	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
@@ -27,6 +27,9 @@
 			</props>
 		</property>
 	</bean>
+	
+	<!-- 静态文件的处理 -->
+	<mvc:resources location="/static/" mapping="/static/**"/>
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/view/" />

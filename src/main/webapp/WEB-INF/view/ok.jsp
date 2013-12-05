@@ -51,11 +51,13 @@
 		<span>Portal</span>
 	</div>
 	<div class="pane ui-layout-west" >
-		
+		<h1>asdlkfasdfkasdlfasd</h1>
 	</div>
 	<div class="pane ui-layout-center">
-	Center	
-
+	<h1>Center</h1>	
+	</div>
 </div>
+
+<div><h1>lsdfklasdflkjasdflkjsadfklj;asdfojiwertwfgwerfg98w2rtjdfsdfgsdfg</h1></div>
 </body>
 </html>
