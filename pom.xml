@@ -10,60 +10,47 @@
 	<developers>
 		<developer></developer>
 	</developers>
-
+	<repositories>
+		<repository>
+			<id>0001</id>
+			<name>inner repo</name>
+			<layout>default</layout>
+			<url>http://172.16.0.18:8081/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
 	<properties>
-		<java-version>1.6</java-version>
+		<java.version>1.6</java.version>
 		<spring.version>3.2.4.RELEASE</spring.version>
-		<org.springframework.security-version>3.1.4.RELEASE</org.springframework.security-version>
 		<hibernate.version>4.2.5.Final</hibernate.version>
-		<slf4j.version>1.6.1</slf4j.version>
+		<mysql.connector.version>5.1.18</mysql.connector.version>
+		<slf4j.version>1.7.5</slf4j.version>
+		<logback.version>1.0.13</logback.version>
 		<jetty.version>8.1.10.v20130312</jetty.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<encoding>UTF-8</encoding>
 	</properties>
 
 	<dependencies>
 
 		<!-- Spring -->
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
+			<scope>runtime</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-loggin</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+			<optional>true</optional>
 		</dependency>
-
-
-
-
-		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-context-support</artifactId> 
-			<version>${spring.version}</version> <scope>compile</scope> <optional>true</optional> 
-			</dependency> <dependency> <groupId>org.springframework</groupId> <artifactId>spring-expression</artifactId> 
-			<version>${spring.version}</version> <scope>compile</scope> </dependency> 
-			<dependency> <groupId>org.springframework</groupId> <artifactId>spring-aop</artifactId> 
-			<version>${spring.version}</version> <scope>compile</scope> </dependency> 
-			<dependency> <groupId>org.springframework</groupId> <artifactId>spring-orm</artifactId> 
-			<version>${spring.version}</version> </dependency> -->
-
-
 
 		<!-- spring mvc -->
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>${spring.version}</version>
-			<scope>compile</scope>
-		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib</artifactId>
-			<version>3.0</version>
 		</dependency>
 
 		<!-- Spring Data JPA -->
@@ -139,20 +126,13 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
 			<version>${slf4j.version}</version>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>${slf4j.version}</version>
-			<scope>runtime</scope>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.16</version>
-			<scope>runtime</scope>
-		</dependency>
+
 
 		<!-- @Inject -->
 		<dependency>
@@ -176,12 +156,6 @@
 			<version>1.9.13</version>
 		</dependency>
 
-		<!-- Rome Atom+RSS -->
-		<dependency>
-			<groupId>net.java.dev.rome</groupId>
-			<artifactId>rome</artifactId>
-			<version>1.0.0</version>
-		</dependency>
 
 		<!-- JSR 303 with Hibernate Validator -->
 		<dependency>
@@ -195,12 +169,11 @@
 			<version>5.0.1.Final</version>
 		</dependency>
 
-		<!-- Joda Time Library -->
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-			<version>2.2</version>
-		</dependency>
+		<!-- Rome Atom+RSS <dependency> <groupId>net.java.dev.rome</groupId> <artifactId>rome</artifactId> 
+			<version>1.0.0</version> </dependency> -->
+
+		<!-- Joda Time Library <dependency> <groupId>joda-time</groupId> <artifactId>joda-time</artifactId> 
+			<version>2.2</version> </dependency> -->
 
 		<!-- File Upload -->
 		<dependency>
@@ -300,6 +273,10 @@
 							<name>org.apache.jasper.compiler.disablejsr199</name>
 							<value>true</value>
 						</systemProperty>
+						<systemProperty>
+							<name>loback.confFile</name>
+							<value>./src/main/resources/logback.xml</value>
+						</systemProperty>
 					</systemProperties>
 					<connectors>
 						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
@@ -314,6 +291,28 @@
 					<stopPort>9966</stopPort>
 					<stopKey>foo</stopKey>
 				</configuration>
+
+				<executions>
+					<execution>
+						<id>start-jetty</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<scanIntervalSeconds>0</scanIntervalSeconds>
+							<daemon>true</daemon>
+						</configuration>
+					</execution>
+					<execution>
+						<id>stop-jetty</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>stop</goal>
+						</goals>
+					</execution>
+				</executions>
+
 			</plugin>
 
 			<plugin>

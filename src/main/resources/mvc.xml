@@ -13,25 +13,27 @@
 
 	<!-- 默认的注解映射的支持 -->
 	<mvc:annotation-driven />
-	<!--启用自动扫描  -->
+	<!--启用自动扫描 -->
 	<context:component-scan base-package="springmvc.controller" />
-	
+
 	<bean id="loginController" class="deep.controller.admin.LoginController">
-		<property name="errView" value="error" ></property>
+		<property name="errView" value="error"></property>
 		<property name="successView" value="portal"></property>
 	</bean>
-	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	<bean id="urlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<props>
 				<prop key="/login.do">loginController</prop>
 			</props>
 		</property>
 	</bean>
-	
+
 	<!-- 静态文件的处理 -->
-	<mvc:resources location="/static/" mapping="/static/**"/>
-	
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<mvc:resources location="/static/" mapping="/static/**" />
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/view/" />
 		<property name="suffix" value=".jsp" />
 	</bean>

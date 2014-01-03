@@ -37,7 +37,7 @@ public class LoginController extends AbstractController {
 	}
 	
 	public User getUser(String userName,String password){
-		if(userName=="Admin" && password=="Admin"){
+		if(userName.equals("Admin") && password.equals("Admin")){
 			User u= new User();
 			u.setName(userName);
 			u.setPassword(password);
