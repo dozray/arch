@@ -8,7 +8,7 @@
 </head>
 <body>
 	${error}
-	<form action="login.do" method="post">
+	<form action="/svc/login.do" method="post">
 		<table>
 			<tr>
 				<td colspan="2" align="center">账户登录</td>

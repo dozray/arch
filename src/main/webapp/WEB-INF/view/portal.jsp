@@ -10,8 +10,6 @@
 <link type="text/css" rel="stylesheet"
 	href="../../static/css/ztree/ztree.css" />
 <style type="text/css">
-//
-for layout style
 	html,body {
 	background: #666;
 	widht: 100%;
@@ -51,7 +49,7 @@ for layout style
 
 
 <SCRIPT type="text/javascript">
-  <!--
+  
 	var tree;
 	var cframe;
 
@@ -167,14 +165,11 @@ for layout style
 		h = cframe.height() >= maxH ? minH:maxH ;
 		if (h < 530) h = 530;
 		cframe.height(h);
-	}
-
-  //-->
+	}  
   </SCRIPT>
 </head>
 <body>
-	<div id="container">
-
+	<div id="container" >
 		<div class="pane ui-layout-north">
 			<span>Portal</span>
 		</div>
