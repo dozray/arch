@@ -28,8 +28,19 @@
 
 	<!-- 默认的注解映射的支持: 启动注解驱动的Spring MVC功能，注册请求url和注解POJO类方法的映射-->  
 	<mvc:annotation-driven />
-	<!--启用包自动扫描: 以便注册带有@Controller、@Service、@repository、@Component等注解的类成为spring的bean -->  
-	<context:component-scan base-package="deep.controller" />
+	
+	<!--启用包自动扫描
+		以便注册带有@Controller、@Service、@repository、@Component等注解的类成为spring的bean 
+		常用的注解有:
+		@Controller		声明Action组件
+		@Service			声明Service组件
+		@Repository		声明Dao组件
+		@Component			泛指组件，当无法明确分类时
+		@RequestMapping	请求映射，如RequestMapping("/menu");
+		@Resource			用于注入，(J2EE 提供的)默认按明称装配，
+		
+	-->  
+	<context:component-scan base-package="deep.entity,deep.controller" />
 	<!-- 静态文件的处理 -->
 	<mvc:resources location="/static/" mapping="/static/**" />
 	

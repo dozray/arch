@@ -4,21 +4,16 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
 	<display-name>arch</display-name>
-	
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/classes/applicationContext.xml</param-value>
-	</context-param>
-	
+
+	<!-- <context-param> <param-name>contextConfigLocation</param-name> <param-value>/WEB-INF/classes/applicationContext.xml</param-value> 
+		</context-param> -->
 
 	<!-- 上下文参数(第一启动),指定jdbc配置文件 </context-param> <context-param> <param-name>contextConfigLocation</param-name> 
 		<param-value>/WEB-INF/configure/jdbc.xml</param-value> <param-value>classpath:/config/jdbc.xml</param-value> 
 		</context-param> -->
-		
-	<!-- spring监听器(第二启动),监听spring环境 -->
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
+
+	<!-- spring监听器(第二启动),监听spring环境 <listener> <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class> 
+		</listener> -->
 
 	<!-- springMVC编码拦截器(第三启动),springMVC内置的编码拦截器 <filter> <filter-name>encodingFilter</filter-name> 
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
@@ -40,6 +35,50 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+	
+	<!-- 处理静态资源: 需写在DispatcherServlet的前面， 让defaultServlet先拦截，不会进入Spring处理
+	
+	不同的web容器默认的servlet 不同，参照如下
+	
+	Tomcat, Jetty, JBoss and GlassFish	默认servlet名称		==	“default”
+	Google App Engine 					默认servlet名称 	==	"_ah_default"		
+	Resin 									默认servlet名称		==	"resin-file"
+	WebLogic 								默认servlet名称		==	"FileServlet"
+	WebSphere								默认servlet名称		==	"SimpleFileServlet"
+	 
+	 -->
+	
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.htm</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.js</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.css</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.jpg</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.png</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.zip</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.jpg</url-pattern>
+	</servlet-mapping>
+
+	
+	<!-- DispatcherServlet  -->
 	<servlet-mapping>
 		<servlet-name>mvc</servlet-name>
 		<url-pattern>/svc/*</url-pattern>
