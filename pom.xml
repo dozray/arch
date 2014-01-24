@@ -25,7 +25,7 @@
 		<mysql.connector.version>5.1.18</mysql.connector.version>
 		<slf4j.version>1.7.5</slf4j.version>
 		<logback.version>1.0.13</logback.version>
-		<jetty.version>8.1.10.v20130312</jetty.version>		
+		<jetty.version>8.1.10.v20130312</jetty.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -79,11 +79,15 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>1.3.174</version>
+			<scope>provided</scope>
 		</dependency>
 		<!-- Mysql Database -->
 		<!-- If you use mysql, uncomment this dependency declaration -->
-		<!-- <dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> 
-			<version>${mysql.connector.version}</version> </dependency> -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connector.version}</version>
+		</dependency>
 		<!-- PostgreSQL JDBC4 -->
 		<!-- If you use postgresql, uncomment this dependency declaration -->
 		<!-- <dependency> <groupId>org.postgresql</groupId> <artifactId>postgresql</artifactId> 

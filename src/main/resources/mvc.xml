@@ -29,7 +29,7 @@
 	<!-- 默认的注解映射的支持: 启动注解驱动的Spring MVC功能，注册请求url和注解POJO类方法的映射-->  
 	<mvc:annotation-driven />
 	
-	<!--启用包自动扫描
+	<!--启用包自动扫描: 可以使用正则表达式或者注解来过滤包含或排除
 		以便注册带有@Controller、@Service、@repository、@Component等注解的类成为spring的bean 
 		常用的注解有:
 		@Controller		声明Action组件
@@ -40,7 +40,13 @@
 		@Resource			用于注入，(J2EE 提供的)默认按明称装配，
 		
 	-->  
-	<context:component-scan base-package="deep.entity,deep.controller" />
+	<context:component-scan base-package="deep.entity,deep.controller">
+	<context:include-filter type="regex" expression="tk\.deep\..*\.web\.action\..*Action"/>
+	<context:include-filter type="regex" expression="tk\.deep\..*\.service\..*ServiceImpl"/>
+	<context:include-filter type="regex" expression="tk\.deep\..*\.dao\..*DAO"/>
+	<context:exclude-filter type="annotation" expression="tttt"/>
+	</context:component-scan>
+	
 	<!-- 静态文件的处理 -->
 	<mvc:resources location="/static/" mapping="/static/**" />
 	
