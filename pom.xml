@@ -10,17 +10,17 @@
 	<developers>
 		<developer></developer>
 	</developers>
-	<repositories>
+	<!-- <repositories>
 		<repository>
 			<id>0001</id>
 			<name>inner repo</name>
 			<layout>default</layout>
 			<url>http://172.16.0.18:8081/nexus/content/groups/public/</url>
 		</repository>
-	</repositories>
+	</repositories> -->
 	<properties>
 		<java.version>1.6</java.version>
-		<spring.version>3.2.4.RELEASE</spring.version>
+		<spring.version>4.0.2.RELEASE</spring.version>
 		<hibernate.version>4.2.5.Final</hibernate.version>
 		<mysql.connector.version>5.1.18</mysql.connector.version>
 		<slf4j.version>1.7.5</slf4j.version>
@@ -45,22 +45,44 @@
 			</exclusions>
 			<optional>true</optional>
 		</dependency>
-
-		<!-- spring mvc -->
+		<!-- spring web and mvc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
 		<!-- Spring Data JPA -->
 
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
-			<version>1.4.3.RELEASE</version>
+			<version>1.5.0.RELEASE</version>
 		</dependency>
-
+		
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.7.3</version>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		
 		<!-- Hibernate -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -259,6 +281,7 @@
 					<warName>template</warName>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
+				<version>2.4</version>
 			</plugin>
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
