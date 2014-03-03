@@ -44,7 +44,7 @@
 	<context:include-filter type="regex" expression="tk\.deep\..*\.web\.action\..*Action"/>
 	<context:include-filter type="regex" expression="tk\.deep\..*\.service\..*ServiceImpl"/>
 	<context:include-filter type="regex" expression="tk\.deep\..*\.dao\..*DAO"/>
-	<context:exclude-filter type="annotation" expression="tttt"/>
+	<!-- <context:exclude-filter type="annotation" expression="tttt"/> -->
 	</context:component-scan>
 	
 	<!-- 静态文件的处理 -->
