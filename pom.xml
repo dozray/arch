@@ -300,9 +300,9 @@
 							<maxIdleTime>5000</maxIdleTime>
 						</connector>
 					</connectors>
-					<scanIntervalSeconds>0</scanIntervalSeconds>
+					<scanIntervalSeconds>5</scanIntervalSeconds>
 					<webAppConfig>
-						<!-- <defaultsDescriptor>src/main/resources/webdefault.xml</defaultsDescriptor> -->
+						<defaultsDescriptor>src/main/resources/webdefault.xml</defaultsDescriptor>
 					</webAppConfig>
 					<stopPort>9966</stopPort>
 					<stopKey>foo</stopKey>
@@ -314,7 +314,7 @@
 						<goals>
 							<goal>run</goal>
 						</goals>
-						<configuration>
+						<configuration>							
 							<scanIntervalSeconds>0</scanIntervalSeconds>
 							<daemon>true</daemon>
 						</configuration>
