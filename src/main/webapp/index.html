@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<!-- General Metas -->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- Force Latest IE rendering engine -->
+		<meta name="description" content="Web App Interface">
+		<meta name="author" content="Ying xian Liu">
+		<title>App Login Entry</title>
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>				
+		<![endif]-->
+	 
+		 <!-- Mobile Specific Metas -->
+		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1"/>
+		 
+		 <script>
+			var _IE = (function(){
+			var v = 3, div = document.createElement('div'), all = div.getElementsByTagName('i');
+			while (
+			div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->',
+			all[0]
+			);
+			return v > 4 ? v : false ;
+			}());
+		</script>
 </head>
 <body>
-	<script type="text/javascript">
-	window.location.href="login.jsp";
-</script>
+	<script type="text/javascript">	
+		if(_IE && _IE<9)
+			window.location.href="login.jsp?"+_IE;
+						
+		else
+			window.location.href="login.htm";
+		
+	</script>
 </body>
 </html>

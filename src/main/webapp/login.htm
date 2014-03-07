@@ -19,7 +19,7 @@
 		 <!-- Mobile Specific Metas -->
 		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1"/>
 	 
-		 <!-- Stylesheets -->
+		 <!-- Stylesheets -->	
 		 <link rel="stylesheet" href="static/login/base.css">
 		 <link rel="stylesheet" href="static/login/skeleton.css">
 		 <link rel="stylesheet" href="static/login/layout.css">
@@ -28,25 +28,38 @@
 	<body>
 		<div class="notice">
 			<a href="" class="close">close</a>
-			<p class="warn">欢迎使用Web App系统</p>
+			<p class="warn">欢迎使用 集团资金使用分析报表 Web App </p>
 		</div>
 		
 		<!-- Primary Page Layout -->
-		<div class="container">
+		<section class="container"  style="margin-top: 0px;">
 			<div class="form-bg">
 				<form action="/svc/login.do" method="post">
 					<h2>Login</h2>
-					<p><input type="text" placeholder="Username"></p>
-					<p><input type="password" placeholder="Password"></p>
+					<p><input type="text" name="userName" placeholder="用户名"></p>
+					<p><input type="password" name="password" placeholder="密码"></p>
 					<label for="remember">
-						<input type="checkbox" id="remember" value="remember"/>
-						<span>Remember me on this computer</span>
+						<input type="checkbox" id="remember" name="remember_me" value="remember"/>
+						<span>在此设备上记住密码</span>
 					</label>
 					<button type="submit"></button>
 				</form>
 			</div>
+			
 			<p class="forgot">忘记密码?<a href="">联系集团运营管理部.</a></p>
-		</div><!-- container -->
+		</section><!-- container -->
+		
+		<section class="about">
+			<p class="about-links">
+      			<!-- <a href="http://www.cssflow.com/snippets/mini-dropdown-menu" target="_parent">View Article</a>
+      			<a href="http://www.cssflow.com/snippets/mini-dropdown-menu.zip" target="_parent">Download</a> -->
+    		</p>
+			<p class="about-author">
+      			&copy; 2014&ndash;2015 <a href="http://www.lyweiye.com" target="_blank">中伟业控股(集团)有限公司</a> -
+      		<a href="http://www.lyweiye.com/license" target="_blank">License</a><br>
+      		Original Dev by <a href="" target="_blank">Liu Yingxian</a>
+    		</p>
+		</section>
 		
 		<!-- JS -->
 		

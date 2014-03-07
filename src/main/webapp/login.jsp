@@ -4,10 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>App Login Entry</title>
+ <link rel="stylesheet" href="static/login/base.css">
 </head>
 <body>
 	${error}
+	<div>
 	<form action="/svc/login.do" method="post">
 		<table>
 			<tr>
@@ -18,7 +20,7 @@
 				<td><input type="text" name="userName" value=""></td>
 			</tr>
 			<tr>
-				<td>密码:</td>
+				<td>密    码:</td>
 				<td><input type="password" name="password" value=""></td>
 			</tr>
 			<tr>
@@ -27,5 +29,17 @@
 			</tr>
 		</table>
 	</form>
+	</div>
+	<div class="about">
+			<p class="about-links">
+      			<a href="" target="_parent" title="升级IE到IE9+" >IE版本过低</a>      		
+      			<a href="static/ChromeframeEnterprise.msi" target="_parent" title="安装IE插件">插件安装</a> 
+    		</p>
+			<p class="about-author">
+      			&copy; 2014&ndash;2015 <a href="http://www.lyweiye.com" target="_blank">中伟业控股(集团)有限公司</a> -
+      		<a href="http://www.lyweiye.com/license" target="_blank">License</a><br>
+      		Original Dev by <a href="" target="_blank">Liu Yingxian</a>
+    		</p>
+	</div>
 </body>
 </html>
