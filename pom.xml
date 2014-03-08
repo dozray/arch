@@ -23,7 +23,7 @@
 		<spring.version>4.0.2.RELEASE</spring.version>
 		<hibernate.version>4.2.5.Final</hibernate.version>
 		<mysql.connector.version>5.1.18</mysql.connector.version>
-		<slf4j.version>1.7.5</slf4j.version>
+		<slf4j.version>1.7.6</slf4j.version>
 		<logback.version>1.0.13</logback.version>
 		<jetty.version>8.1.10.v20130312</jetty.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -32,11 +32,10 @@
 	<dependencies>
 
 		<!-- Spring -->
-		<dependency>
+			<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>${spring.version}</version>
-			<scope>runtime</scope>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>		
 			<exclusions>
 				<exclusion>
 					<groupId>commons-loggin</groupId>
@@ -45,23 +44,72 @@
 			</exclusions>
 			<optional>true</optional>
 		</dependency>
-		<!-- spring web and mvc -->
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>			
+		</dependency>
+				
+		<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-expression</artifactId>
+    		<version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>			
+		</dependency>
+			
+		<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-aop</artifactId>
+    		<version>${spring.version}</version>
+		</dependency>
+		
+	
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>			
+		</dependency>
+		
+		<!-- spring web mvc  orm-->
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>${spring.version}</version>
-		</dependency>
-		
+		</dependency>		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
 			<version>${spring.version}</version>
+		</dependency>
+		
+		<!-- Spring AOP support  -->
+	
+		<dependency>
+    		<groupId>org.aspectj</groupId>
+    		<artifactId>aspectjrt</artifactId>
+    		<version>1.7.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.7.4</version>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2.2</version>
 		</dependency>
 		
 		<!-- Spring Data JPA -->
@@ -72,16 +120,7 @@
 			<version>1.5.0.RELEASE</version>
 		</dependency>
 		
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>1.7.3</version>
-		</dependency>
-		<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib</artifactId>
-			<version>2.2.2</version>
-		</dependency>
+		
 		
 		<!-- Hibernate -->
 		<dependency>
@@ -122,7 +161,7 @@
 			<version>0.8.0.RELEASE</version>
 		</dependency>
 
-		<!-- Servlet API 3.0 -->
+		<!-- Servlet API 3.1 -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -167,19 +206,12 @@
 			<version>1</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>1.7.3</version>
-		</dependency>
-
-
-
 		<!-- Jackson JSON Processor -->
+				
 		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.9.13</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.3.2</version>
 		</dependency>
 
 
@@ -292,6 +324,10 @@
 						<systemProperty>
 							<name>org.apache.jasper.compiler.disablejsr199</name>
 							<value>true</value>
+						</systemProperty>
+						<systemProperty>
+							<name>org.eclipse.jetty.util.URI.charset</name>
+							<value>UTF-8</value>
 						</systemProperty>
 					</systemProperties>
 					<connectors>
