@@ -32,7 +32,7 @@
 			,	spacing_closed:			22
 			,	togglerLength_closed:	140
 			,	togglerAlign_closed:	"top"
-			,	togglerContent_closed:	"C<BR>o<BR>n<BR>t<BR>e<BR>n<BR>t<BR>s"
+			,	togglerContent_closed:	"中<BR>伟<BR>业<BR>集<BR>团"/* "C<BR>o<BR>n<BR>t<BR>e<BR>n<BR>t<BR>s" */
 			,	togglerTip_closed:		"Open & Pin Contents"
 			,	sliderTip:				"Slide Open Contents"
 			,	slideTrigger_open:		"mouseover"
@@ -42,7 +42,8 @@
 		// goto bookmark after creating the layout
 		scrollToBookmark( self.location.hash );
 
-	});
+	});	
+
 	</script>
 
 </head>
@@ -50,7 +51,7 @@
 
 <div class="ui-layout-north">
 
-	<DIV id="logo">Web App</DIV>
+	<DIV id="logo">集团资金报表 Web App</DIV>
 	<DIV id="navigation">
 		<!-- 
 		<A href="index.cfm">HOME</A>
@@ -66,8 +67,7 @@
 </div>
 
 <div class="ui-layout-center content">
-<iframe name="main"  src="http://www.so.com" frameborder="0" scrolling="no"   width="100%" height="100%" ></iframe>
-
+<iframe id="funcPage" name="main"  src="http://www.so.com" frameborder="0" scrolling="no"   width="100%" height="100%" ></iframe>
 <hr>
 </div>
 
@@ -77,67 +77,34 @@
 	=======================
 -->
 <div class="ui-layout-west" style="display: none;">
-	<div class="header">Contents</div>
+	<div class="header">业务与功能</div>
 	<div class="ui-layout-content" style="overflow: auto;">
-		<ul id="TOC">
-			<li><a href="#top">UI Layout</a></li>
-			<li><a href="#Depends_on">Depends on</a></li>
-			<li><a href="#Browsers">Supported Browsers</a></li>
-			<li><a href="#Demos">Demos</a></li>
-			<li><a href="#Example">Example</a></li>
-			<li><span class="tocBtn"></span><a href="#Terminology">Terminology</a>
+		<ul id="TOC">			
+			
+					
+			<li><span class="tocBtn"></span><a href="#Style_Reference">集团数据报表</a>
 				<ul>
-					<li><a href="#Container">Container</a></li>
-					<li><a href="#Panes">Panes</a></li>
-					<li><a href="#Pane_Spacing">Pane Spacing</a></li>
-					<li><a href="#Resizer">Resizer / Resizer-bar</a></li>
-					<li><a href="#Slider">Slider / Slider-bar</a></li>
-					<li><a href="#Toggler">Toggler / Toggler-button</a></li>
+					<li><a href="#Generated_Classes">余额表</a></li>
+					<li><a href="#Resizing_Classes">发生</a></li>
+					<li><a href="#Resizer_Graphics">大额交易</a></li>
 				</ul>
 			</li>
-			<li><span class="tocBtn"></span><a href="#Properties_Methods">Layout Properties &amp; Methods</a>
+
+			<li><span class="tocBtn"></span><a href="#Layout_State">分析图表</a>
 				<ul>
-					<li><a href="#Properties">Properties</a></li>
-					<li><a href="#Methods">Methods</a></li>
-					<li><a href="#Utility_Methods">Utility Methods</a></li>
+					<li><a href="#Logic_Vars">集团资金分布</a></li>
+					<li><a href="#Reading_Size">现金分布</a></li>
+					<li><a href="#Saving_State">银行存款分布</a></li>
+				</ul>
+			</li>			
+			
+			<li><span class="tocBtn"></span><a href="#Utilities">系统设置</a>
+				<ul>
+					<li><a href="#Custom_Buttons">用户设置</a></li>
+					<li><a href="#Drop-Downs">账套设置</a></li>
 				</ul>
 			</li>
-			<li><span class="tocBtn"></span><a href="#Options">Options</a>
-				<ul>
-					<li><a href="#Sub-Key_Format">Sub-Key Format for Options</a></li>
-					<li><a href="#List_Format">List Format for Options</a></li>
-					<li><a href="#Option_Specificity">Option Specificity</a></li>
-					<li><a href="#Selector_Options">Selector Options</a></li>
-					<li><a href="#Class_Options">Class Options</a></li>
-					<li><a href="#List_of_Options"><b>List of Options</b></a></li>
-				</ul>
-			<li><span class="tocBtn"></span><a href="#Layout_State">Reading the Layout-State</a>
-				<ul>
-					<li><a href="#Logic_Vars">Auto-Generated Logic-vars</a></li>
-					<li><a href="#Reading_Size">Reading Pane-Size</a></li>
-					<li><a href="#Saving_State">Saving the  Layout State</a></li>
-				</ul>
-			</li>
-			<li><span class="tocBtn"></span><a href="#Callback_Functions">Using Callback Functions</a>
-				<ul>
-					<li><a href="#Callback_Parameters">Callback Parameters</a></li>
-				</ul>
-			<li><span class="tocBtn"></span><a href="#Style_Reference">Style Reference</a>
-				<ul>
-					<li><a href="#Generated_Classes">Auto-Generated Classes</a></li>
-					<li><a href="#Resizing_Classes">Classes Added During Resizing</a></li>
-					<li><a href="#Resizer_Graphics">Resizer &amp; Toggler Graphics</a></li>
-					<li><a href="#Custom_Button_Classes">Custom Button Classes</a></li>
-				</ul>
-			</li>
-			<li><a href="#Auto-Generated_IDs">Auto-Generated IDs</a></li>
-			<li><a href="#Content-Scrolling">Content-Scrolling <span style="font-size: 0.8em; white-space: nowrap;">&nbsp;(Headers &amp; Footers)</span></a></li>
-			<li><span class="tocBtn"></span><a href="#Utilities">Special Utility Methods</a>
-				<ul>
-					<li><a href="#Custom_Buttons">Creating Custom Toggler Buttons</a></li>
-					<li><a href="#Drop-Downs">Working with Drop-Downs and Pop-Ups</a></li>
-				</ul>
-			</li>
+			
 		</ul>
 	</div>
 </div>
