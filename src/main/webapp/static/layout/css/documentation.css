@@ -1,41 +1,3 @@
-/*
-*	STYLES FOR: documentation and tips pages
-*
-*	Created with ThemeRoller...
-*	http://ui.jquery.com/themeroller/?bgColorDefault=e0e0e0&bgTextureDefault=02_glass.png&bgImgOpacityDefault=80&borderColorDefault=cccccc&fcDefault=444444&iconColorDefault=888888&bgColorHover=d8d8d8&bgTextureHover=02_glass.png&bgImgOpacityHover=90&borderColorHover=888888&fcHover=111111&iconColorHover=222222&bgColorActive=8ab9ff&bgTextureActive=02_glass.png&bgImgOpacityActive=50&borderColorActive=2694e8&fcActive=000000&iconColorActive=ffffff&bgColorContent=f3f3f3&fcContent=362b36&ffDefault=Lucida%20Grande,%20Lucida%20Sans,%20Arial,%20sans-serif&fwDefault=normal&fsDefault=1.2&fsDefaultUnit=em#bgColorDefault=d6d6d6&bgTextureDefault=02_glass.png&bgImgOpacityDefault=80&borderColorDefault=bbbbbb&fcDefault=000000&iconColorDefault=444444&bgColorHover=eeeeee&bgTextureHover=02_glass.png&bgImgOpacityHover=90&borderColorHover=cccccc&fcHover=000066&iconColorHover=000066&bgColorActive=80ade5&bgTextureActive=04_highlight_hard.png&bgImgOpacityActive=100&borderColorActive=266cc0&fcActive=000000&iconColorActive=ffffff&bgColorContent=D1E6FC&bgTextureContent=10_dots_medium.png&bgImgOpacityContent=90&borderColorContent=bbbbbb&fcContent=000000&iconColorContent=222222&ffDefault=Lucida+Grande%2C+Lucida+Sans%2C+Arial%2C+sans-serif&fwDefault=normal&fsDefault=1&fsDefaultUnit=em
-*/
-
-BODY {
-	background-color: #A4C2C2 !important;
-}
-
-TABLE.TOC {
-	border: 1px solid #BBB;
-	border-collapse: collapse;
-	margin: 1em 0;
-	}
-	.TOC TR.rTitle TD{
-		font-size:		0.95em;
-		font-weight:	bold;
-		letter-spacing:	1px;
-		padding-top:	4px;
-		padding-bottom:	5px;
-		background:		#99B5B5;
-		color:			#FFF
-	}
-	.TOC TR.r0 {
-		background:	#FFF;
-	}
-	.TOC TR.r0 {
-		background:	#EEE;
-		}
-		.TOC TD {
-			padding: 2px 10px 4px;
-			white-space: nowrap;
-			border-left: 1px solid #BBB;
-		}
-
-
 H5 {
 	font-size: 1em;
 	font-weight: normal;
@@ -64,98 +26,17 @@ H5 {
 	border-bottom: 0;
 }
 
-UL, OL {
-	}
-	LI {
-		padding-top: 2px;
-		padding-bottom: 3px;
-	}
-
-
 /*
  *	TABLE OF CONTENTS (West-pane)
  */
 .ui-layout-west .ui-layout-content {
-	padding: 1ex 0.5em 2em 22px; /* need left-padding for +/- buttons */
+	 /* padding: 1ex 0.5em 2em 22px; need left-padding for +/- buttons */
+	padding: 1px;
 }
-UL#TOC {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	}
-	#TOC LI {
-		padding: 2px 0;
-		}
-		#TOC A {
-			color: #000;
-			display: block;
-			padding: 1px 0 2px 3px;
-			}
-			#TOC A:visited {
-				color: #000;
-			}
-			#TOC A:hover {
-				color: #000;
-				background-color: #FEC;
-				text-decoration: none;
-			}
-		#TOC LI UL {
-			list-style: none;
-			margin: 0;
-			margin-left: 1em;
-			padding: 0.25em 0;
-			}
-			#TOC LI UL LI {
-				font-size: 0.9em;
-				padding: 1px 0;
-				}
-				#TOC LI UL LI A {
-					padding-top: 0px;
-					padding-bottom: 1px;
-				}
-
-	#TOC .tocBtn {
-		float:			left;
-		margin-left:	-17px; /* move button into left-margin */
-		margin-top:		2px;
-		width:			16px;
-		height:			16px;
-		cursor:			pointer;
-		background:		url(../img/icon_tree_off.gif) no-repeat center;
-	}
-
 
 H2 {
 	margin-bottom: 0;
 }
-DIV.collapsible {
-	padding: 0.75em 3px 3px;
-	border: 1px solid #FFF; /* same as page-color */
-	border-top: none;
-	position: relative;
-	}
-	DIV.highlightCollapsible {
-		border: 1px dotted #566F6F; /* same as H2 border-bottom */
-		border-top: none;
-	}
-	DIV.highlightCollapsible ,
-	DIV.highlightCollapsible PRE {
-		background-color: #F2F6F4;
-	}
-	DIV.collapsible H4 {
-		margin-top: 0 !important; /* div has padding-top */
-	}
-
-SPAN.expander {
-	float:		right;
-	margin-top:	3px;
-	width:		16px;
-	height:		16px;
-	cursor:		pointer;
-	background:	url(../img/icon_tree_on.gif) no-repeat center;
-	}
-	SPAN.expander_open   { background-image: url(../img/icon_tree_off.gif); }
-	SPAN.expander_closed { background-image: url(../img/icon_tree_on.gif); }
 
 
 /*

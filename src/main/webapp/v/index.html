@@ -3,14 +3,35 @@
 <head>
 		<meta content="text/html" charset="utf-8" http-equiv="Content-Type">
 		<title>Web App</title>
-		<link type="text/css" href="../static/layout/css/global.css" rel="stylesheet">
-		<link type="text/css" href="../static/layout/css/documentation.css" rel="stylesheet">
+		<!--		
+		<script type="text/javascript" src="../static/layout/global.js"></script>
+		-->
+		<style type="text/css">
+			#navigation{
+				border-bottom: 0 none;			
+				background-color: #D0E5F5 !important;
+				border-top: 1px solid #FFFFFF;
+				padding: 5px 5px 4px 3em;		
+			}
+			
+			#accordionHeader{
+				background-color: #D0E5F5 !important;
+			}
+			
+
+			BODY {
+				background-color: #D0E5F5 !important;
+			}
+		
+		</style>
+		<!-- <link rel="stylesheet" type="text/css" href="../static/layout/css/global.css"> -->
+		<link rel="stylesheet" type="text/css" href="../static/layout/css/documentation.css">
+		<link rel="stylesheet" type="text/css" href="../static/themes/redmond/jquery-ui.css">
 		
 		<!-- REQUIRED scripts for layout widget -->
-		<script type="text/javascript" src="../static/js/jquery-1.9.1.js"></script>
-		<script type="text/javascript" src="../static/js/jquery-ui.js"></script>
-		<script type="text/javascript" src="../static/layout/jquery.layout.js"></script>
-		<script type="text/javascript" src="../static/layout/global.js"></script>
+		<script type="text/javascript" src="../static/js/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="../static/js/jquery-ui-1.10.4.min.js"></script>
+		<script type="text/javascript" src="../static/layout/jquery.layout.js"></script>		
 	
 	<script type="text/javascript">
 	var pageLayout;
@@ -38,12 +59,11 @@
 			,	slideTrigger_open:		"mouseover"
 			}
 		});
-
-		// goto bookmark after creating the layout
-		scrollToBookmark( self.location.hash );
-
 	});	
-
+	
+	$(function(){
+		$("#accordion").accordion();
+	});
 	</script>
 
 </head>
@@ -51,8 +71,8 @@
 
 <div class="ui-layout-north">
 
-	<DIV id="logo">集团资金报表 Web App</DIV>
-	<DIV id="navigation">
+	<div id="logo" style="color:#FFFFFF; padding: 0.5em 15px 2px ;letter-spacing: 1px">集团资金报表 Web App</div>
+	<div id="navigation" >
 		<!-- 
 		<A href="index.cfm">HOME</A>
 		<A href="demos.cfm">DEMOS</A>
@@ -63,11 +83,11 @@
 		<A href="issues.cfm">ISSUES</A>
 		<A target="_blank" href="http://groups.google.com/group/jquery-ui-layout">DISCUSSION</A>
 		 -->
-	</DIV>
+	</div>
 </div>
 
 <div class="ui-layout-center content">
-<iframe id="funcPage" name="main"  src="http://www.so.com" frameborder="0" scrolling="no"   width="100%" height="100%" ></iframe>
+<iframe id="funcPage" name="main"  src="" frameborder="0" scrolling="no"   width="100%" height="100%" ></iframe>
 <hr>
 </div>
 
@@ -77,11 +97,18 @@
 	=======================
 -->
 <div class="ui-layout-west" style="display: none;">
-	<div class="header">业务与功能</div>
-	<div class="ui-layout-content" style="overflow: auto;">
-		<ul id="TOC">			
-			
-					
+	<div id="accordionHeader" class="header">业务与功能</div>
+	<div id="accordion" class="ui-layout-content" style="overflow: auto;">
+		<h3>First</h3>
+		<div>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
+		<h3>Second</h3>
+		<div>Phasellus mattis tincidunt nibh.</div>
+		<h3>Third</h3>
+		<div>Nam dui erat, auctor a, dignissim quis.</div>
+	
+	
+	<!--
+		<ul id="TOC">						
 			<li><span class="tocBtn"></span><a href="#Style_Reference">集团数据报表</a>
 				<ul>
 					<li><a href="#Generated_Classes">余额表</a></li>
@@ -103,9 +130,10 @@
 					<li><a href="#Custom_Buttons">用户设置</a></li>
 					<li><a href="#Drop-Downs">账套设置</a></li>
 				</ul>
-			</li>
-			
+			</li>			
 		</ul>
+		-->
+		
 	</div>
 </div>
 
