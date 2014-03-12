@@ -2,11 +2,12 @@
 <html>
 <head>
 		<meta content="text/html" charset="utf-8" http-equiv="Content-Type">
-		<title>Web App</title>
-		<!--		
-		<script type="text/javascript" src="../static/layout/global.js"></script>
-		-->
-		<style type="text/css">
+		<title>Web App</title>	
+		
+		<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+		<link rel="stylesheet" type="text/css" href="../static/layout/css/documentation.css">
+		<link rel="stylesheet" type="text/css" href="../static/themes/redmond/jquery-ui.css">
+			<style type="text/css">
 			#navigation{
 				border-bottom: 0 none;			
 				background-color: #D0E5F5 !important;
@@ -16,18 +17,24 @@
 			
 			#accordionHeader{
 				background-color: #D0E5F5 !important;
+			}			
+			li{
+				font-family: monospace;
+				color: black;
+				clear: both;
+				line-height: 18px;
+				background: #DDEDFB;
+				border: 1px solid #09C;
+				border-radius: 6px;
+				white-space: pre-wrap;
+				margin: 5px 0;
+				padding: 5px 20px;
 			}
-			
-
-			BODY {
-				background-color: #D0E5F5 !important;
+			li:hover {
+				background-color: #3C6E31;
+				color: white;
 			}
-		
-		</style>
-		<!-- <link rel="stylesheet" type="text/css" href="../static/layout/css/global.css"> -->
-		<link rel="stylesheet" type="text/css" href="../static/layout/css/documentation.css">
-		<link rel="stylesheet" type="text/css" href="../static/themes/redmond/jquery-ui.css">
-		
+		</style>	
 		<!-- REQUIRED scripts for layout widget -->
 		<script type="text/javascript" src="../static/js/jquery-1.10.2.js"></script>
 		<script type="text/javascript" src="../static/js/jquery-ui-1.10.4.min.js"></script>
@@ -99,13 +106,30 @@
 <div class="ui-layout-west" style="display: none;">
 	<div id="accordionHeader" class="header">业务与功能</div>
 	<div id="accordion" class="ui-layout-content" style="overflow: auto;">
-		<h3>First</h3>
-		<div>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
-		<h3>Second</h3>
-		<div>Phasellus mattis tincidunt nibh.</div>
-		<h3>Third</h3>
-		<div>Nam dui erat, auctor a, dignissim quis.</div>
-	
+		<h3>集团数据报表</h3>
+		<div>
+			<ul>
+				<li><a href="">余额表</a></li>
+				<li><a href="">发生额度</a></li>
+				<li><a href="">大额交易</a></li>
+			</ul>
+		</div>
+		<h3>分析图表</h3>
+		<div>
+				<ul>
+					<li><a href="#Logic_Vars">集团资金分布</a></li>
+					<li><a href="#Reading_Size">现金分布</a></li>
+					<li><a href="#Saving_State">银行存款分布</a></li>
+					<li><a href="">承兑分布</a></li>
+				</ul>
+		</div>
+		<h3>系统设置</h3>
+		<div>
+				<ul>
+					<li><a href="#Custom_Buttons">用户设置</a></li>
+					<li><a href="#Drop-Downs">账套设置</a></li>
+				</ul>
+		</div>
 	
 	<!--
 		<ul id="TOC">						
