@@ -18,7 +18,7 @@
 			#accordionHeader{
 				background-color: #D0E5F5 !important;
 			}			
-			li{
+			#accordion li{
 				font-family: monospace;
 				color: black;
 				clear: both;
@@ -30,10 +30,44 @@
 				margin: 5px 0;
 				padding: 5px 20px;
 			}
-			li:hover {
-				background-color: #3C6E31;
-				color: white;
-			}
+				
+
+/*Splitter style */
+
+
+#LeftPane {
+	/* optional, initial splitbar position */
+	overflow: auto;
+}
+/*
+ * Right-side element of the splitter.
+*/
+
+#RightPane {
+	padding: 2px;
+	overflow: auto;
+	hight:100%;
+}
+.ui-tabs-nav li {position: relative;}
+.ui-tabs-selected a span {padding-right: 10px;}
+.ui-tabs-close {display: none;position: absolute;top: 3px;right: 0px;z-index: 800;width: 16px;height: 14px;font-size: 10px; font-style: normal;cursor: pointer;}
+.ui-tabs-selected .ui-tabs-close {display: block;}
+.ui-layout-west .ui-jqgrid tr.jqgrow td { border-bottom: 0px none;}
+.ui-datepicker {z-index:1200;}
+.rotate
+    {
+        /* for Safari */
+        -webkit-transform: rotate(-90deg);
+
+        /* for Firefox */
+        -moz-transform: rotate(-90deg);
+
+        /* for Internet Explorer */
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    }
+
+		
+			
 		</style>	
 		<!-- REQUIRED scripts for layout widget -->
 		<script type="text/javascript" src="../static/js/jquery-1.10.2.js"></script>
@@ -45,9 +79,8 @@
 
 	$(document).ready(function(){
 		// create page layout
-		pageLayout = $('body').layout({
-			scrollToBookmarkOnLoad:		false // handled by custom code so can 'unhide' section first
-		,	defaults: {
+		pageLayout = $('body').layout({			
+			defaults: {
 			}
 		,	north: {
 				size:					"auto"
@@ -70,6 +103,20 @@
 	
 	$(function(){
 		$("#accordion").accordion();
+		var mtab =jQuery('#tabs','#RightPane').tabs({
+	        add: function(e, ui) {
+	            // append close thingy
+	            $(ui.tab).parents('li:first')
+	                .append('<span class="ui-tabs-close ui-icon ui-icon-close" title="Close Tab"></span>')
+	                .find('span.ui-tabs-close')
+					.show()
+	                .click(function() {
+	                    matab.tabs('remove', $('li', maintab).index($(this).parents('li:first')[0]));
+	                });
+	            // select just added tab
+	            mtab.tabs('select', '#' + ui.panel.id);
+	        }
+	    });
 	});
 	</script>
 
@@ -93,10 +140,22 @@
 	</div>
 </div>
 
-<div class="ui-layout-center content">
-<iframe id="funcPage" name="main"  src="" frameborder="0" scrolling="no"   width="100%" height="100%" ></iframe>
-<hr>
-</div>
+<div id="RightPane" class="ui-layout-center content"><!-- Tabs pane -->
+	<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">Home</a></li>
+			</ul>
+			
+			<div id="tabs-1" style="font-size:12px;"> 				
+				Event and much more... 
+				<br/>
+			</div>
+	</div>
+	
+	<!-- 
+	<iframe id="funcPage" name="main"  src="" frameborder="0" scrolling="no"   width="100%" height="100%" ></iframe>
+	 -->	
+</div><!--  end of RightPane -->
 
 <!--
 	=======================
@@ -129,34 +188,7 @@
 					<li><a href="#Custom_Buttons">用户设置</a></li>
 					<li><a href="#Drop-Downs">账套设置</a></li>
 				</ul>
-		</div>
-	
-	<!--
-		<ul id="TOC">						
-			<li><span class="tocBtn"></span><a href="#Style_Reference">集团数据报表</a>
-				<ul>
-					<li><a href="#Generated_Classes">余额表</a></li>
-					<li><a href="#Resizing_Classes">发生</a></li>
-					<li><a href="#Resizer_Graphics">大额交易</a></li>
-				</ul>
-			</li>
-
-			<li><span class="tocBtn"></span><a href="#Layout_State">分析图表</a>
-				<ul>
-					<li><a href="#Logic_Vars">集团资金分布</a></li>
-					<li><a href="#Reading_Size">现金分布</a></li>
-					<li><a href="#Saving_State">银行存款分布</a></li>
-				</ul>
-			</li>			
-			
-			<li><span class="tocBtn"></span><a href="#Utilities">系统设置</a>
-				<ul>
-					<li><a href="#Custom_Buttons">用户设置</a></li>
-					<li><a href="#Drop-Downs">账套设置</a></li>
-				</ul>
-			</li>			
-		</ul>
-		-->
+		</div>	
 		
 	</div>
 </div>
