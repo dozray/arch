@@ -10,8 +10,17 @@
 	http://www.springframework.org/schema/context/spring-context-4.0.xsd
 	http://www.springframework.org/schema/mvc  
     http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+    
+    
+    <!-- HandlerMapping -->  
+<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>  
+   
+<!-- HandlerAdapter -->  
+<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>  
+<!-- 处理器 -->  
+<bean name="/hello" class="deep.controller.admin.HelloWorld"/> 
 
-	<bean id="loginController" class="deep.controller.admin.LoginController">
+	<bean id="login" class="deep.controller.admin.LoginController">
 		<property name="errView" value="error"></property>
 		<property name="successView" value="portal"></property>
 	</bean>
@@ -20,7 +29,7 @@
 		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<props>
-				<prop key="/svc/login.do">loginController</prop>
+				<prop key="/svc/login.do">login</prop>
 			</props>
 		</property>
 	</bean>
@@ -54,7 +63,7 @@
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.JstlView" />
-		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="prefix" value="/WEB-INF/v/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 
