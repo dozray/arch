@@ -11,21 +11,9 @@
 	http://www.springframework.org/schema/mvc  
     http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
     
-    
-    <!-- HandlerMapping -->  
-	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>  
-   
-	<!-- HandlerAdapter -->  
-	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>  
-
-	<!-- 处理器 -->  
-	<bean name="/hello" class="deep.controller.admin.HelloWorld"/> 
-	<bean name="/login" class="deep.controller.admin.LoginController"/> 
 	
 	
-	<bean id="login" class="deep.controller.admin.LoginController">
-		<property name="errView" value="error"></property>
-		<property name="successView" value="portal"></property>
+	<bean id="login" class="deep.controller.admin.LoginAction">		
 	</bean>
 
 	<bean id="urlMapping"

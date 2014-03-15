@@ -47,6 +47,7 @@ public User getUser(String userName,String password){
 	protected ModelAndView handleRequestInternal(HttpServletRequest req,
 			HttpServletResponse res) throws Exception {
 		// TODO Auto-generated method stub
+		System.out.println("logging is starting.........");
 		String userName = req.getParameter("userName");
 		String password = req.getParameter("password");
 		User u = getUser(userName,password);
