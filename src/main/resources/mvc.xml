@@ -13,13 +13,16 @@
     
     
     <!-- HandlerMapping -->  
-<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>  
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>  
    
-<!-- HandlerAdapter -->  
-<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>  
-<!-- 处理器 -->  
-<bean name="/hello" class="deep.controller.admin.HelloWorld"/> 
+	<!-- HandlerAdapter -->  
+	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>  
 
+	<!-- 处理器 -->  
+	<bean name="/hello" class="deep.controller.admin.HelloWorld"/> 
+	<bean name="/login" class="deep.controller.admin.LoginController"/> 
+	
+	
 	<bean id="login" class="deep.controller.admin.LoginController">
 		<property name="errView" value="error"></property>
 		<property name="successView" value="portal"></property>
@@ -29,7 +32,7 @@
 		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<props>
-				<prop key="/svc/login.do">login</prop>
+				<prop key="/tt.do">login</prop>
 			</props>
 		</property>
 	</bean>
@@ -55,6 +58,13 @@
 	<context:include-filter type="regex" expression="tk\.deep\..*\.dao\..*DAO"/>
 	<!-- <context:exclude-filter type="annotation" expression="tttt"/> -->
 	</context:component-scan>
+	
+	<!-- 
+		会把"/**" url,注册到SimpleUrlHandlerMapping的urlMap中,把对静态资源的访问由HandlerMapping
+		转到 org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler处理并返回
+		DefaultServletHttpRequestHandler使用就是各个Servlet容器自己的默认Servlet. 
+	-->
+	<mvc:default-servlet-handler/> 
 	
 	<!-- 静态文件的处理 -->
 	<mvc:resources location="/static/" mapping="/static/**" />

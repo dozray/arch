@@ -17,27 +17,7 @@ public class LoginController extends AbstractController {
 	private String errView;
 	private String successView;
 	
-	@Override
-	protected ModelAndView handleRequestInternal(HttpServletRequest req,
-			HttpServletResponse res) throws Exception {
-		// TODO Auto-generated method stub
-		String userName = req.getParameter("userName");
-		String password = req.getParameter("password");
-		User u = getUser(userName,password);
-		
-		Map<String, Object> model = new HashMap<String,Object>();
-		if(u!=null){
-			model.put("user", u);
-			return new ModelAndView(getSuccessView(),model);
-		}
-		else{
-			model.put("error", "用户名和密码错误");
-			return new ModelAndView(getErrView(),model);
-		}		
-	}
-	
-
-	public User getUser(String userName,String password){
+public User getUser(String userName,String password){
 		if(userName.equals("Admin") && password.equals("Admin")){
 			User u= new User();
 			u.setName(userName);
@@ -61,5 +41,24 @@ public class LoginController extends AbstractController {
 
 	public void setSuccessView(String successView) {
 		this.successView = successView;
+	}
+
+	@Override
+	protected ModelAndView handleRequestInternal(HttpServletRequest req,
+			HttpServletResponse res) throws Exception {
+		// TODO Auto-generated method stub
+		String userName = req.getParameter("userName");
+		String password = req.getParameter("password");
+		User u = getUser(userName,password);
+			
+		Map<String, Object> model = new HashMap<String,Object>();
+		if(u!=null){
+			model.put("user", u);
+			return new ModelAndView(getSuccessView(),model);
+		}
+		else{
+			model.put("error", "用户名和密码错误");
+			return new ModelAndView(getErrView(),model);
+		}		
 	}
 }

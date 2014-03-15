@@ -22,8 +22,10 @@
 		<param-value>/WEB-INF/configure/jdbc.xml</param-value> <param-value>classpath:/config/jdbc.xml</param-value> 
 		</context-param> -->
 
-	<!-- spring监听器(第二启动),监听spring环境 <listener> <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class> 
-		</listener> -->
+	<!-- spring监听器(第二启动),监听spring环境  
+	<listener> 
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class> 
+	</listener> --> 
 
 	<!-- springMVC编码拦截器(第三启动),springMVC内置的编码拦截器 <filter> <filter-name>encodingFilter</filter-name> 
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
@@ -61,6 +63,10 @@
 	<servlet-mapping>
 		<servlet-name>default</servlet-name>
 		<url-pattern>*.htm</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.html</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>default</servlet-name>
