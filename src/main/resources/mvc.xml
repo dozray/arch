@@ -32,19 +32,20 @@
 	<!--启用包自动扫描: 可以使用正则表达式或者注解来过滤包含或排除
 		以便注册带有@Controller、@Service、@repository、@Component等注解的类成为spring的bean 
 		常用的注解有:
-		@Controller		声明Action组件
+		@Controller			声明Action组件
 		@Service			声明Service组件
-		@Repository		声明Dao组件
+		@Repository			声明Dao组件
 		@Component			泛指组件，当无法明确分类时
-		@RequestMapping	请求映射，如RequestMapping("/menu");
+		@RequestMapping		请求映射，如RequestMapping("/menu");
 		@Resource			用于注入，(J2EE 提供的)默认按明称装配，
 		
 	-->  
 	<context:component-scan base-package="deep.entity,deep.controller">
+	<!--
 	<context:include-filter type="regex" expression="tk\.deep\..*\.web\.action\..*Action"/>
 	<context:include-filter type="regex" expression="tk\.deep\..*\.service\..*ServiceImpl"/>
 	<context:include-filter type="regex" expression="tk\.deep\..*\.dao\..*DAO"/>
-	<!-- <context:exclude-filter type="annotation" expression="tttt"/> -->
+	<context:exclude-filter type="annotation" expression="tttt"/> -->
 	</context:component-scan>
 	
 	<!-- 
