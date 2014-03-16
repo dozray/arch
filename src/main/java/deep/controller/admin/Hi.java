@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import deep.entity.admin.*;
 
 @Controller
-public class Hello {
+public class Hi {
 	private static final String TEMPLATE = "Hello %s";
 	private final AtomicLong counter = new AtomicLong();
 	

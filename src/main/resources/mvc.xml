@@ -13,19 +13,6 @@
     
 	
 	
-	<bean id="login" class="deep.controller.admin.LoginAction">		
-	</bean>
-
-	<bean id="urlMapping"
-		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-		<property name="mappings">
-			<props>
-				<prop key="/tt.do">login</prop>
-			</props>
-		</property>
-	</bean>
-	
-
 	<!-- 默认的注解映射的支持: 启动注解驱动的Spring MVC功能，注册请求url和注解POJO类方法的映射-->  
 	<mvc:annotation-driven />
 	
