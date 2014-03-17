@@ -12,28 +12,57 @@
 			<param-name>useFileMapppedBuffer</param-name>
 			<param-value>false</param-value>
 		</init-param>
-		<load-on-startup>0</load-on-startup>
+		<load-on-startup>2</load-on-startup>
 	</servlet>
 
-	<!-- <context-param> <param-name>contextConfigLocation</param-name> <param-value>/WEB-INF/classes/applicationContext.xml</param-value> 
-		</context-param> -->
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name> 
+		<param-value>/WEB-INF/classes/applicationContext*.xml</param-value> 
+	</context-param> 
 
 	<!-- 上下文参数(第一启动),指定jdbc配置文件 </context-param> <context-param> <param-name>contextConfigLocation</param-name> 
 		<param-value>/WEB-INF/configure/jdbc.xml</param-value> <param-value>classpath:/config/jdbc.xml</param-value> 
 		</context-param> -->
 
-	<!-- spring监听器(第二启动),监听spring环境  
+	<!-- 防止发生java.beans.Introspector内存泄漏，应将它配置在ContextLoaderListener的前面 -->
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+	<!-- 实例化Spring 容器 -->
+	<!-- spring监听器(第二启动),应用启动时，监听器被执行，默认会去WEB-INF中查找applicationContext.xml文件  --> 
 	<listener> 
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class> 
-	</listener> --> 
+	</listener> 
 
-	<!-- springMVC编码拦截器(第三启动),springMVC内置的编码拦截器 <filter> <filter-name>encodingFilter</filter-name> 
-		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
+	<!-- springMVC编码拦截器(第三启动),springMVC内置的编码拦截器 -->
+	<filter> <filter-name>encodingFilter</filter-name> 
+	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
 		<init-param> <param-name>encoding</param-name> <param-value>UTF-8</param-value> 
 		</init-param> <init-param> <param-name>forceEncoding</param-name> <param-value>true</param-value> 
-		</init-param> </filter> <filter-mapping> <filter-name>encodingFilter</filter-name> 
-		<url-pattern>/*</url-pattern> </filter-mapping> -->
-
+		</init-param> 
+	</filter> 
+	<filter-mapping> 
+		<filter-name>encodingFilter</filter-name> 
+		<url-pattern>/*</url-pattern> 
+	</filter-mapping> 
+		
+	<!-- Shiro Filter -->
+	<filter>
+		<filter-name>shiroFilter</filter-name><!-- 这里的filter-name必须对应applicationContext.xml中定义的<bean id="shiroFilter"/> -->
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<init-param>		
+			<param-name>targetFilterLifeCycle</param-name>
+			<!-- 默认为false 表示生命周期由SpringApplicationContext管理 , 设置为True表示由ServletContainer管理 -->
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>shiroFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
 	<!-- springMVC 前置控制器 (第四启动)，在分发其它控制器前都要经过这个控制器 -->
 	<servlet>
 		<servlet-name>mvc</servlet-name>
@@ -52,8 +81,8 @@
 	
 	不同的web容器默认的servlet 不同，参照如下
 	
-	Tomcat, Jetty, JBoss and GlassFish	默认servlet名称		==	“default”
-	Google App Engine 					默认servlet名称 	==	"_ah_default"		
+	Tomcat, Jetty, JBoss and GlassFish		默认servlet名称		==	“default”
+	Google App Engine 						默认servlet名称 		==	"_ah_default"		
 	Resin 									默认servlet名称		==	"resin-file"
 	WebLogic 								默认servlet名称		==	"FileServlet"
 	WebSphere								默认servlet名称		==	"SimpleFileServlet"

@@ -1,4 +1,4 @@
-package deep.entity.admin;
+package deep.demo.bean;
 
 import javax.validation.constraints.Size;
 

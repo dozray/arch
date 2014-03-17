@@ -1,4 +1,4 @@
-package deep.entity.admin;
+package deep.demo.controller;
 
 public class Greeting {
 	private final long id;
