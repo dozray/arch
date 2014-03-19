@@ -1,12 +1,26 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+﻿<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="zh"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="zh"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="zh"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="zh">
+<!--<![endif]-->
+
+
 <head>
-<meta content="text/html" charset="utf-8" http-equiv="Content-Type">
+<!-- General Metas -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="" IE=edge,chrome=1"">
+<!-- Force Latest IE rendering engine -->
+<meta name="description" content="Web App Interface">
+<meta name="author" content="Ying xian Liu">
 <title>Web App</title>
 
 <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
-<link rel="stylesheet" type="text/css" href="../../static/layout/css/documentation.css">
-<link rel="stylesheet" type="text/css" href="../../static/themes/redmond/jquery-ui.css">
+<link rel="stylesheet" type="text/css"
+	href="../../static/layout/css/documentation.css">
+<link rel="stylesheet" type="text/css"
+	href="../../static/themes/redmond/jquery-ui.css">
 <style type="text/css">
 #navigation {
 	border-bottom: 0 none;
@@ -30,13 +44,18 @@
 	white-space: pre-wrap;
 	margin: 5px 0;
 	padding: 5px 20px;
+	cursor: pointer;
+}
+
+#accordion li:hover {
+	background: #DFFFE7;
 }
 
 .ray-nav {
 	
 }
 
-.ray-nav ul {	
+.ray-nav ul {
 	border: 1px solid #000;
 	margin: 0px, auto, 0px, auto;
 }
@@ -75,11 +94,11 @@ div.logo {
 	width: 100%;
 	left: 0;
 	text-align: left;
-	top: 0;	
-	-moz-background-size: 100% 100%;	
+	top: 0;
+	-moz-background-size: 100% 100%;
 	-webkit-background-size: 100% 100%;
 	-o-background-size: 100% 100%;
-	background-size: 100% 100%;	
+	background-size: 100% 100%;
 }
 
 div.func {
@@ -95,26 +114,27 @@ div.func {
 }
 
 ul.titletab {
-    display: inline;
-    float: right;
-    margin-bottom: 0;
-    margin-top: 5px;
-    padding-bottom: 0;
-    padding-right: 0;
+	display: inline;
+	float: right;
+	margin-bottom: 0;
+	margin-top: 5px;
+	padding-bottom: 0;
+	padding-right: 0;
 }
 
 ul.titletab li.activetab {
-    display: inline;
-    font-weight: bold;
-    list-style: none outside none;
+	display: inline;
+	font-weight: bold;
+	list-style: none outside none;
 }
+
 ul.titletab li {
-    display: inline;
-    list-style: none outside none;
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0 3px;
+	display: inline;
+	list-style: none outside none;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	padding: 0 2px;
 }
 
 /*Splitter style */
@@ -182,7 +202,6 @@ ul.titletab li {
 
 <script type="text/javascript">
 	var pageLayout;
-
 	$(document).ready(function() {
 		// create page layout
 		pageLayout = $('body').layout({
@@ -205,54 +224,58 @@ ul.titletab li {
 				slideTrigger_open : "mouseover"
 			}
 		});
-	});
-
-	$(function() {
 		$("#accordion").accordion();
-		var mtab = jQuery('#tabs', '#RightPane').tabs({
-							add : function(e, ui) {
-								// append close thingy
-								$(ui.tab).parents('li:first')
-										.append(
-												'<span class="ui-tabs-close ui-icon ui-icon-close" title="Close Tab"></span>')
-										.find('span.ui-tabs-close')
-										.show()
-										.click(
-												function() {
-													matab
-															.tabs(
-																	'remove',
-																	$('li',
-																			maintab)
-																			.index(
-																					$(
-																							this)
-																							.parents(
-																									'li:first')[0]));
-												});
-								// select just added tab
-								mtab.tabs('select', '#' + ui.panel.id);
-							}
-						});
+	});
+	/* $(document).ready(function(){
+	    $(":input").click(function(){
+	        alert($(this).attr("name"));
+	    })
+	}); */
+	$(document).ready(function() {
+		$("#accordion li").click(function() {
+			var ap = $(this).attr("ap");
+			$("#funcPage").attr("src", ap);
+			/*
+			var da = ap.split("/");
+			var tid=da[da.length-1];
+			alert(tid);
+			var st ="#"+tid;
+			if($(st).html() != null){
+				mtab.tabs('select',st);
+			}
+			else{
+				mtab.tabs('add',st,"uuii");
+				$(st,"#tabs").load(ap);
+				 $.ajax({
+					url:ap,
+					type:"GET",
+					complete:function(req,err){
+						$(st,"#tabs").append(req.responseText);
+						
+					}
+				}); 
+			}*/
+		});
 	});
 </script>
 
 </head>
 <body>
-
+	<nav></nav>
 	<div class="ui-layout-north">
-		<div id="logo" style="height:66px; color: #FFFFFF; padding: 2px; letter-spacing: 1px">		
-			<a href="http://www.lyweiye.cn/"> <img id="logoimg" border="0" alt="[公司首页]"
-				src="../../static/img/banner_logo.png">
+		<div id="logo"
+			style="height: 66px; color: #FFFFFF; padding: 2px; letter-spacing: 1px">
+			<a href="http://www.lyweiye.cn/"> <img id="logoimg" border="0"
+				alt="[公司首页]" src="../../static/img/banner_logo.png">
 			</a>
 		</div>
 		<div class="func">
 			<ul class="titletab">
-				<li  class="activetab"><a href="1">${user}</a></li>
-				<li  class="activetab"><a href="2">|</a></li>
-				<li  class="activetab"><a href="a">安全</a></li>
-				<li  class="activetab"><a href="b">|</a></li>
-				<li  class="activetab"><a href="c">退出</a></li>
+				<li class="activetab"><a href="1">${user}</a></li>
+				<li class="activetab"><a href="2">|</a></li>
+				<li class="activetab"><a href="a">安全</a></li>
+				<li class="activetab"><a href="b">|</a></li>
+				<li class="activetab"><a href="c">退出</a></li>
 			</ul>
 		</div>
 		<div id="navigation">
@@ -270,7 +293,7 @@ ul.titletab li {
 	</div>
 
 	<div id="RightPane" class="ui-layout-center content">
-		<!-- Tabs pane -->
+		<!-- Tabs pane 
 		<div id="tabs">
 			<ul>
 				<li><a href="#tabs-1">Home</a></li>
@@ -280,10 +303,11 @@ ul.titletab li {
 				Event and much more... <br />
 			</div>
 		</div>
+		-->
 
-		<!-- 
-	<iframe id="funcPage" name="main"  src="" frameborder="0" scrolling="no"   width="100%" height="100%" ></iframe>
-	 -->
+		<iframe id="funcPage" name="main" src="http://www.so.com"
+			frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
+
 	</div>
 	<!--  end of RightPane -->
 
@@ -298,26 +322,27 @@ ul.titletab li {
 			<h3>集团数据报表</h3>
 			<div>
 				<ul>
-					<li><a href="/fund/balance">余额表</a></li>
-					<li><a href="/fund/cap">发生额度</a></li>
-					<li><a href="/fund/capd">发生额度明细</a></li>
-					<li><a href="/fund/innerBulk">大额交易</a></li>
+					<li ap="/fund/balance">余额表</li>
+					<li ap="/fund/cap">发生额度</li>
+					<li ap="/fund/capd">发生额度明细</li>
+					<li ap="/fund/capd">大额交易</li>
+					<li ap="http://www.oschina.net">测试</li>
 				</ul>
 			</div>
 			<h3>分析图表</h3>
 			<div>
 				<ul>
-					<li><a href="/fund/fundDistrib">集团资金分布</a></li>
-					<li><a href="/fund/cashDistrib">现金分布</a></li>
-					<li><a href="/fund/bankDistrib">银行存款分布</a></li>
-					<li><a href="/fund/acceptance">承兑分布</a></li>
+					<li ap="/fund/fundDistrib">集团资金分布</li>
+					<li ap="/fund/cashDistrib">现金分布</li>
+					<li ap="/fund/bankDistrib">银行存款分布</li>
+					<li ap="/fund/acceptanceDistrib">承兑分布</li>
 				</ul>
 			</div>
 			<h3>系统设置</h3>
 			<div>
 				<ul>
-					<li><a href="">用户设置</a></li>
-					<li><a href="#Drop-Downs">账套设置</a></li>
+					<li ap="">用户设置</li>
+					<li ap="">账套设置</li>
 				</ul>
 			</div>
 
