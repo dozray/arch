@@ -1,45 +1,33 @@
 package deep.admin.bean;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
 
 public class User {
-	private Long id;
-	private String	name;
-	private String 	password;
-	private Boolean freezen;
-	
-	public Long getId() {
-		return id;
+	private String userName;
+	private String password;
+	/** getXXX方法上的注解是spring MVC的验证注解，在action中调用 **/
+	public User(){}
+	public User(String username, String password){
+		this.userName =username;
+		this.password = password;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	@NotNull(message = "用户名不能为空")
+	public String getUserName(){
+		return this.userName;
 	}
-	public String getName() {
-		return name;
+	public void setUserName(String username){
+		this.userName = username;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getPassword() {
+	@NotNull(message = "密码不能为空")
+	@Size(min = 4, max=8, message="密码在6~10之间")
+	public String getPassword(){
 		return password;
 	}
-	public void setPassword(String password) {
+	public void setPassword(String password){
 		this.password = password;
 	}
-	public Boolean getFreezen() {
-		return freezen;
+	@Override
+	public String toString(){
+		return userName+"#"+password;
 	}
-	public void setFreezen(Boolean freezen) {
-		this.freezen = freezen;
-	}
-	
-	public User(){
-		
-	}
-	public User(Long id, String name, String password, Boolean freezen) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.password = password;
-		this.freezen = freezen;
-	}
-		
 }

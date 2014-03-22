@@ -8,6 +8,7 @@ public class FundController{
 	
 	@RequestMapping("/balance")
 	public String balance(){
+		System.out.println("fund/rpt/balance");
 		return "fund/rpt/balance";
 	}
 	

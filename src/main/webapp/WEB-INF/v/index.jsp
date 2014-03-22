@@ -271,11 +271,11 @@ ul.titletab li {
 		</div>
 		<div class="func">
 			<ul class="titletab">
-				<li class="activetab"><a href="1">${user}</a></li>
+				<li class="activetab"><a href="1">${ray_usr}</a></li>
 				<li class="activetab"><a href="2">|</a></li>
 				<li class="activetab"><a href="a">安全</a></li>
 				<li class="activetab"><a href="b">|</a></li>
-				<li class="activetab"><a href="c">退出</a></li>
+				<li class="activetab"><a href="/logout">退出</a></li>
 			</ul>
 		</div>
 		<div id="navigation">
@@ -322,20 +322,20 @@ ul.titletab li {
 			<h3>集团数据报表</h3>
 			<div>
 				<ul>
-					<li ap="/fund/balance">余额表</li>
-					<li ap="/fund/cap">发生额度</li>
-					<li ap="/fund/capd">发生额度明细</li>
-					<li ap="/fund/capd">大额交易</li>
+					<li ap="/fund/balance/">余额表</li>
+					<li ap="/fund/cap/">发生额度</li>
+					<li ap="/fund/capd/">发生额度明细</li>
+					<li ap="/fund/capd/">大额交易</li>
 					<li ap="http://www.oschina.net">测试</li>
 				</ul>
 			</div>
 			<h3>分析图表</h3>
 			<div>
 				<ul>
-					<li ap="/fund/fundDistrib">集团资金分布</li>
-					<li ap="/fund/cashDistrib">现金分布</li>
-					<li ap="/fund/bankDistrib">银行存款分布</li>
-					<li ap="/fund/acceptanceDistrib">承兑分布</li>
+					<li ap="/fund/fundDistrib/">集团资金分布</li>
+					<li ap="/fund/cashDistrib/">现金分布</li>
+					<li ap="/fund/bankDistrib/">银行存款分布</li>
+					<li ap="/fund/acceptanceDistrib/">承兑分布</li>
 				</ul>
 			</div>
 			<h3>系统设置</h3>

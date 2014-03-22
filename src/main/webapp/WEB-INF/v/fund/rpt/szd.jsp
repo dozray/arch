@@ -6,11 +6,19 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta name=ProgId content=Excel.Sheet>
 <meta name=Generator content="Microsoft Excel 11">
-<link rel=File-List href="szd.files/filelist.xml">
-<style id="balance_27724_Styles">
-<!--table
+<link rel=File-List href="branch.files/filelist.xml">
+<style id="balance_27724_Styles"><!--table
 	{mso-displayed-decimal-separator:"\.";
 	mso-displayed-thousand-separator:"\,";}
+.font527724
+	{color:windowtext;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"Arial Unicode MS";
+	mso-generic-font-family:auto;
+	mso-font-charset:134;}
 .xl2227724
 	{padding-top:1px;
 	padding-right:1px;
@@ -44,11 +52,99 @@ xmlns="http://www.w3.org/TR/REC-html40">
 	mso-number-format:General;
 	text-align:general;
 	vertical-align:bottom;
-	border:.5pt hairline windowtext;
+	border-top:1.0pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.5pt solid windowtext;
 	mso-background-source:auto;
 	mso-pattern:auto;
 	white-space:nowrap;}
 .xl2427724
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:windowtext;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:微软雅黑, sans-serif;
+	mso-font-charset:134;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:1.0pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl2527724
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:windowtext;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:微软雅黑, sans-serif;
+	mso-font-charset:134;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:1.0pt solid windowtext;
+	border-right:1.5pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl2627724
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:windowtext;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:微软雅黑, sans-serif;
+	mso-font-charset:134;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:1.0pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.5pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl2727724
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:windowtext;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:微软雅黑, sans-serif;
+	mso-font-charset:134;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:1.0pt solid windowtext;
+	border-right:1.5pt solid windowtext;
+	border-bottom:1.5pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl2827724
 	{padding-top:1px;
 	padding-right:1px;
 	padding-left:1px;
@@ -66,7 +162,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
 	mso-background-source:auto;
 	mso-pattern:auto;
 	white-space:nowrap;}
-.xl2527724
+.xl2927724
 	{padding-top:1px;
 	padding-right:1px;
 	padding-left:1px;
@@ -84,7 +180,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
 	mso-background-source:auto;
 	mso-pattern:auto;
 	white-space:nowrap;}
-.xl2627724
+.xl3027724
 	{padding-top:1px;
 	padding-right:1px;
 	padding-left:1px;
@@ -102,7 +198,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
 	mso-background-source:auto;
 	mso-pattern:auto;
 	white-space:nowrap;}
-.xl2727724
+.xl3127724
 	{padding-top:1px;
 	padding-right:1px;
 	padding-left:1px;
@@ -120,7 +216,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
 	mso-background-source:auto;
 	mso-pattern:auto;
 	white-space:nowrap;}
-.xl2827724
+.xl3227724
 	{padding-top:1px;
 	padding-right:1px;
 	padding-left:1px;
@@ -138,7 +234,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
 	mso-background-source:auto;
 	mso-pattern:auto;
 	white-space:nowrap;}
-.xl2927724
+.xl3327724
 	{padding-top:1px;
 	padding-right:1px;
 	padding-left:1px;
@@ -156,7 +252,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
 	mso-background-source:auto;
 	mso-pattern:auto;
 	white-space:nowrap;}
-.xl3027724
+.xl3427724
 	{padding-top:1px;
 	padding-right:1px;
 	padding-left:1px;
@@ -171,98 +267,10 @@ xmlns="http://www.w3.org/TR/REC-html40">
 	mso-number-format:"yy\0022年\0022m\0022月\0022d\0022日\0022";
 	text-align:general;
 	vertical-align:bottom;
-	border-top:.5pt hairline windowtext;
-	border-right:.5pt hairline windowtext;
-	border-bottom:.5pt hairline windowtext;
-	border-left:1.0pt solid windowtext;
-	mso-background-source:auto;
-	mso-pattern:auto;
-	white-space:nowrap;}
-.xl3127724
-	{padding-top:1px;
-	padding-right:1px;
-	padding-left:1px;
-	mso-ignore:padding;
-	color:windowtext;
-	font-size:10.0pt;
-	font-weight:400;
-	font-style:normal;
-	text-decoration:none;
-	font-family:微软雅黑, sans-serif;
-	mso-font-charset:134;
-	mso-number-format:General;
-	text-align:general;
-	vertical-align:bottom;
-	border-top:.5pt hairline windowtext;
-	border-right:1.0pt solid windowtext;
-	border-bottom:.5pt hairline windowtext;
-	border-left:.5pt hairline windowtext;
-	mso-background-source:auto;
-	mso-pattern:auto;
-	white-space:nowrap;}
-.xl3227724
-	{padding-top:1px;
-	padding-right:1px;
-	padding-left:1px;
-	mso-ignore:padding;
-	color:windowtext;
-	font-size:10.0pt;
-	font-weight:400;
-	font-style:normal;
-	text-decoration:none;
-	font-family:微软雅黑, sans-serif;
-	mso-font-charset:134;
-	mso-number-format:General;
-	text-align:general;
-	vertical-align:bottom;
-	border-top:.5pt hairline windowtext;
-	border-right:.5pt hairline windowtext;
-	border-bottom:.5pt hairline windowtext;
-	border-left:1.0pt solid windowtext;
-	mso-background-source:auto;
-	mso-pattern:auto;
-	white-space:nowrap;}
-.xl3327724
-	{padding-top:1px;
-	padding-right:1px;
-	padding-left:1px;
-	mso-ignore:padding;
-	color:windowtext;
-	font-size:10.0pt;
-	font-weight:400;
-	font-style:normal;
-	text-decoration:none;
-	font-family:微软雅黑, sans-serif;
-	mso-font-charset:134;
-	mso-number-format:General;
-	text-align:general;
-	vertical-align:bottom;
-	border-top:.5pt hairline windowtext;
-	border-right:.5pt hairline windowtext;
-	border-bottom:1.0pt solid windowtext;
-	border-left:.5pt hairline windowtext;
-	mso-background-source:auto;
-	mso-pattern:auto;
-	white-space:nowrap;}
-.xl3427724
-	{padding-top:1px;
-	padding-right:1px;
-	padding-left:1px;
-	mso-ignore:padding;
-	color:windowtext;
-	font-size:10.0pt;
-	font-weight:400;
-	font-style:normal;
-	text-decoration:none;
-	font-family:微软雅黑, sans-serif;
-	mso-font-charset:134;
-	mso-number-format:General;
-	text-align:general;
-	vertical-align:bottom;
-	border-top:.5pt hairline windowtext;
+	border-top:1.0pt solid windowtext;
 	border-right:1.0pt solid windowtext;
 	border-bottom:1.0pt solid windowtext;
-	border-left:.5pt hairline windowtext;
+	border-left:1.5pt solid windowtext;
 	mso-background-source:auto;
 	mso-pattern:auto;
 	white-space:nowrap;}
@@ -281,10 +289,10 @@ xmlns="http://www.w3.org/TR/REC-html40">
 	mso-number-format:General;
 	text-align:center;
 	vertical-align:bottom;
-	border-top:1.0pt solid windowtext;
-	border-right:.5pt hairline windowtext;
-	border-bottom:.5pt hairline windowtext;
-	border-left:1.0pt solid windowtext;
+	border-top:1.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.5pt solid windowtext;
 	background:#99CCFF;
 	mso-pattern:auto none;
 	white-space:nowrap;}
@@ -303,10 +311,10 @@ xmlns="http://www.w3.org/TR/REC-html40">
 	mso-number-format:General;
 	text-align:center;
 	vertical-align:bottom;
-	border-top:1.0pt solid windowtext;
-	border-right:.5pt hairline windowtext;
-	border-bottom:.5pt hairline windowtext;
-	border-left:.5pt hairline windowtext;
+	border-top:1.5pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;
 	background:#99CCFF;
 	mso-pattern:auto none;
 	white-space:nowrap;}
@@ -325,10 +333,10 @@ xmlns="http://www.w3.org/TR/REC-html40">
 	mso-number-format:General;
 	text-align:center;
 	vertical-align:bottom;
-	border-top:1.0pt solid windowtext;
-	border-right:1.0pt solid windowtext;
-	border-bottom:.5pt hairline windowtext;
-	border-left:.5pt hairline windowtext;
+	border-top:1.5pt solid windowtext;
+	border-right:1.5pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;
 	background:#99CCFF;
 	mso-pattern:auto none;
 	white-space:nowrap;}
@@ -347,10 +355,10 @@ xmlns="http://www.w3.org/TR/REC-html40">
 	mso-number-format:General;
 	text-align:general;
 	vertical-align:bottom;
-	border-top:.5pt hairline windowtext;
-	border-right:.5pt hairline windowtext;
-	border-bottom:1.0pt solid windowtext;
-	border-left:1.0pt solid windowtext;
+	border-top:1.0pt solid windowtext;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.5pt solid windowtext;
+	border-left:1.5pt solid windowtext;
 	mso-background-source:auto;
 	mso-pattern:auto;
 	white-space:nowrap;}
@@ -366,8 +374,7 @@ rt
 	mso-generic-font-family:auto;
 	mso-font-charset:134;
 	mso-char-type:none;}
--->
-</style>
+--></style>
 </head>
 
 <body>
@@ -406,25 +413,25 @@ rt
   <td class=xl2227724 width=160 style='width:120pt'></td>
  </tr>
  <tr height=33 style='mso-height-source:userset;height:24.75pt'>
-  <td colspan=7 height=33 class=xl2627724 style='height:24.75pt'>中伟业公司收支明细表</td>
+  <td colspan=7 height=33 class=xl3027724 style='height:24.75pt'>中伟业公司收支明细表</td>
  </tr>
  <tr height=23 style='mso-height-source:userset;height:17.85pt'>
-  <td colspan=3 height=23 class=xl2827724 style='height:17.85pt'>日期：<span
-  style='mso-spacerun:yes'>     </span>年<span style='mso-spacerun:yes'>    
-  </span>月<span style='mso-spacerun:yes'>     </span>日</td>
-  <td class=xl2727724></td>
-  <td class=xl2927724></td>
-  <td class=xl2927724></td>
-  <td class=xl2927724>单位：元</td>
+  <td colspan=3 height=23 class=xl3227724 style='height:17.85pt'>日期：<span
+  style='mso-spacerun:yes'>    </span>2014 年<span style='mso-spacerun:yes'> 
+  </span>03 月 12<span style='mso-spacerun:yes'>  </span>日</td>
+  <td class=xl3127724></td>
+  <td class=xl3327724></td>
+  <td class=xl3327724></td>
+  <td class=xl3327724>单位：元</td>
  </tr>
  <tr height=25 style='mso-height-source:userset;height:18.75pt'>
-  <td height=25 class=xl2727724 style='height:18.75pt'></td>
-  <td class=xl2727724></td>
-  <td class=xl2727724></td>
-  <td class=xl2727724></td>
-  <td class=xl2727724></td>
-  <td class=xl2727724></td>
-  <td class=xl2727724></td>
+  <td height=25 class=xl3127724 style='height:18.75pt'></td>
+  <td class=xl3127724></td>
+  <td class=xl3127724></td>
+  <td class=xl3127724></td>
+  <td class=xl3127724></td>
+  <td class=xl3127724></td>
+  <td class=xl3127724></td>
  </tr>
  <tr height=24 style='mso-height-source:userset;height:18.0pt'>
   <td height=24 class=xl3527724 style='height:18.0pt'>日期</td>
@@ -436,143 +443,143 @@ rt
   <td class=xl3727724 style='border-left:none'>收支单位</td>
  </tr>
  <tr height=22 style='mso-height-source:userset;height:16.5pt'>
-  <td height=22 class=xl3027724 align=right style='height:16.5pt;border-top:
+  <td height=22 class=xl3427724 align=right style='height:16.5pt;border-top:
   none' x:num="41730">14年4月1日</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>收轧钢XXX款</td>
-  <td class=xl2327724 align=right style='border-top:none;border-left:none' x:num>240000</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 align=right style='border-top:none;border-left:none' x:num>460000</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3127724 style='border-top:none;border-left:none'>轧钢</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>收轧钢XXX款</td>
+  <td class=xl2427724 align=right style='border-top:none;border-left:none' x:num>240000</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 align=right style='border-top:none;border-left:none' x:num>460000</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2527724 style='border-top:none;border-left:none'>轧钢</td>
  </tr>
  <tr height=22 style='mso-height-source:userset;height:16.5pt'>
-  <td height=22 class=xl3027724 align=right style='height:16.5pt;border-top:
+  <td height=22 class=xl3427724 align=right style='height:16.5pt;border-top:
   none' x:num="41731">14年4月2日</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3127724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2527724 style='border-top:none;border-left:none'>　</td>
  </tr>
  <tr height=22 style='mso-height-source:userset;height:16.5pt'>
-  <td height=22 class=xl3227724 style='height:16.5pt;border-top:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3127724 style='border-top:none;border-left:none'>　</td>
+  <td height=22 class=xl2327724 style='height:16.5pt;border-top:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2527724 style='border-top:none;border-left:none'>　</td>
  </tr>
  <tr height=22 style='mso-height-source:userset;height:16.5pt'>
-  <td height=22 class=xl3227724 style='height:16.5pt;border-top:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3127724 style='border-top:none;border-left:none'>　</td>
+  <td height=22 class=xl2327724 style='height:16.5pt;border-top:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2527724 style='border-top:none;border-left:none'>　</td>
  </tr>
  <tr height=22 style='mso-height-source:userset;height:16.5pt'>
-  <td height=22 class=xl3227724 style='height:16.5pt;border-top:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3127724 style='border-top:none;border-left:none'>　</td>
+  <td height=22 class=xl2327724 style='height:16.5pt;border-top:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2527724 style='border-top:none;border-left:none'>　</td>
  </tr>
  <tr height=22 style='mso-height-source:userset;height:16.5pt'>
-  <td height=22 class=xl3227724 style='height:16.5pt;border-top:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3127724 style='border-top:none;border-left:none'>　</td>
+  <td height=22 class=xl2327724 style='height:16.5pt;border-top:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2527724 style='border-top:none;border-left:none'>　</td>
  </tr>
  <tr height=22 style='mso-height-source:userset;height:16.5pt'>
-  <td height=22 class=xl3227724 style='height:16.5pt;border-top:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3127724 style='border-top:none;border-left:none'>　</td>
+  <td height=22 class=xl2327724 style='height:16.5pt;border-top:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2527724 style='border-top:none;border-left:none'>　</td>
  </tr>
  <tr height=22 style='mso-height-source:userset;height:16.5pt'>
-  <td height=22 class=xl3227724 style='height:16.5pt;border-top:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3127724 style='border-top:none;border-left:none'>　</td>
+  <td height=22 class=xl2327724 style='height:16.5pt;border-top:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2527724 style='border-top:none;border-left:none'>　</td>
  </tr>
  <tr height=22 style='mso-height-source:userset;height:16.5pt'>
-  <td height=22 class=xl3227724 style='height:16.5pt;border-top:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3127724 style='border-top:none;border-left:none'>　</td>
+  <td height=22 class=xl2327724 style='height:16.5pt;border-top:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2527724 style='border-top:none;border-left:none'>　</td>
  </tr>
  <tr height=22 style='mso-height-source:userset;height:16.5pt'>
-  <td height=22 class=xl3227724 style='height:16.5pt;border-top:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3127724 style='border-top:none;border-left:none'>　</td>
+  <td height=22 class=xl2327724 style='height:16.5pt;border-top:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2527724 style='border-top:none;border-left:none'>　</td>
  </tr>
  <tr height=22 style='mso-height-source:userset;height:16.5pt'>
-  <td height=22 class=xl3227724 style='height:16.5pt;border-top:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3127724 style='border-top:none;border-left:none'>　</td>
+  <td height=22 class=xl2327724 style='height:16.5pt;border-top:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2527724 style='border-top:none;border-left:none'>　</td>
  </tr>
  <tr height=22 style='mso-height-source:userset;height:16.5pt'>
-  <td height=22 class=xl3227724 style='height:16.5pt;border-top:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3127724 style='border-top:none;border-left:none'>　</td>
+  <td height=22 class=xl2327724 style='height:16.5pt;border-top:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2527724 style='border-top:none;border-left:none'>　</td>
  </tr>
  <tr height=22 style='mso-height-source:userset;height:16.5pt'>
-  <td height=22 class=xl3227724 style='height:16.5pt;border-top:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3127724 style='border-top:none;border-left:none'>　</td>
+  <td height=22 class=xl2327724 style='height:16.5pt;border-top:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2527724 style='border-top:none;border-left:none'>　</td>
  </tr>
  <tr height=22 style='mso-height-source:userset;height:16.5pt'>
-  <td height=22 class=xl3227724 style='height:16.5pt;border-top:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl2327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3127724 style='border-top:none;border-left:none'>　</td>
+  <td height=22 class=xl2327724 style='height:16.5pt;border-top:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2527724 style='border-top:none;border-left:none'>　</td>
  </tr>
  <tr height=25 style='mso-height-source:userset;height:18.75pt'>
   <td height=25 class=xl3827724 style='height:18.75pt;border-top:none'>合计：</td>
-  <td class=xl3327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3327724 style='border-top:none;border-left:none'>　</td>
-  <td class=xl3427724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2627724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2627724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2627724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2627724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2627724 style='border-top:none;border-left:none'>　</td>
+  <td class=xl2727724 style='border-top:none;border-left:none'>　</td>
  </tr>
- <tr height=22 style='height:16.5pt'>
+ <tr height=22 style='mso-height-source:userset;height:16.5pt'>
   <td height=22 class=xl2227724 style='height:16.5pt'></td>
   <td class=xl2227724></td>
   <td class=xl2227724></td>
@@ -591,7 +598,7 @@ rt
   <td class=xl2227724></td>
  </tr>
  <tr height=22 style='mso-height-source:userset;height:16.5pt'>
-  <td height=22 class=xl2427724 style='height:16.5pt'>说明：</td>
+  <td height=22 class=xl2827724 style='height:16.5pt'>说明：</td>
   <td class=xl2227724></td>
   <td class=xl2227724></td>
   <td class=xl2227724></td>
@@ -600,7 +607,7 @@ rt
   <td class=xl2227724></td>
  </tr>
  <tr height=22 style='mso-height-source:userset;height:16.5pt'>
-  <td height=22 class=xl2527724 colspan=6 style='height:16.5pt'>此报表反映了集团的收支明细情况，包含了其所有的收支情况，依照规定合并或冲抵的也在此报表中反映。</td>
+  <td height=22 class=xl2927724 colspan=6 style='height:16.5pt'>此报表反映了集团的收支明细情况，包含了其所有的收支情况，依照规定合并或冲抵的也在此报表中反映。</td>
   <td class=xl2227724></td>
  </tr>
  <![if supportMisalignedColumns]>
@@ -625,3 +632,4 @@ rt
 </body>
 
 </html>
+

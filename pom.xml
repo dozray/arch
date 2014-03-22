@@ -150,10 +150,17 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.connector.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>sqljdbc4</artifactId>
+			<version>4.0</version>		
+		</dependency>
 		<!-- PostgreSQL JDBC4 -->
 		<!-- If you use postgresql, uncomment this dependency declaration -->
 		<!-- <dependency> <groupId>org.postgresql</groupId> <artifactId>postgresql</artifactId> 
 			<version>9.3-1100-jdbc4</version> </dependency> -->
+			
+		
 
 		<!-- BoneCP -->
 		<dependency>
@@ -215,25 +222,7 @@
 			<version>2.3.2</version>
 		</dependency>
 		
-				<!-- shiro-web -->
-		<dependency>
-			<groupId>org.apache.shiro</groupId>
-			<artifactId>shiro-web</artifactId>
-			<version>${shiro.version}</version>
-		</dependency>
-		<!-- shiro-spring -->
-		<dependency>
-			<groupId>org.apache.shiro</groupId>
-			<artifactId>shiro-spring</artifactId>
-			<version>${shiro.version}</version>
-		</dependency>
-		<!-- shiro-ehcache -->
-		<dependency>
-			<groupId>org.apache.shiro</groupId>
-			<artifactId>shiro-ehcache</artifactId>
-			<version>${shiro.version}</version>
-		</dependency>
-
+	
 
 		<!-- JSR 303 with Hibernate Validator -->
 		<dependency>

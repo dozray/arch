@@ -16,6 +16,7 @@
         <mvc:interceptor>    
             <mvc:mapping path="/admin/*" />
             <mvc:mapping path="/fund/*"/>    
+            <mvc:mapping path="/entry"/>
             <bean class="deep.admin.interceptor.SessionInterceptor"></bean>    
         </mvc:interceptor>    
     </mvc:interceptors>
