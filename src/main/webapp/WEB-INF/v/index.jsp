@@ -26,7 +26,7 @@
 	border-bottom: 0 none;
 	background-color: #D0E5F5 !important;
 	border-top: 1px solid #FFFFFF;
-	padding: 5px 5px 4px 3em;
+	padding: 2px 0px 2px 0px;
 }
 
 #accordionHeader {
@@ -86,7 +86,7 @@
 	background: #FFF
 }
 
-div.logo {
+#logo {
 	background-image: url("../../static/img/banner_may_main.jpg");
 	background-repeat: no-repeat;
 	border-style: none none solid;
@@ -101,42 +101,29 @@ div.logo {
 	background-size: 100% 100%;
 }
 
-div.func {
-	border-style: none;
-	color: #FFFFFF;
-	/* height: 1.8em; */
-	left: 0;
-	margin: 0;
-	padding: 0;
+#hd {
 	position: absolute;
 	top: 25px;
+	font: 12px/1.5 arial, sans-serif;
+	min-width: 700px;
+	height: 36px;
 	width: 100%;
+	line-height: 36px;
+	padding: 0 20px 0 0;
+	text-align: right;
 }
-
-ul.titletab {
-	display: inline;
-	float: right;
-	margin-bottom: 0;
-	margin-top: 5px;
-	padding-bottom: 0;
-	padding-right: 0;
+#hd a{
+	text-decoration:none;
+	color:#fff;
 }
-
-ul.titletab li.activetab {
-	display: inline;
-	font-weight: bold;
-	list-style: none outside none;
+#hd a:hover{
+color:#4CC011;
+text-decoration:underline
 }
-
-ul.titletab li {
-	display: inline;
-	list-style: none outside none;
-	margin-bottom: 0;
-	margin-left: 0;
-	margin-right: 0;
-	padding: 0 2px;
+#hd .hd-sep {
+	margin: 0 7px;
+	color: #eaeaea;
 }
-
 /*Splitter style */
 #LeftPane {
 	/* optional, initial splitbar position */
@@ -262,92 +249,89 @@ ul.titletab li {
 </head>
 <body>
 	<nav></nav>
-	<div class="ui-layout-north">
-		<div id="logo"
-			style="height: 66px; color: #FFFFFF; padding: 2px; letter-spacing: 1px">
-			<a href="http://www.lyweiye.cn/"> <img id="logoimg" border="0"
-				alt="[公司首页]" src="../../static/img/banner_logo.png">
-			</a>
-		</div>
-		<div class="func">
-			<ul class="titletab">
-				<li class="activetab"><a href="1">${ray_usr}</a></li>
-				<li class="activetab"><a href="2">|</a></li>
-				<li class="activetab"><a href="a">安全</a></li>
-				<li class="activetab"><a href="b">|</a></li>
-				<li class="activetab"><a href="/logout">退出</a></li>
-			</ul>
-		</div>
-		<div id="navigation">
+	
+		<div class="ui-layout-north">
+			<div id="logo"
+				style="height: 66px; color: #FFFFFF; padding: 2px; letter-spacing: 1px">
+				<a href="http://www.lyweiye.cn/"> <img id="logoimg" border="0"
+					alt="[公司首页]" src="../../static/img/banner_logo.png">
+				</a>
+			</div>
+			<div id="hd">
+				<a href="">您好${ray_usr.userName}</a> <span class="hd-sep">|</span> 
+				<a href="http://www.deep.tk/?src=nav" target="_blank">导航</a> 
+				<span class="hd-sep">|</span> 
+				<a href="/logout" id="usr-logout" target="_blank">注销&nbsp</a>
+				
+			</div>
+			
+			<div id="navigation">
 			<!-- 
-		<A href="index.cfm">HOME</A>
-		<A href="demos.cfm">DEMOS</A>
-		<A href="downloads.cfm">DOWNLOADS</A>
-		<A href="documentation.cfm" class="current">DOCUMENTATION</A>
-		<A href="tips.cfm">TIPS</A>
-		<A href="plugin.cfm">PLUGIN</A>
-		<A href="issues.cfm">ISSUES</A>
-		<A target="_blank" href="http://groups.google.com/group/jquery-ui-layout">DISCUSSION</A>
-		 -->
+				<A href="index.cfm">HOME</A>
+				<A href="demos.cfm">DEMOS</A>
+				<A href="downloads.cfm">DOWNLOADS</A>
+				<A href="documentation.cfm" class="current">DOCUMENTATION</A>
+				<A href="tips.cfm">TIPS</A>
+				<A href="plugin.cfm">PLUGIN</A>
+				<A href="issues.cfm">ISSUES</A>
+				<A target="_blank" href="http://groups.google.com/group/jquery-ui-layout">DISCUSSION</A>
+				-->
+		 	</div>
+		 	
 		</div>
-	</div>
-
-	<div id="RightPane" class="ui-layout-center content">
-		<!-- Tabs pane 
-		<div id="tabs">
-			<ul>
-				<li><a href="#tabs-1">Home</a></li>
-			</ul>
-
-			<div id="tabs-1" style="font-size: 12px;">
-				Event and much more... <br />
+		
+		<div id="RightPane" class="ui-layout-center content">
+			<!-- Tabs pane 
+			<div id="tabs">
+				<ul><li><a href="#tabs-1">Home</a></li></ul>
+				<div id="tabs-1" style="font-size: 12px;">
+					Event and much more... <br />
+				</div>
 			</div>
+			-->
+
+			<iframe id="funcPage" name="main" src="http://www.so.com"
+				frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
+
 		</div>
+		<!--  end of RightPane -->
+		
+		<!--
+		=======================
+		*	TABLE OF CONTENTS  *
+		=======================
 		-->
-
-		<iframe id="funcPage" name="main" src="http://www.so.com"
-			frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
-
-	</div>
-	<!--  end of RightPane -->
-
-	<!--
-	=======================
-	*	TABLE OF CONTENTS  *
-	=======================
--->
-	<div class="ui-layout-west" style="display: none;">
-		<div id="accordionHeader" class="header">业务与功能</div>
-		<div id="accordion" class="ui-layout-content" style="overflow: auto;">
-			<h3>集团数据报表</h3>
-			<div>
-				<ul>
-					<li ap="/fund/balance/">余额表</li>
-					<li ap="/fund/cap/">发生额度</li>
-					<li ap="/fund/capd/">发生额度明细</li>
-					<li ap="/fund/capd/">大额交易</li>
-					<li ap="http://www.oschina.net">测试</li>
-				</ul>
+		<div class="ui-layout-west" style="display: none;">
+			<div id="accordionHeader" class="header">业务与功能</div>
+			<div id="accordion" class="ui-layout-content" style="overflow: auto;">
+				<h3>集团数据报表</h3>
+				<div>
+					<ul>
+						<li ap="/fund/balance/">余额表</li>
+						<li ap="/fund/cap/">发生额度</li>
+						<li ap="/fund/capd/">发生额度明细</li>
+						<li ap="/fund/capd/">大额交易</li>
+						<li ap="http://www.oschina.net">测试</li>
+					</ul>
+				</div>
+				<h3>分析图表</h3>
+				<div>
+					<ul>
+						<li ap="/fund/fundDistrib/">集团资金分布</li>
+						<li ap="/fund/cashDistrib/">现金分布</li>
+						<li ap="/fund/bankDistrib/">银行存款分布</li>
+						<li ap="/fund/acceptanceDistrib/">承兑分布</li>
+					</ul>
+				</div>
+				<h3>系统设置</h3>
+				<div>
+					<ul>
+						<li ap="">用户设置</li>
+						<li ap="">账套设置</li>
+					</ul>
+				</div>
 			</div>
-			<h3>分析图表</h3>
-			<div>
-				<ul>
-					<li ap="/fund/fundDistrib/">集团资金分布</li>
-					<li ap="/fund/cashDistrib/">现金分布</li>
-					<li ap="/fund/bankDistrib/">银行存款分布</li>
-					<li ap="/fund/acceptanceDistrib/">承兑分布</li>
-				</ul>
-			</div>
-			<h3>系统设置</h3>
-			<div>
-				<ul>
-					<li ap="">用户设置</li>
-					<li ap="">账套设置</li>
-				</ul>
-			</div>
-
-		</div>
-	</div>
-
+		</div> <!-- end of content -->
+	<div id="body-wrap"></div> <!-- end body-wrap -->
 </body>
 </html>
