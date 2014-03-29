@@ -290,8 +290,8 @@ text-decoration:underline
 			</div>
 			-->
 
-			<iframe id="funcPage" name="main" src="http://www.so.com"
-				frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
+			<iframe id="funcPage" name="main" src="/hm.htm"
+				frameborder="0"  width="100%" height="100%"></iframe>
 
 		</div>
 		<!--  end of RightPane -->
@@ -307,11 +307,10 @@ text-decoration:underline
 				<h3>集团数据报表</h3>
 				<div>
 					<ul>
-						<li ap="/fund/balance/">余额表</li>
-						<li ap="/fund/cap/">发生额度</li>
-						<li ap="/fund/capd/">发生额度明细</li>
-						<li ap="/fund/capd/">大额交易</li>
-						<li ap="http://www.oschina.net">测试</li>
+						<li ap="/fund/balance/">资金余额表</li>
+						<li ap="/fund/cap/">资金收支汇总表</li>
+						<li ap="/fund/capd/">资金收支明细表</li>
+						<li ap="/fund/bulkTrade/">大额资金收支明细表</li>
 					</ul>
 				</div>
 				<h3>分析图表</h3>
@@ -326,7 +325,7 @@ text-decoration:underline
 				<h3>系统设置</h3>
 				<div>
 					<ul>
-						<li ap="">用户设置</li>
+						<li ap="/user/list/">用户设置</li>
 						<li ap="">账套设置</li>
 					</ul>
 				</div>

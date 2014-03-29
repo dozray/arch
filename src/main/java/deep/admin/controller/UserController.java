@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import deep.demo.bean.User;
+import deep.admin.bean.User;
 import deep.demo.controller.Greeting;
 
 @Controller
@@ -38,10 +38,10 @@ public class UserController {
 	
 	
 	public UserController(){
-		users.put("lyx", new User(1L,"多多","123456"));
-		users.put("gl", new User(1L,"郭丽","123456"));
-		users.put("lbn", new User(1L,"伯南","123456"));
-		users.put("zzy", new User(1L,"子宜","123456"));		
+		users.put("lyx", new User("多多","123456"));
+		users.put("gl", new User("IDG","123456"));
+		users.put("lbn", new User("伯南","123456"));
+		users.put("zzy", new User("子宜","123456"));		
 	}
 	
 	@RequestMapping(value="/list",method=RequestMethod.GET)
@@ -61,7 +61,7 @@ public class UserController {
 		if(br.hasErrors()){
 			return "user/add";
 		}
-		users.put(user.getName(), user);
+		users.put(user.getUserName(), user);
 		return "redirect:/user/list";
 	}
 }
