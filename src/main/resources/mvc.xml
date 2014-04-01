@@ -35,7 +35,7 @@
 		@Resource			用于注入，(J2EE 提供的)默认按明称装配，
 		
 	-->  
-	<context:component-scan base-package="deep.admin.controller,deep.fund.controller">
+	<context:component-scan base-package="deep.rpt,deep.admin.controller,deep.fund.controller">
 	<!--
 	<context:include-filter type="regex" expression="tk\.deep\..*\.web\.action\..*Action"/>
 	<context:include-filter type="regex" expression="tk\.deep\..*\.service\..*ServiceImpl"/>
@@ -53,8 +53,23 @@
 	<!-- 静态文件的处理 -->
 	<mvc:resources location="/static/" mapping="/static/**" />
 	
-	<bean
+	<!-- 
+	Here we configure two view resolvers:
+		ResourceBundleViewResolver: to resolve view names specified in the views.properties file.
+		InternalResourceViewResolver: to resolve view names to JSP pages.
+		
+		Note that the ResourceBundleViewResolver has higher priority (order=”1”) than the 
+		InternalResourceViewResolver (order=”2”) so the view names specified in the views.properties 
+		are processed first.	
+	 -->
+	<bean id="viewResolver1" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+		<property name="order" value="1"/>
+		<property name="basename" value="views"/> 
+	</bean>
+	
+	<bean id="viewResolver2"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="order" value="2"/>
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.JstlView" />
 		<property name="prefix" value="/WEB-INF/v/" />

@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import deep.admin.svc.ConnectionDAO;
-import deep.fund.bean.Balance;
+import deep.fund.rpt.bean.Balance;
 import deep.fund.rpt.bean.BulkTrade;
 import deep.fund.rpt.bean.DCDetails;
 import deep.fund.rpt.bean.ION;

@@ -87,8 +87,8 @@
 }
 
 #logo {
-	background-image: url("../../static/img/banner_may_main.jpg");
-	background-repeat: no-repeat;
+	background-image: url("../../static/img/banner_may_main.png");
+	/* background-repeat: no-repeat; */
 	border-style: none none solid;
 	height: 135px;
 	width: 100%;
@@ -106,9 +106,9 @@
 	top: 25px;
 	font: 12px/1.5 arial, sans-serif;
 	min-width: 700px;
-	height: 36px;
+	height: 16px;
 	width: 100%;
-	line-height: 36px;
+	line-height: 16px;
 	padding: 0 20px 0 0;
 	text-align: right;
 }
@@ -252,7 +252,7 @@ text-decoration:underline
 	
 		<div class="ui-layout-north">
 			<div id="logo"
-				style="height: 66px; color: #FFFFFF; padding: 2px; letter-spacing: 1px">
+				style="height: 50px; color: #FFFFFF; padding: 2px; letter-spacing: 1px">
 				<a href="http://www.lyweiye.cn/"> <img id="logoimg" border="0"
 					alt="[公司首页]" src="../../static/img/banner_logo.png">
 				</a>

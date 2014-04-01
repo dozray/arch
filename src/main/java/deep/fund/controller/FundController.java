@@ -1,14 +1,18 @@
 package deep.fund.controller;
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
-import deep.fund.bean.Balance;
+import deep.fund.rpt.bean.Balance;
 import deep.fund.svc.BalanceSvc;
 
 @Controller
@@ -54,6 +58,7 @@ public class FundController{
 	
 	@RequestMapping("/fundDistrib")
 	public String fundDistrib(){
+		
 		return "fund/analyse/fund_distrib";
 	}
 	
@@ -71,4 +76,23 @@ public class FundController{
 	public String InnerBulk(){
 		return "fund/analyse/acceptance_distrib";
 	}	
+	
+	
+	@RequestMapping(value="/t",method = RequestMethod.GET)
+	public String viewHome(){
+		return "/fund/dl";
+	}
+	
+	@RequestMapping(value="/dl" , method = RequestMethod.GET)
+	public ModelAndView downloadExcel(String dt){
+		List<Balance> lst = new ArrayList<Balance>();
+		if(dt==null){
+			dt = DateFormat.getDateInstance(DateFormat.MEDIUM).format(new java.util.Date());			
+		}	
+		BalanceSvc svc = new BalanceSvc();		
+		lst = svc.getBalance(dt);
+		
+		// return a view which will be resolved by an excel view resolver.
+		return new ModelAndView ("pdfView","lst",lst);
+	}
 }

@@ -508,7 +508,7 @@ rt
   <td class=xl288142 style='border-left:none'>银行</td>
   <td class=xl288142 style='border-left:none'>承兑</td>
   <td class=xl288142 style='border-left:none'>余额</td>
-  <td class=xl298142 style='border-left:none'>监管账户</td>
+  <td class=xl298142 style='border-left:none'>监管/保证金</td>
   <td class=xl308142>备注</td>
   <td class=xl228142></td>
  </tr>

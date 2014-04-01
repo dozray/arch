@@ -1,4 +1,4 @@
-package deep.fund.bean;
+package deep.fund.rpt.bean;
 
 public class Balance {
 	private String companyName;
