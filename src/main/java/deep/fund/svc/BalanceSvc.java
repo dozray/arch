@@ -18,13 +18,13 @@ public class BalanceSvc {
 		ArrayList<Balance> al = new ArrayList<Balance>();		
 		
 		try{
-			PreparedStatement pstmt = ConnectionDAO.getConnection().prepareStatement("{call dbo.proc_rpt_balance(?)}");					
+			PreparedStatement pstmt = ConnectionDAO.getConnection().prepareStatement("{call dbo.proc_rpt_balance_q(?)}");					
 			pstmt.setString(1, dt);		
 			ResultSet rs = pstmt.executeQuery();
 			//ResultSet rs = stmt.executeQuery(SQL);
 			if(null != rs){
 				while(rs.next()){
-					al.add(new Balance(rs.getString("company"),rs.getDouble("cash"),rs.getDouble("bank"),rs.getDouble("acceptance")));
+					al.add(new Balance(rs.getString("company"),rs.getDouble("cash"),rs.getDouble("bank"),rs.getDouble("acceptance"),rs.getDouble("freeze")));
 				}				
 			}			
 		}catch(SQLException e){
