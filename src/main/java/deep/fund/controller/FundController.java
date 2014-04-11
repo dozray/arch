@@ -11,9 +11,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import deep.fund.rpt.bean.Balance;
+import deep.fund.rpt.bean.PieData;
 import deep.fund.svc.BalanceSvc;
 
 @Controller
@@ -102,9 +104,66 @@ public class FundController{
 			dt = DateFormat.getDateInstance(DateFormat.MEDIUM).format(new java.util.Date());			
 		}	
 		BalanceSvc svc = new BalanceSvc();		
-		lst = svc.getBalance(dt);
-		
+		lst = svc.getBalance(dt);		
 		// return a view which will be resolved by an excel view resolver.
 		return new ModelAndView ("pdfView","lst",lst);
 	}
+	
+	@RequestMapping(value="/cashjson",method=RequestMethod.GET)
+	@ResponseBody
+	public List<PieData> genCash(String dt){
+		ArrayList<PieData> al = new ArrayList<PieData>();
+		
+		if(dt==null){
+			dt = DateFormat.getDateInstance(DateFormat.MEDIUM).format(new java.util.Date());			
+		}
+		BalanceSvc svc = new BalanceSvc();
+		ArrayList<Balance> alb = svc.getBalance(dt);
+		if(alb.size()>0){
+			for(Balance b : alb)
+			{
+				al.add(new PieData(b.getCompanyName(),b.getCashBalance()));
+			}
+		}	
+		return al;
+	}
+	
+	@RequestMapping(value="/bankjson",method=RequestMethod.GET)
+	@ResponseBody
+	public List<PieData> genBank(String dt){
+		ArrayList<PieData> al = new ArrayList<PieData>();
+		
+		if(dt==null){
+			dt = DateFormat.getDateInstance(DateFormat.MEDIUM).format(new java.util.Date());			
+		}
+		BalanceSvc svc = new BalanceSvc();
+		ArrayList<Balance> alb = svc.getBalance(dt);
+		if(alb.size()>0){
+			for(Balance b : alb)
+			{
+				al.add(new PieData(b.getCompanyName(),b.getBankBalance()));
+			}
+		}	
+		return al;
+	}
+	
+	@RequestMapping(value="/balancejson",method=RequestMethod.GET)
+	@ResponseBody
+	public List<PieData> genBalance(String dt){
+		ArrayList<PieData> al = new ArrayList<PieData>();
+		
+		if(dt==null){
+			dt = DateFormat.getDateInstance(DateFormat.MEDIUM).format(new java.util.Date());			
+		}
+		BalanceSvc svc = new BalanceSvc();
+		ArrayList<Balance> alb = svc.getBalance(dt);
+		if(alb.size()>0){
+			for(Balance b : alb)
+			{				
+				al.add(new PieData(b.getCompanyName(),b.getCashBalance()+b.getBankBalance()));
+			}
+		}	
+		return al;
+	}
+	
 }

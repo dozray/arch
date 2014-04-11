@@ -12,7 +12,7 @@ body {
 
 </style>
 <body>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="../../../../static/js/d3.v3.min.js"></script>
 <script>
 
 var width = 960,
@@ -36,7 +36,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-d3.json("../../../tmp/data.json", function(error, data) {
+d3.json("/fund/cashjson", function(error, data) {
 
   data.forEach(function(d) {
     d.value= +d.value;

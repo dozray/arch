@@ -1,6 +1,8 @@
 package deep.admin.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -10,13 +12,16 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import sun.rmi.runtime.Log;
 import deep.admin.bean.User;
 import deep.demo.controller.Greeting;
+import deep.fund.rpt.bean.PieData;
 
 @Controller
 @RequestMapping("/user")
@@ -95,4 +100,14 @@ public class UserController {
 		users.remove(id);
 		return "redirect:/user/list";
 	}
+	
+	@RequestMapping(value="/json",method=RequestMethod.GET)	
+	public @ResponseBody String testJson(@RequestBody User u){
+		System.out.println("get json input from request body annotation");
+		System.out.println(u.getUserName());
+        return "return ok";
+	}	
+	
+	
+
 }

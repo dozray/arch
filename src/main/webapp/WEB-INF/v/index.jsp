@@ -330,11 +330,9 @@ text-decoration:underline
 				<div id="tabs-1" style="font-size: 12px;">
 					Event and much more... <br />
 				</div>
-			</div>
-			-->
-			<iframe id="funcPg" name="frmPg" src="/hm.htm"
-				frameborder="0"  width="100%" height="100%"></iframe>
-
+			</div>			
+			<iframe id="funcPg" name="frmPg" width="100%" onload="this.height=frmPg.document.body.scrollHeight" frameborder="0" src="/hm.htm">
+			</iframe>
 		</div>
 		<!--  end of RightPane -->
 		
@@ -361,7 +359,7 @@ text-decoration:underline
 						<li ap="/fund/fundDistrib/">集团资金分布</li>
 						<li ap="/fund/cashDistrib/">现金分布</li>
 						<li ap="/fund/bankDistrib/">银行存款分布</li>
-						<li ap="/fund/acceptanceDistrib/">承兑分布</li>
+						<!-- <li ap="/fund/acceptanceDistrib/">承兑分布</li> -->
 					</ul>
 				</div>
 				<h3>系统设置</h3>
