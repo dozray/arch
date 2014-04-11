@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <meta charset="utf-8">
 <style>
 
@@ -20,7 +20,7 @@ var width = 960,
     radius = Math.min(width, height) / 2;
 
 var color = d3.scale.ordinal()
-    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+     .range(["#F7596F", "#C7F458", "#5796F2", "#E955CD", "#5047BF", "#d0743c", "#ff8c00"]);
 
 var arc = d3.svg.arc()
     .outerRadius(radius - 10)
@@ -36,7 +36,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-d3.csv("data.csv", function(error, data) {
+d3.csv("../../../tmp/data.csv", function(error, data) {
 
   data.forEach(function(d) {
     d.value= +d.value;

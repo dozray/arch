@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -30,11 +31,22 @@ public class FundController{
 		return "fund/rpt/balance";
 	}
 	
+	@RequestMapping("/balance/{dt}")
+	public String blc(@PathVariable String dt,Model model){	
+		BalanceSvc svc = new BalanceSvc();		
+		model.addAttribute("rpt", svc.getBalance(dt));		
+		System.out.println("fund/rpt/balance");
+		return "fund/rpt/blc";
+	}
+	
 	// collection and payment
 	@RequestMapping("/cap")
-	public String inOut(Model model){
+	public String inOut(String dt,Model model){
+		if(dt==null){
+			dt = DateFormat.getDateInstance(DateFormat.MEDIUM).format(new java.util.Date());			
+		}
 		BalanceSvc svc = new BalanceSvc();
-		model.addAttribute("sz_rpt", svc.getOccurSum());
+		model.addAttribute("sz_rpt", svc.getOccurSum(dt));
 		return "fund/rpt/sz";
 	}
 	

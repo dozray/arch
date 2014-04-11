@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html xmlns:o="urn:schemas-microsoft-com:office:office"
 xmlns:x="urn:schemas-microsoft-com:office:excel"
 xmlns="http://www.w3.org/TR/REC-html40">
@@ -429,7 +430,7 @@ rt
   width:758pt'>中伟业集团资金收支汇总表</td>
  </tr>
  <tr class=xl335765 height=36 style='mso-height-source:userset;height:27.0pt'>
-  <td colspan=3 height=36 class=xl255765 style='height:27.0pt'>日期：2014 年 03 月</td>
+  <td colspan=3 height=36 class=xl255765 style='height:27.0pt'>日期：${sz_rpt[0].dt }</td>
   <td class=xl245765></td>
   <td colspan=2 class=xl265765>单位：元</td>
  </tr>

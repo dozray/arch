@@ -10,8 +10,10 @@
 <head>
 <!-- General Metas -->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="" IE=edge,chrome=1"">
+<meta name="renderer" content="webkit"> 
+<meta name="force-rendering" content="webkit"> 
 <!-- Force Latest IE rendering engine -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="description" content="Web App Interface">
 <meta name="author" content="Ying xian Liu">
 <title>Web App</title>
@@ -22,6 +24,10 @@
 <link rel="stylesheet" type="text/css"
 	href="../../static/themes/redmond/jquery-ui.css">
 <style type="text/css">
+/* body {
+    background: url("../../static/img/page_bg.jpg") repeat-x scroll left top #FFFFFF;
+    font-family: Arial,Verdana,Tahoma,sans-serif;    
+} */
 #navigation {
 	border-bottom: 0 none;
 	background-color: #D0E5F5 !important;
@@ -103,12 +109,12 @@
 
 #hd {
 	position: absolute;
-	top: 25px;
+	top: 20px;
 	font: 12px/1.5 arial, sans-serif;
 	min-width: 700px;
-	height: 16px;
+	height: 1em;
 	width: 100%;
-	line-height: 16px;
+	line-height: 1em;
 	padding: 0 20px 0 0;
 	text-align: right;
 }
@@ -124,6 +130,17 @@ text-decoration:underline
 	margin: 0 7px;
 	color: #eaeaea;
 }
+#fm {
+	position: absolute;
+	top: 30px;
+	font: 12px/1.5 arial, sans-serif;	
+	height: 2em;
+	width: 50%;
+	line-height: 2em;
+	padding: 0 20px 0 0;
+	text-align: right;
+}
+
 /*Splitter style */
 #LeftPane {
 	/* optional, initial splitbar position */
@@ -221,8 +238,10 @@ text-decoration:underline
 	$(document).ready(function() {
 		$("#accordion li").click(function() {
 			var ap = $(this).attr("ap");
-			$("#funcPage").attr("src", ap);
+			$("#funcPg").attr("src", ap);
+			
 			/*
+			$("#print").attr("href",ap);
 			var da = ap.split("/");
 			var tid=da[da.length-1];
 			alert(tid);
@@ -244,12 +263,31 @@ text-decoration:underline
 			}*/
 		});
 	});
+	
+	function print(){		
+		if (confirm('确定打印吗?')){
+			alert("pirnting...");
+			/* document.frames("frmPg").print();
+	    	document.frames("frmPg").window.focus();
+	        window.print(); */
+			b = window.open();
+		    b.document.open();
+		    b.document.write(document.getElementById("funcPg").outerHTML);
+		    b.document.execCommand('SaveAs', '123.html');
+		    b.document.close();
+	   }
+	}
+	function preview(){
+		b = window.open();
+	    b.document.open();
+	    b.document.write(document.getElementById("funcPg").outerHTML);
+	}
+	 
 </script>
 
 </head>
 <body>
-	<nav></nav>
-	
+	<!-- <nav></nav>	 -->
 		<div class="ui-layout-north">
 			<div id="logo"
 				style="height: 50px; color: #FFFFFF; padding: 2px; letter-spacing: 1px">
@@ -261,9 +299,14 @@ text-decoration:underline
 				<a href="">您好${ray_usr.userName}</a> <span class="hd-sep">|</span> 
 				<a href="http://www.deep.tk/?src=nav" target="_blank">导航</a> 
 				<span class="hd-sep">|</span> 
-				<a href="/logout" id="usr-logout" target="_blank">注销&nbsp</a>
+				<a href="/logout" id="usr-logout" target="_top">注销&nbsp</a>
 				
 			</div>
+			<div id="fm">		
+				<input type="button" value="预览" onclick="preview();"> 	
+				<!-- <a id="print" href="" target="_black">预览</a> -->						
+		 	</div>
+		 	
 			
 			<div id="navigation">
 			<!-- 
@@ -289,8 +332,7 @@ text-decoration:underline
 				</div>
 			</div>
 			-->
-
-			<iframe id="funcPage" name="main" src="/hm.htm"
+			<iframe id="funcPg" name="frmPg" src="/hm.htm"
 				frameborder="0"  width="100%" height="100%"></iframe>
 
 		</div>
@@ -310,7 +352,7 @@ text-decoration:underline
 						<li ap="/fund/balance/">资金余额表</li>
 						<li ap="/fund/cap/">资金收支汇总表</li>
 						<li ap="/fund/capd/">资金收支明细表</li>
-						<li ap="/fund/bulkTrade/">大额资金收支明细表</li>
+						<li ap="/fund/bulkTrade/">大额资金收支明细表</li>						
 					</ul>
 				</div>
 				<h3>分析图表</h3>

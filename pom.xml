@@ -42,8 +42,7 @@
 					<groupId>commons-loggin</groupId>
 					<artifactId>commons-logging</artifactId>
 				</exclusion>
-			</exclusions>
-			<optional>true</optional>
+			</exclusions>			
 		</dependency>
 		
 		<dependency>
@@ -144,16 +143,17 @@
 			<scope>provided</scope>
 		</dependency>
 		<!-- Mysql Database -->
-		<!-- If you use mysql, uncomment this dependency declaration -->
+		<!-- If you use mysql, uncomment this dependency declaration 
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.connector.version}</version>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>com.microsoft.sqlserver</groupId>
 			<artifactId>sqljdbc4</artifactId>
-			<version>4.0</version>		
+			<version>4.0</version>	
+			<scope>runtime</scope>	
 		</dependency>
 		<!-- PostgreSQL JDBC4 -->
 		<!-- If you use postgresql, uncomment this dependency declaration -->
@@ -258,11 +258,11 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
     		<groupId>commons-lang</groupId>
     		<artifactId>commons-lang</artifactId>
     		<version>2.6</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 		    <groupId>org.apache.commons</groupId>
 		    <artifactId>commons-lang3</artifactId>
@@ -273,6 +273,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -333,7 +334,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<webXml>src/main/webapp/WEB-INF/web.xml</webXml>
-					<warName>template</warName>
+					<warName>portal</warName>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 				<version>2.4</version>
@@ -355,12 +356,13 @@
 					</systemProperties>
 					<connectors>
 						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-							<port>8888</port>
+							<port>80</port>
 							<maxIdleTime>5000</maxIdleTime>
 						</connector>
 					</connectors>
 					<scanIntervalSeconds>5</scanIntervalSeconds>
 					<webAppConfig>
+						<contextPath>/</contextPath>
 						<defaultsDescriptor>src/main/resources/webdefault.xml</defaultsDescriptor>
 					</webAppConfig>
 					<stopPort>9966</stopPort>

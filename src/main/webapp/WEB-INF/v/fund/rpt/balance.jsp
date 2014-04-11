@@ -447,18 +447,19 @@ rt
 	%>	
   </td>
   <td class=xl2426491></td>
-  <td colspan=3 class=xl2626491>单位：<!-- 万 -->元</td>
+  <td colspan=2 class=xl2626491>单位：元</td>
+  
  </tr>
  <tr height=24 style='mso-height-source:userset;height:18.0pt'>
   <td height=24 class=xl2726491 style='height:18.0pt'>公司名称</td>
   <td class=xl2826491 style='border-left:none'>现金</td>
   <td class=xl2826491 style='border-left:none'>银行</td>
-  <td class=xl2826491 style='border-left:none'>承兑</td>
+  <!-- <td class=xl2826491 style='border-left:none'>承兑</td> -->
   <td class=xl2826491 style='border-left:none'>余额</td>
   <td class=xl2926491 style='border-left:none'>监管账户</td>
   <td class=xl3026491>备注</td>
  </tr>
-  <c:set var="total_cash" value="${0}"/>
+ <c:set var="total_cash" value="${0}"/>
  <c:set var="total_bank" value="${0}"/>
  <c:set var="total_acceptance" value="${0}"/>
  <c:set var="total_freeze" value="${0 }"/>
@@ -471,9 +472,9 @@ rt
   <td class=xl3226491 align=right style='border-top:none;border-left:none' x:num>
   <fmt:formatNumber value="${um.bankBalance}" pattern="#,###.00" type="number"/>
   </td>
-  <td class=xl3226491 align=right style='border-top:none;border-left:none' x:num>
+ <%--  <td class=xl3226491 align=right style='border-top:none;border-left:none' x:num>
   <fmt:formatNumber value="${um.acceptanceBalance}" pattern="#,###.00" type="number"/>  
-  </td>
+  </td> --%>
   <td class=xl3226491 align=right style='border-top:none;border-left:none' x:num>
   <fmt:formatNumber value="${um.cashBalance+um.bankBalance+um.acceptanceBalance}" pattern="#,###.00" type="number"/>
   </td>
@@ -495,9 +496,9 @@ rt
   <td class=xl3626491 align=right style='border-top:none;border-left:none' x:num>
   <fmt:formatNumber value="${total_bank }" pattern="#,###.##" type="number"/>
   </td>
-  <td class=xl3626491 align=right style='border-top:none;border-left:none' x:num>
+  <%-- <td class=xl3626491 align=right style='border-top:none;border-left:none' x:num>
   	<fmt:formatNumber value="${total_acceptance }" pattern="#,###.##" type="number"/>
-  </td>
+  </td> --%>
   <td class=xl3626491 align=right style='border-top:none;border-left:none' x:num>
   <fmt:formatNumber value="${total_cash + total_bank +total_acceptance }" pattern="#,###.##" type="number"/>
   </td>

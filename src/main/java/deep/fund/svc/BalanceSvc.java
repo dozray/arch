@@ -32,12 +32,13 @@ public class BalanceSvc {
 		}		
 		return al;
 	}
-	public ArrayList<ION>  getOccurSum(){
+	public ArrayList<ION>  getOccurSum(String dt){
 		ArrayList<ION> al = new ArrayList<ION>();
 		Statement stmt = null;
 		try{
-			stmt = ConnectionDAO.getStatement();
-			ResultSet rs = stmt.executeQuery("{call dbo.proc_rpt_debit_credit}");
+			PreparedStatement pstmt = ConnectionDAO.getConnection().prepareStatement("{call proc_rpt_debit_credit_sum(?)}");					
+			pstmt.setString(1, dt);		
+			ResultSet rs = pstmt.executeQuery();
 			//ResultSet rs = stmt.executeQuery(SQL);
 			if(null != rs){
 				while(rs.next()){
