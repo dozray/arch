@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="zh"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="zh"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="zh"> <![endif]-->
@@ -296,7 +297,7 @@ text-decoration:underline
 				</a>
 			</div>
 			<div id="hd">
-				<a href="">您好${ray_usr.userName}</a> <span class="hd-sep">|</span> 
+				<a href="">您好admin</a> <span class="hd-sep">|</span> 
 				<a href="http://www.deep.tk/?src=nav" target="_blank">导航</a> 
 				<span class="hd-sep">|</span> 
 				<a href="/logout" id="usr-logout" target="_top">注销&nbsp</a>
@@ -330,9 +331,11 @@ text-decoration:underline
 				<div id="tabs-1" style="font-size: 12px;">
 					Event and much more... <br />
 				</div>
-			</div>			
-			<iframe id="funcPg" name="frmPg" width="100%" onload="this.height=frmPg.document.body.scrollHeight" frameborder="0" src="/hm.htm">
-			</iframe>
+			</div>
+			-->
+			<iframe id="funcPg" name="frmPg" src="/hm.htm"
+				frameborder="0"  width="100%" height="100%"></iframe>
+
 		</div>
 		<!--  end of RightPane -->
 		
