@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ConnectionDAO {
-	static Connection conn;
+	private static Connection conn;
 	/**
 	 * This method returns the connection object.
 	 * @return Connection
@@ -22,9 +22,10 @@ public class ConnectionDAO {
 			// SQL jdbc driver
 			Class.forName(driverName);
 			try{
-				if(null == conn){
+				if(null == conn || conn.isClosed()){
 					conn = DriverManager.getConnection(url+dbName,uname,pwd);
 				}
+				
 			}catch(SQLException e){
 				System.out.println("SQL Exception occurred while getting connection object. \nDetails :"+e.getMessage());
 				e.printStackTrace();
@@ -38,7 +39,7 @@ public class ConnectionDAO {
 	public static Statement getStatement(){
 		Statement stmt = null;
 		try{
-			Connection con = ConnectionDAO.getConnection();
+			Connection con = getConnection();
 			stmt = con.createStatement();
 		}catch(Exception e){
 			System.out.println("Exception occurred while getting Statement object. \nDetails :"+e.getMessage());

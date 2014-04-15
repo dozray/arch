@@ -18,7 +18,7 @@
 <!-- Force Latest IE rendering engine -->
 <meta name="description" content="Web App Interface">
 <meta name="author" content="Ying xian Liu">
-<title>App Login Entry</title>
+<title>集团报表系统</title>
 <!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>			
 		<![endif]-->

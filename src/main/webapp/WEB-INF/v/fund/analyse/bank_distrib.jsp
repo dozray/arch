@@ -56,6 +56,12 @@ d3.json("/fund/bankjson", function(error, data) {
       .attr("dy", ".35em")
       .style("text-anchor", "middle")
       .text(function(d) { return d.data.name; });
+  
+  g.append("text")
+  .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+  .attr("dy", "2em")
+  .style("text-anchor", "middle")
+  .text(function(d) { return d.data.value; });
 
 });
 

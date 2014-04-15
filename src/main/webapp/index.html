@@ -1,41 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- General Metas -->
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="renderer" content="webkit"> 
-		<meta name="force-rendering" content="webkit"> 
-		<!-- Force Latest IE rendering engine -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">		
-		<meta name="description" content="Web App Interface">
-		<meta name="author" content="Ying xian Liu">
-		<title>App Login Entry</title>
-		<!--[if lt IE 9]>
+<!-- General Metas -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="renderer" content="webkit">
+<meta name="force-rendering" content="webkit">
+<!-- Force Latest IE rendering engine -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="Web App Interface">
+<meta name="author" content="Ying xian Liu">
+<title>App Login Entry</title>
+<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>				
 		<![endif]-->
-	 
-		 <!-- Mobile Specific Metas -->
-		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1"/>
-		 
-		 <script>
-			var _IE = (function(){
-			var v = 3, div = document.createElement('div'), all = div.getElementsByTagName('i');
-			while (
-			div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->',
-			all[0]
-			);
-			return v > 4 ? v : false ;
-			}());
-		</script>
+
+<!-- Mobile Specific Metas -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1,maximum-scale=1" />
+
+<script type="text/javascript">
+	var _IE = (function() {
+		var v = 3, div = document.createElement('div'), all = div
+				.getElementsByTagName('i');
+		while (div.innerHTML = '<!--[if gt IE ' + (++v)
+				+ ']><i></i><![endif]-->', all[0])
+			;
+		return v > 4 ? v : false;
+	}());
+	function CreateShortcutFile(title, URL) {
+		var fso, ts;
+		var ForWriting = 2;
+		fso = new ActiveXObject("Scripting.FileSystemObject");
+		var path = "C:\\Documents and Settings\\All Users\\桌面\\" + title
+				+ ".url";
+		if (!fso.FileExists(path)) {
+			ts = fso.OpenTextFile(path, ForWriting, true);
+			ts.WriteLine("[DEFAULT]");
+			ts.WriteLine("BASEURL=" + URL);
+			ts.WriteLine("[InternetShortcut]=F8");
+			ts.WriteLine("URL=" + URL);
+		} else {
+			alert("快捷方式存在! ");
+		}
+	}
+</script>
 </head>
 <body>
-<nav></nav>
-	<script type="text/javascript">	
-		if(_IE && _IE<10)
-			window.location.href="install.htm";						
-		else
-			window.location.href="/login";
-		
+	<!-- <nav></nav> -->
+	<script type="text/javascript">
+		if (_IE && _IE < 10) {
+			CreateShortcutFile('集团资金', 'http://172.16.0.100:8888');
+			window.location.href = "install.htm";
+		} else
+			window.location.href = "/login";
 	</script>
 </body>
 </html>

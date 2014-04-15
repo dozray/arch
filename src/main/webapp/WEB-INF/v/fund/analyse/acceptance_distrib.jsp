@@ -55,7 +55,7 @@ d3.csv("../../../tmp/data.csv", function(error, data) {
       .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
       .attr("dy", ".35em")
       .style("text-anchor", "middle")
-      .text(function(d) { return d.data.name; });
+      .text(function(d) { return d.data.name"; });
 
 });
 

@@ -1,5 +1,7 @@
 package deep.fund.controller;
+import java.math.BigDecimal;
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -21,7 +23,7 @@ import deep.fund.svc.BalanceSvc;
 @Controller
 @RequestMapping("/fund")
 public class FundController{
-	
+	private DecimalFormat df = new DecimalFormat("#.00");
 	@RequestMapping("/balance")
 	public String balance(String dt,Model model){
 		if(dt==null){
@@ -122,7 +124,7 @@ public class FundController{
 		if(alb.size()>0){
 			for(Balance b : alb)
 			{
-				al.add(new PieData(b.getCompanyName(),b.getCashBalance()));
+				al.add(new PieData(b.getCompanyName(),new BigDecimal(b.getCashBalance())));
 			}
 		}	
 		return al;
@@ -141,7 +143,7 @@ public class FundController{
 		if(alb.size()>0){
 			for(Balance b : alb)
 			{
-				al.add(new PieData(b.getCompanyName(),b.getBankBalance()));
+				al.add(new PieData(b.getCompanyName(),new BigDecimal(b.getBankBalance())));
 			}
 		}	
 		return al;
@@ -160,7 +162,7 @@ public class FundController{
 		if(alb.size()>0){
 			for(Balance b : alb)
 			{				
-				al.add(new PieData(b.getCompanyName(),b.getCashBalance()+b.getBankBalance()));
+				al.add(new PieData(b.getCompanyName(),new BigDecimal(b.getCashBalance().toString()).add(new BigDecimal(b.getBankBalance().toString()))));
 			}
 		}	
 		return al;
