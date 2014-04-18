@@ -11,23 +11,12 @@ import org.springframework.web.servlet.ModelAndView;
 import deep.admin.bean.User;
 
 public class SessionInterceptor implements HandlerInterceptor,InitializingBean{
-	
-	@Override
-	public void afterCompletion(HttpServletRequest arg0,
-			HttpServletResponse arg1, Object arg2, Exception arg3)
-			throws Exception {
-		// TODO Auto-generated method stub
-		
+
+	// Called by container on app start.
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("======== Init SessionIntercdptor ========");
 	}
 
-	@Override
-	public void postHandle(HttpServletRequest arg0, HttpServletResponse arg1,
-			Object arg2, ModelAndView arg3) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	/**
 	 * 在Controller 方法前进行拦截
 	 * 
@@ -39,9 +28,8 @@ public class SessionInterceptor implements HandlerInterceptor,InitializingBean{
 	 * 		3.然后进入到拦截器链，从最后一个拦截器往回运行所有拦截器的postHandle方法
 	 * 		4.接着依旧是从最后一个拦截器往回运行所有拦截器的afterCompletion方法
 	 */
-	public boolean preHandle(HttpServletRequest req, HttpServletResponse res,
-			Object obj) throws Exception {
-		// TODO Auto-generated method stub
+	public boolean preHandle(HttpServletRequest req,
+			HttpServletResponse res, Object handler) throws Exception {
 		User user = (User)req.getSession().getAttribute("ray_usr");
 		if(user == null){
 			System.out.println("Interceptor got a null value of the ray_user");
@@ -52,11 +40,18 @@ public class SessionInterceptor implements HandlerInterceptor,InitializingBean{
 		return true;
 	}
 
-	@Override
-	// Called by container on app start.
-	public void afterPropertiesSet() throws Exception {
+	public void postHandle(HttpServletRequest request,
+			HttpServletResponse response, Object handler,
+			ModelAndView modelAndView) throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println("======== Init SessionIntercdptor ========");
+		
 	}
+
+	public void afterCompletion(HttpServletRequest request,
+			HttpServletResponse response, Object handler, Exception ex)
+			throws Exception {
+		// TODO Auto-generated method stub
+		
+	}	
 
 }
