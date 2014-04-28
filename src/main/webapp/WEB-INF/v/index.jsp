@@ -370,6 +370,8 @@ text-decoration:underline
 					<ul>
 						<li ap="/user/list/">用户设置</li>
 						<li ap="">账套设置</li>
+						<li ap="/upload/show/">报表上传</li>
+						
 					</ul>
 				</div>
 			</div>

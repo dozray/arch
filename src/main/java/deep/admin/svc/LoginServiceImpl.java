@@ -12,7 +12,6 @@ import deep.admin.bean.User;
 @Service("LoginService")
 public class LoginServiceImpl implements LoginService{
 
-	@Override
 	public boolean validate(User user) {
 		String SQL ="SELECT * FROM sys_user WHERE userName = '"+user.getUserName()+"' and password = '"+user.getPassword()+"';";
 		System.out.println("SQL : "+SQL);

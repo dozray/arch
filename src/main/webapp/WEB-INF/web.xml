@@ -18,7 +18,7 @@
 	
 	<context-param>
 		<param-name>contextConfigLocation</param-name> 
-		<param-value>/WEB-INF/classes/applicationContext.xml</param-value> 
+		<param-value>/WEB-INF/classes/conf/applicationContext.xml</param-value> 
 	</context-param> 
 
 	<!-- 上下文参数(第一启动),指定jdbc配置文件 </context-param> <context-param> <param-name>contextConfigLocation</param-name> 
@@ -35,7 +35,7 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class> 
 	</listener> 
 
-	<!-- springMVC编码拦截器(第三启动),springMVC内置的编码拦截器 -->
+	<!-- springMVC编码拦截器(第三启动),springMVC内置的编码拦截器
 	<filter> <filter-name>encodingFilter</filter-name> 
 	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
 		<init-param> <param-name>encoding</param-name> <param-value>UTF-8</param-value> 
@@ -45,7 +45,7 @@
 	<filter-mapping> 
 		<filter-name>encodingFilter</filter-name> 
 		<url-pattern>/*</url-pattern> 
-	</filter-mapping> 	
+	</filter-mapping> 	 -->
 	
 	<!-- springMVC 前置控制器 (第四启动)，在分发其它控制器前都要经过这个控制器 -->
 	<servlet>
@@ -53,12 +53,17 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/classes/mvc.xml</param-value>
+			<param-value>/WEB-INF/classes/conf/mvc.xml</param-value>
 			<!-- 其中<param-value>**.xml</param-value> 这里可以使用多种写法 1、不写,使用默认值:/WEB-INF/<servlet-name>-servlet.xml 
 				2、<param-value>/WEB-INF/classes/springMVC.xml</param-value> 3、<param-value>classpath*:springMVC-mvc.xml</param-value> 
 				4、多个值用逗号分隔 -->
 		</init-param>
 		<load-on-startup>1</load-on-startup>
+		<multipart-config>			
+			<max-file-size>52428800</max-file-size>
+			<max-request-size>52428800</max-request-size>
+			<file-size-threshold>0</file-size-threshold>
+		</multipart-config>		
 	</servlet>
 	
 	<!-- 处理静态资源: 需写在DispatcherServlet的前面， 让defaultServlet先拦截，不会进入Spring处理
@@ -88,10 +93,6 @@
 	<servlet-mapping>
 		<servlet-name>default</servlet-name>
 		<url-pattern>*.css</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>default</servlet-name>
-		<url-pattern>*.jpg</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>default</servlet-name>

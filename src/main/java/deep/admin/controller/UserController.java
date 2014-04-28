@@ -35,11 +35,7 @@ public class UserController {
 			@RequestParam(value="name",required=false,defaultValue="world") String name){
 		return new Greeting(counter.incrementAndGet(),String.format(TEMPLATE, name));
 	}
-	
-	@RequestMapping({"/protal","/jj"})
-	public String hello(){
-		return "hello";
-	}
+
 	
 	private Map<Long,User> users = new HashMap<Long,User>();	
 	public UserController(){

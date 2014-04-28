@@ -9,7 +9,7 @@
    
   <logger name="tk.deep" level="TRACE"/>
  
-  <root level="debug">
+  <root level="error">
     <appender-ref ref="STDOUT" />
   </root>
 </configuration>

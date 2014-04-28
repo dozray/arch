@@ -19,21 +19,42 @@
 		</repository>
 	</repositories> -->
 	<properties>
-		<java.version>1.6</java.version>
-		<spring.version>4.0.2.RELEASE</spring.version>
-		<hibernate.version>4.2.5.Final</hibernate.version>
-		<mysql.connector.version>5.1.18</mysql.connector.version>
+		<java.version>1.7</java.version>		
 		<slf4j.version>1.7.6</slf4j.version>
 		<logback.version>1.0.13</logback.version>
+		<spring.version>4.0.2.RELEASE</spring.version>
+		<spring-data-jpa.version>1.5.2.RELEASE</spring-data-jpa.version>
+		<hibernate.version>4.2.6.Final</hibernate.version>
+		<mysql.connector.version>5.1.26</mysql.connector.version>
+		<aspectj.version>1.7.4</aspectj.version>
+		<jackson-json.version>2.3.1</jackson-json.version>
+		<commons-lang3.version>3.1</commons-lang3.version>		
 		<shiro.version>1.2.3</shiro.version>
-		<jetty.version>8.1.10.v20130312</jetty.version>
+		<jetty.version>9.2.0.M0</jetty.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencies>
 
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+
 		<!-- Spring -->
-			<dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>${spring.version}</version>		
@@ -57,12 +78,7 @@
     		<version>${spring.version}</version>
 		</dependency>
 		
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-tx</artifactId>
-			<version>${spring.version}</version>			
-		</dependency>
-			
+	
 		<dependency>
     		<groupId>org.springframework</groupId>
     		<artifactId>spring-aop</artifactId>
@@ -76,7 +92,7 @@
 			<version>${spring.version}</version>			
 		</dependency>
 		
-		<!-- spring web mvc  orm-->
+		<!-- spring web mvc -->
 		
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -88,28 +104,36 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
+		
 		
 		<!-- Spring AOP support  -->
 	
 		<dependency>
-    		<groupId>org.aspectj</groupId>
-    		<artifactId>aspectjrt</artifactId>
-    		<version>1.7.4</version>
-		</dependency>
-		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
-			<version>1.7.4</version>
+			<version>${aspectj.version}</version>
 		</dependency>
+		<dependency>
+    		<groupId>org.aspectj</groupId>
+    		<artifactId>aspectjrt</artifactId>
+    		<version>${aspectj.version}</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
 			<version>2.2.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>			
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		
 		<!-- Spring Data JPA -->
@@ -117,7 +141,7 @@
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
-			<version>1.5.0.RELEASE</version>
+			<version>${spring-data-jpa.version}</version>
 		</dependency>
 		
 		
@@ -139,7 +163,7 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<version>1.3.174</version>
+			<version>1.3.176</version>
 			<scope>provided</scope>
 		</dependency>
 		<!-- Mysql Database -->
@@ -159,9 +183,7 @@
 		<!-- If you use postgresql, uncomment this dependency declaration -->
 		<!-- <dependency> <groupId>org.postgresql</groupId> <artifactId>postgresql</artifactId> 
 			<version>9.3-1100-jdbc4</version> </dependency> -->
-			
 		
-
 		<!-- BoneCP -->
 		<dependency>
 			<groupId>com.jolbox</groupId>
@@ -169,6 +191,12 @@
 			<version>0.8.0.RELEASE</version>
 		</dependency>
 
+		<!-- Web dependencies -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.3</version>
+		</dependency>
 		<!-- Servlet API 3.1 -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -188,23 +216,6 @@
 			<scope>provided</scope>
 		</dependency>
 
-
-		<!-- Logging -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jcl-over-slf4j</artifactId>
-			<version>${slf4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>${logback.version}</version>
-		</dependency>
 
 
 		<!-- @Inject -->
@@ -251,7 +262,7 @@
 		<!-- Joda Time Library <dependency> <groupId>joda-time</groupId> <artifactId>joda-time</artifactId> 
 			<version>2.2</version> </dependency> -->
 
-		<!-- File Upload -->
+		<!-- File Upload 
 		<dependency>
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
@@ -261,7 +272,7 @@
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
-		</dependency>
+		</dependency>-->
 		<!-- <dependency>
     		<groupId>commons-lang</groupId>
     		<artifactId>commons-lang</artifactId>
@@ -344,10 +355,11 @@
 				<version>2.4</version>
 			</plugin>
 			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
+				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>${jetty.version}</version>
 				<configuration>
+					<war>${basedir}/target/ray.war</war>
 					<systemProperties>
 						<systemProperty>
 							<name>org.apache.jasper.compiler.disablejsr199</name>
@@ -358,20 +370,18 @@
 							<value>UTF-8</value>
 						</systemProperty>
 					</systemProperties>
-					<connectors>
-						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-							<port>80</port>
-							<maxIdleTime>5000</maxIdleTime>
-						</connector>
-					</connectors>
+					<jettyXml>${project.build.outputDirectory}/conf/jetty.xml,${project.build.outputDirectory}/conf/jetty-http.xml</jettyXml>
+					<!-- <jettyXml>jetty.xml,jetty-http.xml,jetty-ssl.xml,jetty-https.xml</jettyXml> -->		
 					<scanIntervalSeconds>5</scanIntervalSeconds>
-					<webAppConfig>
+					<webApp>
 						<contextPath>/</contextPath>
-						<defaultsDescriptor>src/main/resources/webdefault.xml</defaultsDescriptor>
-					</webAppConfig>
+						<!-- <contextPath>/${project.artifactId}</contextPath> -->
+						<defaultsDescriptor>${project.build.outputDirectory}/conf/webdefault.xml</defaultsDescriptor>
+					</webApp>					
 					<stopPort>9966</stopPort>
 					<stopKey>foo</stopKey>
 				</configuration>
+			
 				<executions>
 					<execution>
 						<id>start-jetty</id>
@@ -379,7 +389,7 @@
 						<goals>
 							<goal>run</goal>
 						</goals>
-						<configuration>							
+						<configuration>
 							<scanIntervalSeconds>0</scanIntervalSeconds>
 							<daemon>true</daemon>
 						</configuration>
@@ -391,7 +401,7 @@
 							<goal>stop</goal>
 						</goals>
 					</execution>
-				</executions>
+				</executions>				
 			</plugin>
 
 			<plugin>
