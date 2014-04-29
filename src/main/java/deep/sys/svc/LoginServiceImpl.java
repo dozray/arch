@@ -1,4 +1,4 @@
-package deep.admin.svc;
+package deep.sys.svc;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,7 +7,8 @@ import java.sql.Statement;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import deep.admin.bean.User;
+import deep.sys.ConnectionDAO;
+import deep.sys.beans.User;
 
 @Service("LoginService")
 public class LoginServiceImpl implements LoginService{

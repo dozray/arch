@@ -1,4 +1,4 @@
-package deep.admin.svc;
+package deep.sys;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

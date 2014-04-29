@@ -1,4 +1,4 @@
-package deep.admin.controller;
+package deep.sys.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,10 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import sun.rmi.runtime.Log;
-import deep.admin.bean.User;
-import deep.demo.controller.Greeting;
 import deep.fund.rpt.bean.PieData;
+import deep.sys.beans.User;
 
 @Controller
 @RequestMapping("/user")
@@ -30,12 +28,13 @@ public class UserController {
 	private static final String TEMPLATE = "Hello %s";
 	private final AtomicLong counter = new AtomicLong();
 	
+	/*
 	@RequestMapping("/greeting")
 	public @ResponseBody Greeting greeting(
 			@RequestParam(value="name",required=false,defaultValue="world") String name){
 		return new Greeting(counter.incrementAndGet(),String.format(TEMPLATE, name));
 	}
-
+*/
 	
 	private Map<Long,User> users = new HashMap<Long,User>();	
 	public UserController(){

@@ -1,4 +1,4 @@
-package deep.admin.controller;
+package deep.sys.controller;
 
 import java.util.Map;
 
@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
-import deep.admin.bean.ApplicationModel;
-import deep.admin.bean.User;
-import deep.admin.svc.LoginService;
+import deep.sys.ApplicationModel;
+import deep.sys.beans.User;
+import deep.sys.svc.LoginService;
 
 @Controller
 public class LoginController {

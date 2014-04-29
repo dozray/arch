@@ -1,4 +1,4 @@
-package deep.admin.bean;
+package deep.sys.beans;
 
 public class Rule {
 	private Long	id;

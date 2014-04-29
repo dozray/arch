@@ -1,6 +1,7 @@
-package deep.admin.svc;
+package deep.sys.svc;
 
-import deep.admin.bean.User;
+import deep.sys.beans.User;
+
 
 public interface IUserSvc {
 	User getByAccount(String username);

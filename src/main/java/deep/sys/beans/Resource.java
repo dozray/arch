@@ -1,4 +1,4 @@
-package deep.admin.bean;
+package deep.sys.beans;
 
 public class Resource {
 	private Long	id;

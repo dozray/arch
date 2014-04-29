@@ -1,9 +1,9 @@
-package deep.admin.svc;
+package deep.sys.svc;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import deep.admin.bean.User;
+import deep.sys.beans.User;
 
 public class UserSvc implements IUserSvc {
 

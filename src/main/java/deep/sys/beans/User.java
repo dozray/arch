@@ -1,4 +1,4 @@
-package deep.admin.bean;
+package deep.sys.beans;
 import javax.validation.constraints.Size;
 import javax.validation.constraints.NotNull;
 

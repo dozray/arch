@@ -1,4 +1,6 @@
-package deep.admin.bean;
+package deep.sys;
+
+import deep.sys.beans.User;
 
 /**
  * This model class is used mainly to send the data into a single object which contains all the details

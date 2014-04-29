@@ -1,4 +1,4 @@
-package deep.admin.bean;
+package deep.sys.beans;
 
 import java.util.List;
 
