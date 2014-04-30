@@ -350,6 +350,7 @@ text-decoration:underline
 				<h3>集团数据报表</h3>
 				<div>
 					<ul>
+						<li ap="/fund/plan/">资金计划执行情况表</li>
 						<li ap="/fund/balance/">资金余额表</li>
 						<li ap="/fund/cap/">资金收支汇总表</li>
 						<li ap="/fund/capd/">资金收支明细表</li>

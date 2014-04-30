@@ -2,11 +2,10 @@ package deep.fund.controller;
 import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +23,14 @@ import deep.fund.svc.BalanceSvc;
 @RequestMapping("/fund")
 public class FundController{
 	private DecimalFormat df = new DecimalFormat("#.00");
+	
+	@RequestMapping("plan")
+	public String plan(String dt,Model model){
+		if(dt==null)
+			dt = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+		return "upload/rpt/"+dt;
+	}
+	
 	@RequestMapping("/balance")
 	public String balance(String dt,Model model){
 		if(dt==null){
