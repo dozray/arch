@@ -206,7 +206,8 @@ text-decoration:underline
 	src="../../static/layout/jquery.layout.js"></script>
 
 <script type="text/javascript">
-	var pageLayout;
+	var pageLayout, ap;
+	var today = new Date().toJSON().substring(0,10);
 	$(document).ready(function() {
 		// create page layout
 		pageLayout = $('body').layout({
@@ -232,15 +233,11 @@ text-decoration:underline
 		$("#accordion").accordion();
 		$( "#datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
 	});
-	/* $(document).ready(function(){
-	    $(":input").click(function(){
-	        alert($(this).attr("name"));
-	    })
-	}); */
+	
 	$(document).ready(function() {
 		$("#accordion li").click(function() {
-			var ap = $(this).attr("ap");
-			$("#funcPg").attr("src", ap);
+			ap = $(this).attr("ap");
+			$("#funcPg").attr("src", ap+today);
 			
 			/*
 			$("#print").attr("href",ap);
@@ -271,6 +268,8 @@ text-decoration:underline
 		      buttons: {
 		          "确定": function() {
 		            $( this ).dialog( "close" );
+		            var dtAp = ap + $("#datepicker").val();
+					$("#funcPg").attr("src", dtAp);
 		          }
 		        }
 		    });
@@ -318,7 +317,7 @@ text-decoration:underline
 			</div>
 			
 			<div id="fm">
-				<input type="button" value="查询" onclick="dtQuery();" id="dtQ"/>
+				<input type="button" value="查询" id="dtQ"/>
 				<input type="button" value="预览" onclick="preview();"></input>
 			</div>
 			

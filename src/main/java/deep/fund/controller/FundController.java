@@ -24,10 +24,10 @@ import deep.fund.svc.BalanceSvc;
 public class FundController{
 	private DecimalFormat df = new DecimalFormat("#.00");
 	
-	@RequestMapping("plan")
-	public String plan(String dt,Model model){
+	@RequestMapping("/plan/{dt}")
+	public String plan(@PathVariable String dt,Model model){
 		if(dt==null)
-			dt = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+			dt = new SimpleDateFormat("yyyy-MM-dd").format(new Date());		
 		return "upload/rpt/"+dt;
 	}
 	
@@ -71,6 +71,15 @@ public class FundController{
 		model.addAttribute("dc_detail",svc.getOccurDetail(dt));
 		return "fund/rpt/szd";
 	}
+	
+	@RequestMapping("/capd/{dt}")
+	public String capd(@PathVariable String dt,Model model){
+		BalanceSvc svc = new BalanceSvc();
+		model.addAttribute("dc_detail",svc.getOccurDetail(dt));
+		return "fund/rpt/szd";
+	}
+	
+	
 	// Bulk Trade action
 	@RequestMapping("bulkTrade")
 	public String bulkTrade(Model model){
