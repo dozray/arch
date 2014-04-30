@@ -230,6 +230,7 @@ text-decoration:underline
 			}
 		});
 		$("#accordion").accordion();
+		$( "#datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
 	});
 	/* $(document).ready(function(){
 	    $(":input").click(function(){
@@ -263,6 +264,18 @@ text-decoration:underline
 				}); 
 			}*/
 		});
+		$("#dtQ").click(function(){
+			$( "#dialog" ).dialog({
+		      height: 200,
+		      modal: true,
+		      buttons: {
+		          "确定": function() {
+		            $( this ).dialog( "close" );
+		          }
+		        }
+		    });
+		});
+		
 	});
 	
 	function print(){		
@@ -283,7 +296,7 @@ text-decoration:underline
 	    b.document.open();
 	    b.document.write(document.getElementById("funcPg").outerHTML);
 	}
-	 
+	
 </script>
 
 </head>
@@ -303,11 +316,13 @@ text-decoration:underline
 				<a href="/logout" id="usr-logout" target="_top">注销&nbsp</a>
 				
 			</div>
-			<div id="fm">		
-				<input type="button" value="预览" onclick="preview();"> 	
-				<!-- <a id="print" href="" target="_black">预览</a> -->						
-		 	</div>
-		 	
+			
+			<div id="fm">
+				<input type="button" value="查询" onclick="dtQuery();" id="dtQ"/>
+				<input type="button" value="预览" onclick="preview();"></input>
+			</div>
+			
+			
 			
 			<div id="navigation">
 			<!-- 
@@ -378,5 +393,11 @@ text-decoration:underline
 			</div>
 		</div> <!-- end of content -->
 	<div id="body-wrap"></div> <!-- end body-wrap -->
+	<div id="dialog" title="查询窗口">
+  		<p>输入查询日期</p>
+  		<p>查询日期: <input type="text" id="datepicker"></p>
+  		
+	</div>
+	
 </body>
 </html>
