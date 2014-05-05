@@ -61,6 +61,13 @@ public class FundController{
 		return "fund/rpt/sz";
 	}
 	
+	@RequestMapping("/cap/{dt}")
+	public String cap(@PathVariable String dt,Model model){
+		BalanceSvc svc = new BalanceSvc();
+		model.addAttribute("sz_rpt", svc.getOccurSum(dt));
+		return "fund/rpt/sz";
+	}
+	
 	// detail report of collection and payment
 	@RequestMapping({"capd","/cap/detail"})
 	public String inOutDetail(String dt,Model model){

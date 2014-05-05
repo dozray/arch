@@ -200,10 +200,8 @@ text-decoration:underline
 </style>
 <!-- REQUIRED scripts for layout widget -->
 <script type="text/javascript" src="../../static/js/jquery-1.10.2.js"></script>
-<script type="text/javascript"
-	src="../../static/js/jquery-ui-1.10.4.min.js"></script>
-<script type="text/javascript"
-	src="../../static/layout/jquery.layout.js"></script>
+<script type="text/javascript" src="../../static/js/jquery-ui-1.10.4.min.js"></script>
+<script type="text/javascript" src="../../static/layout/jquery.layout.js"></script>
 
 <script type="text/javascript">
 	var pageLayout, ap;
@@ -236,8 +234,14 @@ text-decoration:underline
 	
 	$(document).ready(function() {
 		$("#accordion li").click(function() {
-			ap = $(this).attr("ap");
-			$("#funcPg").attr("src", ap+today);
+			var li = $(this);
+			var qp = li.attr("qp");
+			ap = li.attr("ap");
+	
+			if(qp && qp==1)
+				$("#funcPg").attr("src", ap+today);
+			else
+				$("#funcPg").attr("src", ap);
 			
 			/*
 			$("#print").attr("href",ap);
@@ -364,19 +368,19 @@ text-decoration:underline
 				<h3>集团数据报表</h3>
 				<div>
 					<ul>
-						<li ap="/fund/plan/">资金计划执行情况表</li>
-						<li ap="/fund/balance/">资金余额表</li>
-						<li ap="/fund/cap/">资金收支汇总表</li>
-						<li ap="/fund/capd/">资金收支明细表</li>
-						<li ap="/fund/bulkTrade/">大额收支明细表</li>						
+						<li ap="/fund/plan/" qp="1">资金计划执行情况表</li>
+						<li ap="/fund/balance/" qp="1">资金余额表</li>
+						<li ap="/fund/cap/" qp="1">资金收支汇总表</li>
+						<li ap="/fund/capd/" qp="1">资金收支明细表</li>
+						<li ap="/fund/bulkTrade/" >大额收支明细表</li>						
 					</ul>
 				</div>
 				<h3>分析图表</h3>
 				<div>
 					<ul>
-						<li ap="/fund/fundDistrib/">集团资金分布</li>
-						<li ap="/fund/cashDistrib/">现金分布</li>
-						<li ap="/fund/bankDistrib/">银行存款分布</li>
+						<li ap="/fund/fundDistrib/" >集团资金分布</li>
+						<li ap="/fund/cashDistrib/" >现金分布</li>
+						<li ap="/fund/bankDistrib/" >银行存款分布</li>
 						<!-- <li ap="/fund/acceptanceDistrib/">承兑分布</li> -->
 					</ul>
 				</div>
