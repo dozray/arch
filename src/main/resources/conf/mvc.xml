@@ -28,7 +28,7 @@
 		以便注册带有@Controller、@Service、@repository、@Component等注解的类成为spring的bean 
 		常用的注解有:
 		@Controller			声明Action组件
-		@Service			声明Service组件
+		@Service				声明Service组件
 		@Repository			声明Dao组件
 		@Component			泛指组件，当无法明确分类时
 		@RequestMapping		请求映射，如RequestMapping("/menu");

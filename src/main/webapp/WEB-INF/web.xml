@@ -5,20 +5,10 @@
 	id="WebApp_ID" version="3.0">
 	<display-name>arch</display-name>
 	
-	<!-- <servlet>
-		<servlet-name>default</servlet-name>
-		<servlet-class>org.eclipse.jetty.servlet.DefaultServlet</servlet-class>
-		<init-param>
-			<param-name>useFileMapppedBuffer</param-name>
-			<param-value>false</param-value>
-		</init-param>
-		<load-on-startup>2</load-on-startup>
-	</servlet> -->
-
-	
 	<context-param>
 		<param-name>contextConfigLocation</param-name> 
-		<param-value>/WEB-INF/classes/conf/applicationContext.xml</param-value> 
+		<param-value>/WEB-INF/classes/conf/applicationContext.xml,
+							/WEB-INF/classes/conf/jpa.xml</param-value> 
 	</context-param> 
 
 	<!-- 上下文参数(第一启动),指定jdbc配置文件 </context-param> <context-param> <param-name>contextConfigLocation</param-name> 

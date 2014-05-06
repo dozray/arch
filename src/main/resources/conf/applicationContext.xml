@@ -23,4 +23,13 @@
     	<context:component-scan base-package="deep.sys">
     		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     	</context:component-scan>
+
+    	<!-- Localization 
+    	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageResource">
+    		<property name="basename" value="classpath:org/springframework/security/message_zh_CN"/>
+    	</bean>
+    	-->
+    	
+    	
+    	
 </beans>

@@ -1,13 +1,24 @@
 package deep.sys.beans;
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-public class User {
+@Entity
+@Table(name="sys_users")
+public class User implements Serializable{
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	private String code;
-	private String userName;
+	private String username;
 	private String password;
 	private String phone;
 	private String remark;
@@ -15,7 +26,7 @@ public class User {
 	/** getXXX方法上的注解是spring MVC的验证注解，在action中调用 **/
 	public User(){}
 	public User(String username, String password){
-		this.userName =username;
+		this.username =username;
 		this.password = password;
 	}
 	
@@ -24,7 +35,7 @@ public class User {
 		super();
 		this.id = id;
 		this.code = code;
-		this.userName = userName;
+		this.username = userName;
 		this.password = password;
 		this.phone = phone;
 		this.remark = remark;
@@ -44,10 +55,10 @@ public class User {
 	}
 	@NotEmpty(message = "用户名不能为空")
 	public String getUserName(){
-		return this.userName;
+		return this.username;
 	}
 	public void setUserName(String username){
-		this.userName = username;
+		this.username = username;
 	}	
 	@Size(min = 6, max=8, message="密码长度在6位以上")
 	public String getPassword(){
@@ -70,6 +81,6 @@ public class User {
 	}
 	@Override
 	public String toString(){
-		return userName+"#"+password;
+		return username+"#"+password;
 	}
 }

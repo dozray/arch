@@ -471,14 +471,14 @@ rt
  
  <c:forEach items="${users}" var="um">		
 	 <tr height=22 style='mso-height-source:userset;height:16.5pt'>
-  		<td height=22 class=xl3420249 style='height:16.5pt;border-top:none'>${um.value.id}</td>
-  		<td class=xl3020249 style='border-top:none;border-left:none'>${um.value.code}</td>
-  		<td class=xl3020249 style='border-top:none;border-left:none'><a href="/user/${um.value.id}">${um.value.userName}</a></td>
-  		<td class=xl3020249 style='border-top:none;border-left:none'>${um.value.phone}</td>
-  		<td class=xl3520249 style='border-top:none;border-left:none'><a href="/user/${um.value.id }/update">编辑</a></td>
-  		<td class=xl3520249 style='border-top:none'><a href="/user/${um.value.id }/freeze">冻结</a></td>
-  		<td class=xl3520249 style='border-top:none'><a href="/user/${um.value.id }/delete">删除</a></td>
-  		<td class=xl3620249 style='border-top:none'>${um.value.remark}</td>
+  		<td height=22 class=xl3420249 style='height:16.5pt;border-top:none'>${um.id}</td>
+  		<td class=xl3020249 style='border-top:none;border-left:none'>${um.code}</td>
+  		<td class=xl3020249 style='border-top:none;border-left:none'><a href="/user/${um.id}">${um.userName}</a></td>
+  		<td class=xl3020249 style='border-top:none;border-left:none'>${um.phone}</td>
+  		<td class=xl3520249 style='border-top:none;border-left:none'><a href="/user/${um.id }/update">编辑</a></td>
+  		<td class=xl3520249 style='border-top:none'><a href="/user/${um.id }/freeze">冻结</a></td>
+  		<td class=xl3520249 style='border-top:none'><a href="/user/${um.id }/delete">删除</a></td>
+  		<td class=xl3620249 style='border-top:none'>${um.remark}</td>
  </tr>
 </c:forEach>
 

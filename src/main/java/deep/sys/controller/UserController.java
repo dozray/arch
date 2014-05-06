@@ -1,5 +1,6 @@
 package deep.sys.controller;
 
+/**
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,13 +29,13 @@ public class UserController {
 	private static final String TEMPLATE = "Hello %s";
 	private final AtomicLong counter = new AtomicLong();
 	
-	/*
-	@RequestMapping("/greeting")
-	public @ResponseBody Greeting greeting(
-			@RequestParam(value="name",required=false,defaultValue="world") String name){
-		return new Greeting(counter.incrementAndGet(),String.format(TEMPLATE, name));
-	}
-*/
+	
+	//@RequestMapping("/greeting")
+	//public @ResponseBody Greeting greeting(
+		//	@RequestParam(value="name",required=false,defaultValue="world") String name){
+		//return new Greeting(counter.incrementAndGet(),String.format(TEMPLATE, name));
+	//}
+
 	
 	private Map<Long,User> users = new HashMap<Long,User>();	
 	public UserController(){
@@ -44,16 +45,18 @@ public class UserController {
 		users.put(3L, new User(2L,"qqz","齐全中","123456","18737906872","集团财务部"));
 	}
 	
+	
+	
 	@RequestMapping(value="/list",method=RequestMethod.GET)
 	public String list(Model model){
 		model.addAttribute("users",users);
 		return "user/list";
 	}	
-	/*开启modelDriven 1
-	public String add(Model model){		
-		model.addAttribute(new User());
-		return "user/add";
-	}*/
+	//开启modelDriven 1
+	//public String add(Model model){		
+		//model.addAttribute(new User());
+		//return "user/add";
+	//}
 	//开启modelDriven 2	
 	@RequestMapping(value="/add",method=RequestMethod.GET)
 	public String add(@ModelAttribute("user") User user){			
@@ -106,3 +109,4 @@ public class UserController {
 	
 
 }
+**/
