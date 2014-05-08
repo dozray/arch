@@ -1,20 +1,29 @@
 package deep.sys.svc;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import deep.sys.ConnectionDAO;
 import deep.sys.beans.User;
 
 @Service("LoginService")
 public class LoginServiceImpl implements LoginService{
+	
+	@Autowired
+	private UserSvc us;
+	
+	public boolean validate(User user){
+		try{	
+			return us.isExistUser(user.getCode(),user.getPassword());
+		}catch(Exception e){
+			System.out.println("validate exception:"+e.getStackTrace());
+			return false;
+		}
+	}
 
+	/**
 	public boolean validate(User user) {
-		String SQL ="SELECT * FROM sys_user WHERE userName = '"+user.getUserName()+"' and password = '"+user.getPassword()+"';";
+		String SQL ="SELECT * FROM sys_users WHERE userName = '"+user.getUserName()+"' and password = '"+user.getPassword()+"';";
 		System.out.println("SQL : "+SQL);
 		Statement stmt = null;
 		try{
@@ -32,5 +41,5 @@ public class LoginServiceImpl implements LoginService{
 			return false;
 		}
 	}
-	
+	**/
 }

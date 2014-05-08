@@ -27,12 +27,6 @@ public class UserSvc implements IUserSvc {
 
 	@Transactional
 	public  User modiUser(User u){
-		//User old = ur.getOne(u.getId());
-		//old.setCode(u.getCode());
-		//old.setUserName(u.getUserName());
-		//old.setPassword(u.getPassword());
-		//old.setPhone(u.getPhone());
-		//old.setRemark(u.getRemark());
 		return ur.save(u);
 	}
 
@@ -45,8 +39,8 @@ public class UserSvc implements IUserSvc {
 	public User getByAccount(String username) {
 		return ur.getByAccount(username);
 	}
-	public boolean isExistUser(String username,String password){
-		return ur.isExistUser(username, password);
+	public boolean isExistUser(String code,String password){
+		return ur.isExistUser(code, password);
 	}
 	
 }

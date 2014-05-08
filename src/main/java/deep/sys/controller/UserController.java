@@ -73,7 +73,16 @@ public class UserController {
 		return "redirect:/user/list";
 	}
 	
-	
+	@RequestMapping(value="{id}/password",method=RequestMethod.GET)
+	public String password(){		
+		return "user/paswd";
+	}
+
+	@RequestMapping(value="{id}/password",method=RequestMethod.POST)
+	public String password(@PathVariable Long id,String oldPassword,String newPassword){
+		
+		return null;
+	}
 	
 	private static final String TEMPLATE = "Hello %s";
 	private final AtomicLong counter = new AtomicLong();

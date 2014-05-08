@@ -313,7 +313,7 @@ text-decoration:underline
 				</a>
 			</div>
 			<div id="hd">
-				<a href="">您好admin</a> <span class="hd-sep">|</span> 
+				<a href="">设置</a> <span class="hd-sep">|</span> 
 				<a href="#" target="_blank">导航</a> 
 				<span class="hd-sep">|</span> 
 				<a href="/logout" id="usr-logout" target="_top">注销&nbsp</a>

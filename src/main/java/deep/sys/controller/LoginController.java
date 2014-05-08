@@ -59,8 +59,8 @@ public class LoginController {
 		try {
 			// Using Spring ValidationUtils class to check for the empty fields.
 			// This will add the error if any in the br object
-			ValidationUtils.rejectIfEmptyOrWhitespace(br, "userName",
-					"userName", "用户名不能为空");
+			ValidationUtils.rejectIfEmptyOrWhitespace(br, "code",
+					"code", "登录号不能为空");
 			ValidationUtils.rejectIfEmptyOrWhitespace(br, "password",
 					"password", "密码不能为空");
 
