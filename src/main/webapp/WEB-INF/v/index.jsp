@@ -299,6 +299,9 @@ text-decoration:underline
 	    b.document.open();
 	    b.document.write(document.getElementById("funcPg").outerHTML);
 	}
+	function chgPswd(){
+		b = window.open("/user/modiPswd");		
+	}
 	
 </script>
 
@@ -399,7 +402,6 @@ text-decoration:underline
 	<div id="dialog" title="查询窗口">
   		<p>输入查询日期</p>
   		<p>查询日期: <input type="text" id="datepicker"></p>
-  		
 	</div>
 	
 </body>

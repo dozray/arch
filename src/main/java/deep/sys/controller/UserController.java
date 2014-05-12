@@ -1,6 +1,9 @@
 package deep.sys.controller;
 
+import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicLong;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import deep.sys.beans.User;
 import deep.sys.svc.UserSvc;
@@ -73,15 +77,22 @@ public class UserController {
 		return "redirect:/user/list";
 	}
 	
-	@RequestMapping(value="{id}/password",method=RequestMethod.GET)
+	@RequestMapping(value="/modiPswd",method=RequestMethod.GET)
 	public String password(){		
-		return "user/paswd";
+		return "user/pswd";
 	}
 
-	@RequestMapping(value="{id}/password",method=RequestMethod.POST)
-	public String password(@PathVariable Long id,String oldPassword,String newPassword){
-		
-		return null;
+	@RequestMapping(value="/modiPswd",method=RequestMethod.POST)
+	public @ResponseBody String password(HttpServletRequest req,String oldPassword,String newPassword){
+		User usr = (User)req.getSession().getAttribute("ray_user");
+		if(usr.getPassword().equals(oldPassword)){
+			usr.setPassword(newPassword);
+			us.modiUser(usr);
+			return "密码已修改!";
+		}
+		else{
+			return "原密码错误!";
+		}
 	}
 	
 	private static final String TEMPLATE = "Hello %s";
