@@ -54,31 +54,46 @@
 	-->
 	<mvc:default-servlet-handler/> 	
 	
+						
+	<bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="templateLoaderPath" value="WEB-INF/ftl/" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+
 	<!-- 
 	Here we configure two view resolvers:
-		ResourceBundleViewResolver: to resolve view names specified in the views.properties file.
+		
 		InternalResourceViewResolver: to resolve view names to JSP pages.
+		ResourceBundleViewResolver: 	to resolve view names specified in the views.properties file.
 		
 		Note that the ResourceBundleViewResolver has higher priority (order=”1”) than the 
 		InternalResourceViewResolver (order=”2”) so the view names specified in the views.properties 
 		are processed first.	
 	 -->
-	<bean id="viewResolver1" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
-		<property name="order" value="1"/>
-		<property name="basename" value="views"/> 
-	</bean>
-	
-	<bean id="viewResolver2"
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="order" value="2"/>
+	 
+	<bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
+    
+    <bean id="InternalViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+		<property name="order" value="8"/>
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.JstlView" />
 		<property name="prefix" value="/WEB-INF/v/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
-	<bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
-		
+	 <bean id="freemarker" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+	 	<property name="order" value="1"></property>
+	 	<property name="suffix" value=".flt"/>
+	 	<property name="contentType" value="text/html;charset=UTF-8"></property>
+	 	<!-- This variable's value is  pageContext.request , you can use rc.contextPath to handle in page. -->
+	 	<property name="requestContextAttribute" value="rc"></property>
+	 </bean>
+	 
+	<bean id="ResourceBundleViewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+		<property name="order" value="2"/>
+		<property name="basename" value="views"/> 
 	</bean>
+	
 
 </beans> 
