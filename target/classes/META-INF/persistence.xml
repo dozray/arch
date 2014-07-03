@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+                                 http://java.sun.com/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="H2">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <!-- <jta-data-source>java:/DefaultDS</jta-data-source> -->
+        
+        <properties>
+       
+	      	<property name="hibernate.connection.drirver_class" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+    	    <property name="hibernate.connection.url" value="jdbc:sqlserver://172.16.4.250:1433; DatabaseName=WYG_Cluster"/>
+        	<property name="hibernate.connection.username" value="root"/>
+        	<property name="hibernate.connection.password" value="wygdev"/>
+                         
+            <!-- 
+	      	<property name="hibernate.connection.drirver_class" value="org.h2.Driver"/>
+    	    <property name="hibernate.connection.url" value="jdbc:h2:mem:arch"/>
+        	<property name="hibernate.connection.username" value="sa"/>
+        	<property name="hibernate.connection.password" value=""/>
+			 -->
+			<!-- 
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+	        <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
+	         -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/>
+            <property name="hibernate.show_sql" value="true" />
+	        <property name="hibernate.format_sql" value="true"/>
+ 	        <property name="hibernate.hbm2ddl.auto" value="update"/> <!-- (create-drop , update , validate) -->
+	        <property name="hibernate.max_fetch_depth" value="3"/>
+            <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/>
+            <property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider" />
+            <property name="jadira.usertype.autoRegisterUserTypes" value="true" /> 1
+            <property name="jadira.usertype.databaseZone" value="jvm" />
+        </properties>
+    </persistence-unit>
+    
+</persistence>

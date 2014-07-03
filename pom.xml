@@ -5,18 +5,25 @@
 	<artifactId>arch</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>show Maven Webapp</name>
+	<name>Web App</name>
 	<url>http://www.deep.tk</url>
 	<developers>
 		<developer></developer>
 	</developers>
-
+	<!-- <repositories>
+		<repository>
+			<id>0001</id>
+			<name>inner repo</name>
+			<layout>default</layout>
+			<url>http://172.16.0.18:8081/nexus/content/groups/public/</url>
+		</repository>
+	</repositories> -->
 	<properties>
 		<java.version>1.7</java.version>		
 		<slf4j.version>1.7.6</slf4j.version>
 		<logback.version>1.0.13</logback.version>
 		<spring.version>4.0.2.RELEASE</spring.version>
-		<spring-data-jpa.version>1.5.2.RELEASE</spring-data-jpa.version>
+		<spring-data-jpa.version>1.6.1.RELEASE</spring-data-jpa.version>
 		<hibernate.version>4.2.6.Final</hibernate.version>
 		<mysql.connector.version>5.1.26</mysql.connector.version>
 		<aspectj.version>1.7.4</aspectj.version>
@@ -170,13 +177,13 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.connector.version}</version>
-		</dependency>-->
+		</dependency>
 		<dependency>
 			<groupId>com.microsoft.sqlserver</groupId>
 			<artifactId>sqljdbc4</artifactId>
 			<version>4.0</version>	
 			<scope>runtime</scope>	
-		</dependency>
+		</dependency>-->
 		<!-- PostgreSQL JDBC4 -->
 		<!-- If you use postgresql, uncomment this dependency declaration -->
 		<!-- <dependency> <groupId>org.postgresql</groupId> <artifactId>postgresql</artifactId> 

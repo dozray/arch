@@ -1,0 +1,27 @@
+数据库连接
+EXEC sp_addlinkedserver 
+   'instance1', 
+   '', 
+   'MSDASQL',
+   NULL,
+   NULL,
+   'DRIVER={SQL Server};SERVER=192.168.1.100;UID=sa;PWD=123;'
+GO
+EXEC sp_addlinkedserver 
+   'instance1', 
+   '', 
+   'MSDASQL',
+   NULL,
+   NULL,
+   'DRIVER={SQL Server};SERVER=172.16.4.250;UID=root;PWD=wygdev;'
+GO
+
+--查看链接服务器
+EXEC sp_linkedservers
+
+--删除链接服务器
+EXEC sp_dropserver 'instance1'
+
+--开始查询测试
+select * from instance1.db1.dbo.table1
+select * from 别名.数据库名.dbo.表名
