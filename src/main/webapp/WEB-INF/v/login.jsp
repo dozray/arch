@@ -13,11 +13,21 @@
 
 <head>
 <!-- General Metas -->
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<!-- Force Latest IE rendering engine -->
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta name="description" content="Web App Interface">
 <meta name="author" content="Ying xian Liu">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Force Latest IE rendering engine -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+
+
+
+
 <title>集团报表系统</title>
 <!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>			
