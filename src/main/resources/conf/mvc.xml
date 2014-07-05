@@ -94,6 +94,5 @@
 		<property name="order" value="2"/>
 		<property name="basename" value="views"/> 
 	</bean>
-	
 
 </beans> 

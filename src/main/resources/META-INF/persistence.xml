@@ -11,22 +11,24 @@
         
         <properties>
        
+        	<!-- 
 	      	<property name="hibernate.connection.drirver_class" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
     	    <property name="hibernate.connection.url" value="jdbc:sqlserver://172.16.4.250:1433; DatabaseName=WYG_Cluster"/>
         	<property name="hibernate.connection.username" value="root"/>
         	<property name="hibernate.connection.password" value="wygdev"/>
                          
-            <!-- 
+           	 -->
 	      	<property name="hibernate.connection.drirver_class" value="org.h2.Driver"/>
     	    <property name="hibernate.connection.url" value="jdbc:h2:mem:arch"/>
         	<property name="hibernate.connection.username" value="sa"/>
         	<property name="hibernate.connection.password" value=""/>
-			 -->
+		
+			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
 			<!-- 
-            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/>
 	        <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
 	         -->
-            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/>
+            
             <property name="hibernate.show_sql" value="true" />
 	        <property name="hibernate.format_sql" value="true"/>
  	        <property name="hibernate.hbm2ddl.auto" value="update"/> <!-- (create-drop , update , validate) -->
